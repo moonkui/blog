@@ -133,13 +133,56 @@
 </ol>
 <ul>
 <li>含义:创建动画，指定一个CSS样式和动画将逐步从目前的样式更改为新的样式</li>
-<li>注意：当@keyframes创建动画，把它绑定到选择器上，否则不会有任何效果。animation上至少写着两个属性 animation(name, duration)<br><img src="https://wp.forzgc.cn/wp-content/uploads/2021/06/image-14.png" alt="animation"></li>
+<li>注意：当@keyframes创建动画，把它绑定到选择器上，否则不会有任何效果。animation上至少写着两个属性 animation(name, duration)</li>
 </ul>
+<ol start="3">
+<li>animation-timing-function 的不同取值 </li>
+</ol>
+<ul>
+<li>ease 默认 动画以低速开始，然后加快，在结束后变慢</li>
+<li>linear 动画从头到尾的速度是相同的</li>
+<li>ease-in 动画以低速开始</li>
+<li>ease-out 动画以低速结束</li>
+<li>ease-in-out 动画以低速开始和结束</li>
+<li>cubic-bezier(n,n,n,n) 在cubic-bezier函数中定义值，可能的值是从0-1的数值</li>
+</ul>
+<ol start="4">
+<li>animation-direction 定义是否循环交替反向播放动画</li>
+</ol>
+<ul>
+<li>注意：动画被设置只播放一次，该属性不起作用</li>
+<li>normal 默认值 动画按正常播放</li>
+<li>reverse 动画反向播放</li>
+<li>alternate 动画在奇数次正向播放，偶数次反向播放</li>
+<li>alternate-reverse 动画在奇数次反向播放，偶数次正向播放</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@keyframes myfirst&#123;</span><br><span class="line">  from &#123;background:red;&#125;</span><br><span class="line">  to&#123;background:blue;&#125;</span><br><span class="line">&#125;</span><br><span class="line">div&#123;</span><br><span class="line">  width:100px;</span><br><span class="line">  height:100px;</span><br><span class="line">animation:myfirst 5s; </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@keyframes move&#123;</span><br><span class="line">  0% &#123;background:red;left:0px; top:0px;&#125;</span><br><span class="line">  25% &#123;background:yellow;left:250px; top:0px;&#125;</span><br><span class="line">  50% &#123;background:blue;left:500px; top:0px;&#125;</span><br><span class="line">  75% &#123;background:#008c8c;left:750px; top:0px;&#125;</span><br><span class="line">  100% &#123;background:#f40;left:1000px; top:0px;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">div&#123;</span><br><span class="line">  width:100px;</span><br><span class="line">  height:100px;</span><br><span class="line">  position:relative;</span><br><span class="line">  /*animation:move 5s;*/</span><br><span class="line">  animation:move 5s linear 2s infinite alternate;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><ol>
+<li>圆角（border-radius)</li>
+</ol>
+<ul>
+<li>border-radius（分写属性：border-top-left-radius,border-top-right-radius,border-bottom-right-radius,border-bottom-left-radius)  </li>
+<li>四个值：左上，右上，右下，左下</li>
+<li>三个值：左上，右上和左下，右下</li>
+<li>两个值：左上和右下，右上和左下 </li>
+<li>一个值：4个圆角值相同</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  width:100px;</span><br><span class="line">  height:100px;</span><br><span class="line">  border:1px solid #008c8c;</span><br><span class="line">  &lt;!-- border-radius:50% --&gt;</span><br><span class="line">  border0-radius:2px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>阴影（box-shadow)</li>
+</ol>
+<ul>
+<li>box-shadow(x偏移量,y偏移量,阴影模糊半径，阴影扩散半径，阴影颜色）</li>
+</ul>
+<p>!(<a target="_blank" rel="noopener" href="https://wp.forzgc.cn/wp-content/uploads/2021/06/image-19.png">https://wp.forzgc.cn/wp-content/uploads/2021/06/image-19.png</a>)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="ckpw5b7oq0000513b0e3thbmi" data-title="CSS3新特性" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="ckpw661pe0000bl3b2j82d5dx" data-title="CSS3新特性" class="article-share-link">分享</a>
       
       
       
@@ -228,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+css)/" data-id="ckpw5b7ot0002513b55ikg01y" data-title="面试总结1（html+css)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+css)/" data-id="ckpw661ph0002bl3b97g9afia" data-title="面试总结1（html+css)" class="article-share-link">分享</a>
       
       
       
@@ -279,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/hello-world/" data-id="ckpw5b7os0001513bc3xtauzn" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/hello-world/" data-id="ckpw661ph0001bl3b52rw3rij" data-title="Hello World" class="article-share-link">分享</a>
       
       
       
