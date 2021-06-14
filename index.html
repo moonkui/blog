@@ -71,6 +71,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS3新特性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" class="article-date">
+  <time class="dt-published" datetime="2021-06-14T04:44:25.000Z" itemprop="datePublished">2021-06-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">CSS3新特性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="CSS3过渡-transition"><a href="#CSS3过渡-transition" class="headerlink" title="CSS3过渡(transition)"></a>CSS3过渡(transition)</h2><ul>
+<li>是元素从一种样式逐渐改变为另一种效果</li>
+<li>transition上至少写 transition(transition-property,transition-duration)</li>
+<li>transition-property 规定应用过渡的CSS属性名称</li>
+<li>transition-duration定义过渡效果花费的时间，默认为0</li>
+<li>transition-timing-function 规定过渡效果的时间曲线</li>
+<li>transition-delay 规定 过渡效果何时开始 默认为0</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  width:100px;</span><br><span class="line">  height:100px;</span><br><span class="line">  background:#008c8c;</span><br><span class="line">  transition:width 2s,height 2s,linear 2s;</span><br><span class="line">&#125;</span><br><span class="line">div:hover&#123;</span><br><span class="line">  width:300px;</span><br><span class="line">  height:300px;</span><br><span class="line">  transform:rotate(180deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="ckpw51e4c00001e3bft5u14nm" data-title="CSS3新特性" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-面试总结1(html+css)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+css)/" class="article-date">
@@ -85,7 +133,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+css)/">h5</a>
+      <a class="p-name article-title" href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+css)/">面试总结1（html+css)</a>
     </h1>
   
 
@@ -93,7 +141,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="面试总结1（html-css"><a href="#面试总结1（html-css" class="headerlink" title="面试总结1（html+css)"></a>面试总结1（html+css)</h1><ol>
+        <ol>
 <li>display的值有哪些</li>
 </ol>
 <ul>
@@ -105,16 +153,16 @@
 <li>inherit 从父元素继承display的值</li>
 <li>list-item 此元素会作为列表显示</li>
 <li>run-in 此元素会根据上下文作为块级元素或行内元素显示</li>
-<li>table 此元素会类似块级表格显示类似（<table></li>
-<li>inline-table 此元素会类似行内表格显示类似（<table> </li>
-<li>table-row-group  此元素作为一个或多个行来的分组来显示（类似<tbody>）</li>
-<li>table-header-group 此元素作为一个或多个行来的分组来显示（类似<thead>）</li>
-<li>table-footer-group 此元素作为一个或多个行来的分组来显示（类似<tfoot>）</li>
-<li>table-row 此元素会作为一个表格行来显示（类似<tr>)</li>
-<li>table-column-group 此元素会作为一个或多个列的分组来显示（类似<colgroup>）</li>
-<li>table-column  此元素会作为一个单元格列来显示（<col>）</li>
-<li>table-cell 此元素会作为一个表格单元格显示（类似<td><th>）</li>
-<li>table-caption 此元素会作为一个表格标题显示（类似<caption>） </li>
+<li>table 此元素会类似块级表格显示类似（table标签)</li>
+<li>inline-table 此元素会类似行内表格显示类似（table标签）</li>
+<li>table-row-group  此元素作为一个或多个行来的分组来显示（类似tbody标签）</li>
+<li>table-header-group 此元素作为一个或多个行来的分组来显示（类似thead标签）</li>
+<li>table-footer-group 此元素作为一个或多个行来的分组来显示（类似tfoot标签）</li>
+<li>table-row 此元素会作为一个表格行来显示（类似tr标签)</li>
+<li>table-column-group 此元素会作为一个或多个列的分组来显示（类似colgroup标签）</li>
+<li>table-column  此元素会作为一个单元格列来显示（col标签）</li>
+<li>table-cell 此元素会作为一个表格单元格显示（类似td th标签）</li>
+<li>table-caption 此元素会作为一个表格标题显示（类似caption标签） </li>
 </ul>
 <ol start="2">
 <li>position的值有哪些</li>
@@ -148,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+css)/" data-id="ckpw36yip0000nc3b40atd286" data-title="h5" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+css)/" data-id="ckpw51e4f00021e3b2wd622w5" data-title="面试总结1（html+css)" class="article-share-link">分享</a>
       
       
       
@@ -199,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/hello-world/" data-id="ckpw36yis0001nc3b1mdtfbmn" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/hello-world/" data-id="ckpw51e4e00011e3b9oy3bgjy" data-title="Hello World" class="article-share-link">分享</a>
       
       
       
@@ -242,7 +290,11 @@
       <ul>
         
           <li>
-            <a href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+css)/">h5</a>
+            <a href="/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">CSS3新特性</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+css)/">面试总结1（html+css)</a>
           </li>
         
           <li>
