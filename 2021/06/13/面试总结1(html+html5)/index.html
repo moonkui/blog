@@ -14,7 +14,7 @@
 <meta property="og:description" content="五大主流浏览器及其内核   Chrome -&gt;Webkit&#x2F;Blink Firefox -&gt;Gecko IE -&gt;Trident Safari -&gt;Webkit Opera -&gt;Presto .Blink   块级元素和行内元素有哪些   块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增 foo">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-13T09:18:25.000Z">
-<meta property="article:modified_time" content="2021-06-15T09:41:50.929Z">
+<meta property="article:modified_time" content="2021-06-16T14:34:47.240Z">
 <meta property="article:author" content="kui">
 <meta name="twitter:card" content="summary">
   
@@ -125,6 +125,16 @@
 <li>语法处理，html无法对不准确的语法，html5可以</li>
 </ul>
 <ol start="4">
+<li>html5和html的区别</li>
+</ol>
+<ul>
+<li>html5新增了语义化标签</li>
+<li>html5完全支持css3</li>
+<li>支持本地离线缓存</li>
+<li>新增了canvas标签</li>
+<li>新增了视频和音频标签<br>（HTML5离线存储 localStorage 长期存储数据，浏览器关闭后数据不丢失。sessionStorage 数据在浏览器关闭后自动删除）</li>
+</ul>
+<ol start="5">
 <li>h5新增元素移除的元素，css3新增用法废弃的用法</li>
 </ol>
 <ul>
@@ -136,26 +146,38 @@
 <li>css新增</li>
 <li>border-color,border-image,border-radius,box-shadow,background-size,background-clip,background-repeat,background-origin,text-shadow, word-wrap,transform,animation, transition</li>
 </ul>
-<ol start="5">
+<ol start="6">
 <li>选择器，他们的优先级</li>
 </ol>
 <ul>
-<li>ID选择器 类选择器 伪类选择器  属性选择器 元素选择器 伪元素选择器 通配符选择器</li>
+<li>ID选择器 类选择器 伪类选择器  属性选择器 元素选择器 伪元素选择器 通配符选择器 (子选择器 后代选择器 相邻选择器)</li>
 <li>千位 内联样式</li>
 <li>百位 ID选择器</li>
 <li>十位 类选择器 属性选择器 伪类选择器</li>
 <li>个位 元素选择器 伪元素选择器</li>
+<li>选择器的组合</li>
 </ul>
-<ol start="6">
-<li>优先级计算</li>
+<ol>
+<li><p>并且 不加任何元素组合在一起</p>
+</li>
+<li><p>后代元素 - 空格</p>
+</li>
+<li><p>子元素 - &gt;</p>
+</li>
+<li><p>相邻元素 - +</p>
+</li>
+<li><p>后面出现的所有兄弟元素 - ～</p>
+</li>
+<li><p>优先级计算</p>
+</li>
 </ol>
 <ul>
 <li>比较重要性 1作者样式表中!important样式 ,2作者样式表中的普通样式3浏览器默认样式</li>
 <li>比较特殊性 看选择器</li>
 <li>看源次序，代码靠后的胜出</li>
 </ul>
-<ol start="7">
-<li><p>可继承属性 font-size font-family color</p>
+<ol start="8">
+<li><p>可继承属性 font-size font-family color text-indent 不可继承属性 border width height margin padding</p>
 </li>
 <li><p> css构成 元素构成</p>
 </li>
@@ -164,7 +186,7 @@
 <li>css由选择器和声明块构成，声明块包括多个（属性 + 属性值）css规则 = 选择器 + 声明块</li>
 <li>元素 = 起始标记 + 结束标记 + 元素内容 + 元素属性</li>
 </ul>
-<ol start="9">
+<ol start="10">
 <li>外部样式表的好处</li>
 </ol>
 <ul>
@@ -172,101 +194,57 @@
 <li>有利用浏览器缓存，提高页面响应效率</li>
 <li>有利于代码分离，更利于维护</li>
 </ul>
-<ol start="10">
+<ol start="11">
 <li>块级元素和行内元素的区别</li>
 </ol>
 <ul>
 <li>块级元素独占一行，行内元素不换行，块级元素可以包含行内元素，行内元素不可以包含块级元素(a除外）</li>
 <li>但是现在元素的包含关系由元素的内容类别来决定</li>
 </ul>
-<ol start="11">
+<ol start="12">
 <li>如何理解语义化</li>
 </ol>
 <ul>
 <li>为了让搜索引擎优化</li>
 <li>为了让浏览器理解网页</li>
-</ul>
-<ol start="12">
-<li>display的值有哪些</li>
-</ol>
-<ul>
-<li>none inline inline-block block inherit list-item run-in table inline-table table-row table-row-group table-header-group table-footer-group table-column table-column-group table-cell table-caption</li>
-<li>none 此元素不会被显示</li>
-<li>block 块级元素</li>
-<li>inline 行内元素</li>
-<li>inline-block 行内块元素</li>
-<li>flex 弹性容器</li>
-<li>inline-flex</li>
-<li>inherit 从父元素继承display的值</li>
-<li>list-item 此元素会作为列表显示</li>
-<li>run-in 此元素会根据上下文作为块级元素或行内元素显示</li>
-<li>table 此元素会类似块级表格显示类似（table标签)</li>
-<li>inline-table 此元素会类似行内表格显示类似（table标签）</li>
-<li>table-row-group  此元素作为一个或多个行来的分组来显示（类似tbody标签）</li>
-<li>table-header-group 此元素作为一个或多个行来的分组来显示（类似thead标签）</li>
-<li>table-footer-group 此元素作为一个或多个行来的分组来显示（类似tfoot标签）</li>
-<li>table-row 此元素会作为一个表格行来显示（类似tr标签)</li>
-<li>table-column-group 此元素会作为一个或多个列的分组来显示（类似colgroup标签）</li>
-<li>table-column  此元素会作为一个单元格列来显示（col标签）</li>
-<li>table-cell 此元素会作为一个表格单元格显示（类似td th标签）</li>
-<li>table-caption 此元素会作为一个表格标题显示（类似caption标签） </li>
+<li>便于团队开发和维护，语义化更具有可有性</li>
 </ul>
 <ol start="13">
-<li>position的值有哪些</li>
+<li>id与class的区别</li>
 </ol>
 <ul>
-<li>注意：static relative absolute fixed sticky 为常用取值</li>
-<li>static 默认值 没有定位，出现在正常的流中（忽略top bottom left right z-index)</li>
-<li>relative 相对定位 相对于其正常位置定位</li>
-<li>absolute 绝对定位 相对于static以外的第一个父元素进行定位</li>
-<li>fixed 固定定位 相对于浏览器可视窗口进行定位</li>
-<li>sticky 粘性定位 该定位基于用户滚动的位置</li>
-<li>inherit  规定应该从父元素继承该属性</li>
-<li>initial 设置该属性为默认值</li>
-<li>注意：绝对定位、固定定位一定是块盒，一定不是浮动元素，没有外边距合并</li>
+<li>class 用于设置标签的类，用来指定元素属于何种样式的类。</li>
+<li>id 用于定义id独特的样式</li>
+<li>class是可重复的，id是唯一的</li>
 </ul>
 <ol start="14">
-<li>定位元素水平垂直居中（取值为absolute fixed)</li>
+<li><p>如何看待前端模块化</p>
+</li>
+<li><p>如何看待前后端分离</p>
+</li>
+<li><p>浏览器兼容性问题</p>
+</li>
+<li><p>对浏览器内核的理解</p>
+</li>
 </ol>
 <ul>
-<li>定宽高, top bottom left right值设为0，margin为auto</li>
+<li>主要分成两部分：渲染引擎和js引擎</li>
+<li>渲染引擎：负责取得网页的内容（HTML、图像等）。整理讯息（例如加入CSS等），以及计算网页的显示方式，然后输出至显示器或打印机。浏览器内核的不同对于网页的语法解释会有不同，所以渲染的效果会不同。所有的网页浏览器、电子邮件客户端以及其他需要编辑、显示网络内容的应用程序都需要内核</li>
+<li>js引擎解析和执行javascript来实现网页的动态效果</li>
 </ul>
-<ol start="15">
-<li>多个定位元素重叠时，堆叠上下文（z-index）</li>
+<ol start="18">
+<li>前端页面有哪三层构成，分别是什么，作用是什么</li>
 </ol>
 <ul>
-<li>设置z-index 该值越大，越靠近用户</li>
-<li>只有定位元素设置z-index有效</li>
-<li>z-index 为负数时,遇到常规流，浮动元素会被其覆盖</li>
-</ul>
-<ol start="16">
-<li>清除浮动的几种方式</li>
-</ol>
-<ul>
-<li><p>给父元素添加高度</p>
-</li>
-<li><p>给父元素添加一个类clearfix(优点：结构化正确，缺点：有兼容性问题)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">clearfix::after&#123;</span><br><span class="line">content:&quot;&quot;;</span><br><span class="line">display:block;</span><br><span class="line">clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>给父元素添加overflow:hidden;或者overflow:auto;或者overflow:scroll;</p>
-<ul>
-<li>优点：不存在语义化问题，代码量少</li>
-<li>缺点：内容增多时容易造成不会自动换行的内容被隐藏掉，无法显示需要被溢出的元素</li>
-</ul>
-</li>
-<li><p>在浮动元素后添加一个无内容的块级元素 并添加一个class为clear 在css中赋予 .clear{clear:both;} 即可清除浮动</p>
-<ul>
-<li>优点：简单，代码少，兼容性好</li>
-<li>缺点：需要添加大量无语义元素，代码不够优雅，后期不易维护</li>
-</ul>
-</li>
-<li><p>给浮动元素后面紧跟的元素添加clear属性</p>
-</li>
+<li>结构层 由HTML或XHTML之类的标记语言创建，仅负责语义的表达，解决页面内容是什么的问题</li>
+<li>表示层 由CSS负责，解决如何显示内容的问题</li>
+<li>行为层：由脚本负责。解决页面上内容应该如何对事件作出反应的问题</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckpxuxj2x0001uo3b1ejc66lq" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckq2d6h550002j13bfvmn10s8" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
       
       
       
@@ -324,6 +302,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/">面试总结2(css+css3)</a>
+          </li>
         
           <li>
             <a href="/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">CSS3新特性</a>
