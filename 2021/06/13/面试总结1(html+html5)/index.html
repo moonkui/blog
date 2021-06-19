@@ -6,15 +6,15 @@
   
   <title>面试总结1 （html html5) | Moon Kui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="五大主流浏览器及其内核   Chrome -&gt;Webkit&#x2F;Blink Firefox -&gt;Gecko IE -&gt;Trident Safari -&gt;Webkit Opera -&gt;Presto .Blink   块级元素和行内元素有哪些   块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增 foo">
+  <meta name="description" content="五大主流浏览器及其内核   Chrome -&gt;Webkit&#x2F;Blink Firefox -&gt;Gecko IE -&gt;Trident Safari -&gt;Webkit Opera -&gt;Presto .Blink   块级元素和行内元素有哪些，空元素   块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面试总结1 （html html5)">
 <meta property="og:url" content="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/index.html">
 <meta property="og:site_name" content="Moon Kui">
-<meta property="og:description" content="五大主流浏览器及其内核   Chrome -&gt;Webkit&#x2F;Blink Firefox -&gt;Gecko IE -&gt;Trident Safari -&gt;Webkit Opera -&gt;Presto .Blink   块级元素和行内元素有哪些   块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增 foo">
+<meta property="og:description" content="五大主流浏览器及其内核   Chrome -&gt;Webkit&#x2F;Blink Firefox -&gt;Gecko IE -&gt;Trident Safari -&gt;Webkit Opera -&gt;Presto .Blink   块级元素和行内元素有哪些，空元素   块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-13T09:18:25.000Z">
-<meta property="article:modified_time" content="2021-06-16T14:34:47.240Z">
+<meta property="article:modified_time" content="2021-06-19T03:24:38.347Z">
 <meta property="article:author" content="kui">
 <meta name="twitter:card" content="summary">
   
@@ -106,12 +106,14 @@
 <li>Opera -&gt;Presto .Blink</li>
 </ul>
 <ol start="2">
-<li>块级元素和行内元素有哪些</li>
+<li>块级元素和行内元素有哪些，空元素</li>
 </ol>
 <ul>
 <li><p>块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增 footer  head nav aside section main article audio video canvas output</p>
 </li>
 <li><p>行内元素 a br  img map button input  i em b code del  select q label sub sup  strong small  texture span mark city abbr</p>
+</li>
+<li><p>空元素：即没有内容的HTML元素，例：br meta hr link input img</p>
 </li>
 </ul>
 <ol start="3">
@@ -240,11 +242,33 @@
 <li>表示层 由CSS负责，解决如何显示内容的问题</li>
 <li>行为层：由脚本负责。解决页面上内容应该如何对事件作出反应的问题</li>
 </ul>
+<ol start="19">
+<li>src与href的区别</li>
+</ol>
+<ul>
+<li>href 是指向网络资源所在位置，建立和当前元素（锚点）或当前文档（链接）之间的链接，用于超链接</li>
+<li>src 是指外部资源的位置，指向的内容嵌入到文档中当前标签所在位置。在请求src资源时会将其指向的资源下载并应用到文档内，例如js脚本，img图片和frame等元素。当浏览器解析到该元素时，会暂停其他资源的下载和处理，直到将该资源加载、编译、执行完毕，图片和框架等元素也如此，类似于将所指向资源嵌入当前标签内。这也是为什么将js脚本放在底部而不是头部。</li>
+</ul>
+<ol start="20">
+<li>什么是CSS Hack</li>
+</ol>
+<ul>
+<li>一般来说是针对不同的浏览器写不同的CSS,就是CSS Hack</li>
+<li>IE浏览器Hack一般又分为三种，条件Hack、属性级Hack、选择符Hack</li>
+</ul>
+<ol start="21">
+<li>同步和异步的区别</li>
+</ol>
+<ul>
+<li>同步就是阻塞模式，异步就是非阻塞模式</li>
+<li>同步就是指一个进程在执行某个请求的时候，若该请求需要一段时间才能返回信息，那么这个进程会一直等待下去，直到收到返回信息才继续执行</li>
+<li>异步是指进程不需要一直等下去，而是继续执行下面的操作，不管其他进程的状态，当又消息返回时系统会通知进程进行处理，这样可以提高执行的效率</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckq2d6h550002j13bfvmn10s8" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckq3uxma30002vi3b2k8yaog8" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
       
       
       
