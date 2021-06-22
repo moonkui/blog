@@ -71,6 +71,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-面试总结3（js）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2021-06-22T03:33:49.000Z" itemprop="datePublished">2021-06-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/">面试总结3（js）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>数据类型有哪些？</li>
+</ol>
+<ul>
+<li>原始值：Number Boolean String undefined null</li>
+<li>引用值：array Object function…date RegExp</li>
+</ul>
+<ol start="2">
+<li>typeOf返回值 </li>
+</ol>
+<ul>
+<li>String Number Boolean Object undefined function</li>
+<li>typeOf(null)返回Object ,typeOf(array)返回Object</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" data-id="ckq7i4w9i0005ga3bewb0a8cf" data-title="面试总结3（js）" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-数组字符串部分属性用法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" class="article-date">
@@ -111,145 +163,16 @@
 </ol>
 <ul>
 <li>定义和用法：判断数组是否包含一个指定的值，是返回true，否则返回false</li>
-<li>语法：array.includes(searchElement,fromIndex) fromIndex可写可不写，若为负值，则按升序从array.length + fromIndex的索引开始搜索，默认为0。fromIndex大于数组长度，返回false，该数组不会被搜索<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;c&quot;];</span><br><span class="line">  console.log(arr.includes(&quot;a&quot;)); //返回true</span><br><span class="line">  console.log(arr.includes(&quot;b&quot;,2));//返回false</span><br><span class="line">  console.log(arr.includes(&quot;b&quot;,-100));//返回true</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="3">
-<li>slice</li>
-</ol>
-<ul>
-<li>定义：可从已有的数组中返回选定的元素，不会改变元素组</li>
-<li>语法：array.slice(start,end) start为负数则从数组中倒数第几个元素开始提取，slice(-2)表示提取倒数第二个元素和最后一个元素<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var array = [1,2,3,4,5];</span><br><span class="line">  console.log(array.slice(1,3));//返回[2,3]</span><br><span class="line">  console.log(array.slice(-3));//返回[3,4,5]</span><br><span class="line">  console.log(array.slice(-3,-1));//返回[3,4]</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="4">
-<li>splice</li>
-</ol>
-<ul>
-<li>定义和用法：用于添加或删除数组中的元素，此方法会改变原数组</li>
-<li>语法：array.splice(index,howmany,item1,item2,…,itemX)</li>
-<li>index:规定从何处添加或删除元素，是开始插入或删除数组元素的下标，必须是数字</li>
-<li>howmany:可选，规定应删除多少元素，可以是0，若未规定此参数，则删除从index开始到元素组结尾的所有元素</li>
-<li>item1,…,itemX:可选，要添加到数组的新元素</li>
-<li>若有删除元素，返回值为被删除元素的数组,若无删除元素，只插入元素，返回值为空数组<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var array = [1, 2, 3, 4, 5, 6];</span><br><span class="line">console.log(array.splice(0, 3));//返回[1,2,3]</span><br><span class="line">console.log(array.splice(1, 0, 66, 77, 88));// 返回[]</span><br><span class="line">console.log(array);//返回[4,66,77,88,5,6]</span><br><span class="line">console.log(array.splice(-2, 2));//返回[5,6]</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="5">
-<li>forEach</li>
-</ol>
-<ul>
-<li> 定义及用法：用于调用数组的每个元素，并将元素传递给会调函数</li>
-<li>注意：forEach()对于空数组是不会执行回调函数的 </li>
-<li>语法：array.forEach(function(currentValue,index,arr),thisValue)</li>
-<li>currentValue 必填，当前元素</li>
-<li>index 可选 当前元素的索引值</li>
-<li>arr 可选 当前元素所属的数组对象</li>
-<li>thisValue 可选 传递给函数的值一般用”this”值，若此参数为空，”undefined”会传递给”this”值<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;numbers.forEach(myFunction)&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">&lt;p&gt;数组总和：&lt;span id=&quot;demo&quot;&gt;&lt;/span&gt;&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">var sum = 0;</span><br><span class="line">var numbers = [1,2,3,4,5,6,7,8,9,10];</span><br><span class="line">function myFunction(item)&#123;</span><br><span class="line">  sum += item;</span><br><span class="line">  demo.innerHTML = sum;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="6">
-<li>map</li>
-</ol>
-<ul>
-<li>定义及用法：通过指定函数处理数组的每个元素，并返回处理后的数组，不会对空数组进行检测，不会改变原始数组</li>
-<li>语法：array.map(function(currentValue,index,arr),thisValue)</li>
-</ul>
-<ol start="7">
-<li>for…of</li>
-</ol>
-<ul>
-<li>定义及用法：ES6用法，遍历数组每一项</li>
-</ul>
-<ol start="8">
-<li>filter</li>
-</ol>
-<ul>
-<li>定义及用法：检测数值元素，并返回符合条件所有元素的数组</li>
-<li>语法：array.filter(function(currentValue,index,arr), thisValue)</li>
-</ul>
-<ol start="9">
-<li>push pop unshift shift</li>
-</ol>
-<ul>
-<li>push 此方法会改变元素组，在数组后面添加一个或多个元素，并返回数组长度</li>
-<li>pop 在数组后面删除一个元素，每次只能删除一个，返回删除的元素的值</li>
-<li>unshift 此方法会改变元素组，在数组前面面添加一个或多个元素，并返回新数组长度 </li>
-<li>shift 在数组前面删除第一个元素，每次只能删除一个，返回删除的元素的值<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var array = [1,2,3,4,5,6];</span><br><span class="line">console.log(array.push(22,33));//返回8</span><br><span class="line">console.log(array.pop());//返回33</span><br><span class="line">console.log(array);//返回[1,2,3,4,5,6,22]</span><br><span class="line">console.log(array.unshift(77,88));//返回9</span><br><span class="line">console.log(array);//返回[77,88,1,2,3,4,5,6,22]</span><br><span class="line">console.log(array.shift());//返回77</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="10">
-<li>join</li>
-</ol>
-<ul>
-<li>定义和用法：把数组中的所有元素转换为一个字符串</li>
-<li>语法：array.join(separator)</li>
-<li>separator 指定要使用的分隔符，若省略则使用逗号作为分隔符<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var array = [1, 2, 3, 4, 5, 6];</span><br><span class="line">console.log(array.join());//返回1,2,3,4,5,6</span><br><span class="line">console.log(array.join(&quot;and&quot;));//返回1and2and3and4and5and6</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="11">
-<li>reverse</li>
-</ol>
-<ul>
-<li>定义和用法：颠倒数组中元素的顺序</li>
-<li>语法array.reverse()<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var array = [1, 2, 3, 4, 5, 6];</span><br><span class="line">console.log(array.reverse());//返回[6, 5, 4, 3, 2, 1]</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h2 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h2><ol>
-<li>indexOf lastIndexOf</li>
-</ol>
-<ul>
-<li>indexOf</li>
-<li>定义和用法：返回某个指定的字符串值在字符串中首次出现的位置，如果没有找到匹配的字符串则返回-1，此方法区分大小写</li>
-<li>语法：string.indexOf(searchvalue,start)</li>
-<li>searchvalue 必填 填写需检索的字符串</li>
-<li>start 字符串开始检索的位置，合法取值为0-string Object.length - 1,若省略改值，则从字符串的首字符开始检索</li>
-<li>lastIndexOf</li>
-<li>定义和用法：可返回一个指定的字符串值最后出现的位置，如果指定第二个参数 start，则在一个字符串中的指定位置从后向前搜索。</li>
-<li>注意：该方法将从后向前检索字符串，但返回是从起始位置 (0) 开始计算子字符串最后出现的位置。 看它是否含有字符串。</li>
-<li>语法：string.lastIndexOf(searchvalue,start)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;to welcome to China&quot;;</span><br><span class="line"> console.log(str.indexOf(&quot;to&quot;));//返回0</span><br><span class="line"> console.log(str.lastIndexOf(&quot;to&quot;));//返回11</span><br><span class="line"> console.log(str.indexOf(&quot;on&quot;));//返回-1</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="2">
-<li>includes</li>
-</ol>
-<ul>
-<li>定义和用法：查找字符串是否包含指定的子字符串，找到返回true否则返回false，此方法区分大小写</li>
-<li>string.includes(searchvalue,start)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;to welcome to China&quot;;</span><br><span class="line">console.log(str.includes(&quot;to&quot;));//返回true</span><br><span class="line">console.log(str.includes(&quot;you&quot;));//返回false</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="3">
-<li>replace</li>
-</ol>
-<ul>
-<li>定义和用法：替换与正则表达式匹配的子串</li>
-<li>语法：string.replace(searchvalue,newvalue) 返回值为一个新的字符串<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;to welcome to China&quot;;</span><br><span class="line">console.log(str.replace(&quot;to&quot;,&quot;on&quot;));//返回on welcome to China</span><br><span class="line">console.log(str.replace(/to/g,&quot;on&quot;));//返回on welcome on China</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="4">
-<li>slice</li>
-</ol>
-<ul>
-<li>定义和用法：提取字符串的片段，并在新的字符串中返回被提取的部分</li>
-<li>语法：string.slice(start,end)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;to welcome to China&quot;;</span><br><span class="line">console.log(str.slice(2,7));//返回welc</span><br><span class="line">console.log(str.slice(2));//返回welcome to China</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="5">
-<li>split</li>
-</ol>
-<ul>
-<li>定义和用法：把字符串分割为子字符串数组,不改变原字符串，若把空字符串(“”)用作separator,那么stringObject中的每个字符之间都会被分割，返回类型为一个字符串数组</li>
-<li>语法：string.split(separtor,limit)</li>
-<li>separtor 可选，字符串或正则表达式，从该参数指定的地方分割</li>
-<li>limit 可选，指定返回的数组的最大长度，若设置该参数，返回的子串不会多于这个参数指定的数组，若没有设置，整个字符串将会被分割<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;to welcome to China&quot;;</span><br><span class="line">console.log(str.split());//返回[&quot;to welcome to China&quot;]</span><br><span class="line">console.log(str.split(&quot;&quot;));//返回[&quot;t&quot;, &quot;o&quot;, &quot; &quot;, &quot;w&quot;, &quot;e&quot;, &quot;l&quot;, &quot;c&quot;, &quot;o&quot;, &quot;m&quot;, &quot;e&quot;, &quot; &quot;, &quot;t&quot;, &quot;o&quot;, &quot; &quot;, &quot;C&quot;, &quot;h&quot;, &quot;i&quot;, &quot;n&quot;, &quot;a&quot;]</span><br><span class="line">console.log(str.split(&quot; &quot;));//返回[&quot;to&quot;, &quot;welcome&quot;, &quot;to&quot;, &quot;China&quot;]</span><br><span class="line">console.log(str.split(&quot; &quot;,2));//返回[&quot;to&quot;, &quot;welcome&quot;]</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="6">
-<li>trim</li>
-</ol>
-<ul>
-<li>定义和用法：移除字符串首尾空白符，空白符包括：空格、制表符tab、换行符等其他空白符等，不会改变原数组，不适用于null，undefined，Number类型</li>
-<li>语法：string.trim()<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot; welcome     &quot;;</span><br><span class="line">console.log(str.trim());//返回welcome</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="7">
-<li>charAt()</li>
-</ol>
-<ul>
-<li>定义和用法：返回指定索引位置的字符</li>
-<li>语法：string.charAt(index)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;hello world i me you&quot;</span><br><span class="line">console.log(str.charAt(0));//返回h</span><br><span class="line">console.log(str.charAt(str.length - 1));//返回u</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+<li>语法：array.includes(searchElement,fromIndex) fromIndex可写可不写，若为负值，则按升序从array.length + fromIndex的索引开始搜索，默认为0。fromIndex大于数组长度，返回false，该数组不会被搜索<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;c&quot;];</span><br><span class="line">  console.log(arr.includes(&quot;a&quot;)); //返回true</span><br><span class="line">  console.log(arr.includes(&quot;b&quot;,2));//返回false</span><br><span class="line">  console.log(arr.includes(&quot;b&quot;,-100));//返回true</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/#more">阅读更多</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="ckq7hqd1y0002ds3b9atd11p4" data-title="数组字符串部分方法" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="ckq7i4w9g0001ga3bgl7jg53q" data-title="数组字符串部分方法" class="article-share-link">分享</a>
       
       
       
@@ -329,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" data-id="ckq7hqd1z0004ds3bfoz4bomv" data-title="面试总结2(css+css3)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" data-id="ckq7i4w9h0003ga3bdhuecw7h" data-title="面试总结2(css+css3)" class="article-share-link">分享</a>
       
       
       
@@ -391,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="ckq7hqd1v0000ds3bbijl4ruu" data-title="CSS3新特性" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="ckq7i4w9e0000ga3b9lrwg7b1" data-title="CSS3新特性" class="article-share-link">分享</a>
       
       
       
@@ -463,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckq7hqd1z0003ds3b17c16lhb" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckq7i4w9h0002ga3b27xkhzrh" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
       
       
       
@@ -514,7 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/hello-world/" data-id="ckq7hqd1y0001ds3b608s638q" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/hello-world/" data-id="ckq7i4w9h0004ga3b5foeallv" data-title="Hello World" class="article-share-link">分享</a>
       
       
       
@@ -557,6 +480,10 @@
       <ul>
         
           <li>
+            <a href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/">面试总结3（js）</a>
+          </li>
+        
+          <li>
             <a href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/">数组字符串部分方法</a>
           </li>
         
@@ -570,10 +497,6 @@
         
           <li>
             <a href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/">面试总结1 （html html5)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/13/hello-world/">Hello World</a>
           </li>
         
       </ul>
