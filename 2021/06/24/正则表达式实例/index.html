@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>正则表达式实例 | Moon Kui</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="匹配一切字符12345var reg &#x3D; &#x2F;[\d\D]&#x2F;g;var reg1 &#x3D; &#x2F;[\s\S&#x2F;g;var reg2 &#x3D; &#x2F;[\w\W&#x2F;g;var reg3 &#x3D; &#x2F;[\u0000-\uffff&#x2F;g;  写一个正则表达式，检验首尾是否含有数字123var str &#x3D; &quot;12ffffdsdlsjflajf&quot;;var reg &#x3D; &#x2F;^\d|\d$&#x2F;g;console.log(str">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式实例">
+<meta property="og:url" content="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/index.html">
+<meta property="og:site_name" content="Moon Kui">
+<meta property="og:description" content="匹配一切字符12345var reg &#x3D; &#x2F;[\d\D]&#x2F;g;var reg1 &#x3D; &#x2F;[\s\S&#x2F;g;var reg2 &#x3D; &#x2F;[\w\W&#x2F;g;var reg3 &#x3D; &#x2F;[\u0000-\uffff&#x2F;g;  写一个正则表达式，检验首尾是否含有数字123var str &#x3D; &quot;12ffffdsdlsjflajf&quot;;var reg &#x3D; &#x2F;^\d|\d$&#x2F;g;console.log(str">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-24T08:04:39.000Z">
+<meta property="article:modified_time" content="2021-06-24T10:19:17.001Z">
+<meta property="article:author" content="kui">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Moon Kui" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Moon Kui</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-正则表达式实例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-06-24T08:04:39.000Z" itemprop="datePublished">2021-06-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      正则表达式实例
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="匹配一切字符"><a href="#匹配一切字符" class="headerlink" title="匹配一切字符"></a>匹配一切字符</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var reg = /[\d\D]/g;</span><br><span class="line">var reg1 = /[\s\S/g;</span><br><span class="line">var reg2 = /[\w\W/g;</span><br><span class="line">var reg3 = /[\u0000-\uffff/g;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="写一个正则表达式，检验首尾是否含有数字"><a href="#写一个正则表达式，检验首尾是否含有数字" class="headerlink" title="写一个正则表达式，检验首尾是否含有数字"></a>写一个正则表达式，检验首尾是否含有数字</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;12ffffdsdlsjflajf&quot;;</span><br><span class="line">var reg = /^\d|\d$/g;</span><br><span class="line">console.log(str.match(reg)); //[&quot;1&quot;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="写一个正则表达式，检验首或尾都含有数字"><a href="#写一个正则表达式，检验首或尾都含有数字" class="headerlink" title="写一个正则表达式，检验首或尾都含有数字"></a>写一个正则表达式，检验首或尾都含有数字</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;12ffffdsdlsjflajf3&quot;;</span><br><span class="line">var reg = /^\d[\s\S]+\d$/g;</span><br><span class="line">console.log(str.match(reg)); //[&quot;12ffffdsdlsjflajf3&quot;]</span><br></pre></td></tr></table></figure>
+<h2 id="匹配aaaa形式的字符串"><a href="#匹配aaaa形式的字符串" class="headerlink" title="匹配aaaa形式的字符串"></a>匹配aaaa形式的字符串</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;aaaa&quot;;</span><br><span class="line">var reg = /(\w)\1\1\1/g;</span><br></pre></td></tr></table></figure>
+<h2 id="匹配aabb形式的字符串"><a href="#匹配aabb形式的字符串" class="headerlink" title="匹配aabb形式的字符串"></a>匹配aabb形式的字符串</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;aabb&quot;;</span><br><span class="line">var reg = /(\w)\1(\w)\2/g;</span><br></pre></td></tr></table></figure>
+
+<h2 id="把aabb形式的替换成bbaa形式"><a href="#把aabb形式的替换成bbaa形式" class="headerlink" title="把aabb形式的替换成bbaa形式"></a>把aabb形式的替换成bbaa形式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//法一</span><br><span class="line">var str = &quot;aabb&quot;;</span><br><span class="line">  var reg = /(\w)\1(\w)\2/g;</span><br><span class="line"></span><br><span class="line">  console.log(str.replace(reg,&quot;$2$2$1$1&quot;)); //bbaa</span><br><span class="line"></span><br><span class="line">//法二</span><br><span class="line">var str = &quot;aabb&quot;;</span><br><span class="line">  var reg = /(\w)\1(\w)\2/g;</span><br><span class="line"></span><br><span class="line">  console.log(str.replace(reg,function($,$1,$2)&#123;</span><br><span class="line">    return $2 + $2 +$1 +$1;</span><br><span class="line">  &#125;)); //bbaa</span><br><span class="line">  //function($,$1,$2)&#123;&#125; 中，第一个参数表示正则表达式匹配的全局，第二个参数表示第一个正则表达式匹配的内容，第三个参数表示第二个正则表达式匹配的内容</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="把形如-the-first-name-的字符串变成-小驼峰式的字符串即-theFirstName"><a href="#把形如-the-first-name-的字符串变成-小驼峰式的字符串即-theFirstName" class="headerlink" title="把形如 the-first-name 的字符串变成 小驼峰式的字符串即 theFirstName"></a>把形如 the-first-name 的字符串变成 小驼峰式的字符串即 theFirstName</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;the-first-name&quot;;</span><br><span class="line">  var reg = /-(\w)/g;</span><br><span class="line">  console.log(str.replace(reg,function($,$1)&#123;</span><br><span class="line">    return $1.toUpperCase();</span><br><span class="line">  &#125;));  //theFirstName</span><br></pre></td></tr></table></figure>
+<h2 id="字符串去重"><a href="#字符串去重" class="headerlink" title="字符串去重"></a>字符串去重</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;aaabbbcccddd&quot;;</span><br><span class="line">  var reg = /(\w)\1*/g;</span><br><span class="line">  console.log(str.replace(reg,&quot;$1&quot;)); //abcd</span><br></pre></td></tr></table></figure>
+
+<h2 id="给数字科学计数法，从后往前三位数打一个点，例如：100000000-gt-100-000-000"><a href="#给数字科学计数法，从后往前三位数打一个点，例如：100000000-gt-100-000-000" class="headerlink" title="给数字科学计数法，从后往前三位数打一个点，例如：100000000 -&gt;100,000,000"></a>给数字科学计数法，从后往前三位数打一个点，例如：100000000 -&gt;100,000,000</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckqar730f00061o3b7stn9it5" data-title="正则表达式实例" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">正则表达式1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/">正则表达式实例</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1/">正则表达式1</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/">模版字符串</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/">面试总结3（js）</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/">数组字符串部分方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 kui<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
