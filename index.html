@@ -71,6 +71,87 @@
       <div class="outer">
         <section id="main">
   
+    <article id="var-const的区别" class="h-entry article article-type-var" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/25/const%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+  <time class="dt-published" datetime="2021-06-25T13:44:23.000Z" itemprop="datePublished">2021-06-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/25/const%E7%9A%84%E5%8C%BA%E5%88%AB/">const的区别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/25/const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckqcdyt160001k23bbluih7y8" data-title="const的区别" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-数组去重方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-06-25T08:58:29.000Z" itemprop="datePublished">2021-06-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">数组去重方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>利用ES6新特性 Set<br>优点：简单，代码简洁。缺点：兼容性差。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,2,3,4,3,5,7];</span><br><span class="line"></span><br><span class="line">function unique(arr)&#123;</span><br><span class="line">  return Array.from(new Set(arr));</span><br><span class="line">&#125;</span><br><span class="line">console.log(unique(arr));</span><br></pre></td></tr></table></figure>
+<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>利用数组的indexOf()方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [2, 8, 5, 0, 5, , ,2, 6, 7, 2];</span><br><span class="line">    var newArr = [];</span><br><span class="line">    for(var i = 0 ;i&lt;arr.length;i++)&#123;</span><br><span class="line">      if(newArr.indexOf(arr[i]) === -1)&#123;</span><br><span class="line">        newArr.push(arr[i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(newArr);</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ckqcdyt160002k23bhpmn97l1" data-title="数组去重方法" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-正则表达式实例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" class="article-date">
@@ -107,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckqb29zkf0004w43bc6h06cgc" data-title="正则表达式实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckqcdyt180006k23bfwtsheuh" data-title="正则表达式实例" class="article-share-link">分享</a>
       
       
       
@@ -226,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1/" data-id="ckqb29zkf0003w43b6w4q04t1" data-title="正则表达式1" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1/" data-id="ckqcdyt180005k23bfx557a6a" data-title="正则表达式1" class="article-share-link">分享</a>
       
       
       
@@ -272,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ckqb29zke0002w43b9m2y8u0a" data-title="模版字符串" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ckqcdyt170004k23b4c0gg250" data-title="模版字符串" class="article-share-link">分享</a>
       
       
       
@@ -338,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" data-id="ckqb29zkg0007w43b3xqeaxvo" data-title="面试总结3（js）" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" data-id="ckqcdyt190009k23b0ro90x06" data-title="面试总结3（js）" class="article-share-link">分享</a>
       
       
       
@@ -399,7 +480,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="ckqb29zke0001w43b77osbywg" data-title="数组字符串部分方法" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="ckqcdyt170003k23bgfk25o7k" data-title="数组字符串部分方法" class="article-share-link">分享</a>
       
       
       
@@ -479,7 +560,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" data-id="ckqb29zkg0006w43bbg1hb170" data-title="面试总结2(css+css3)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" data-id="ckqcdyt190008k23b83n668se" data-title="面试总结2(css+css3)" class="article-share-link">分享</a>
       
       
       
@@ -541,7 +622,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="ckqb29zkb0000w43b3u613xzy" data-title="CSS3新特性" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="ckqcdyt140000k23bdfok60yk" data-title="CSS3新特性" class="article-share-link">分享</a>
       
       
       
@@ -613,7 +694,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckqb29zkf0005w43b2vu20nnl" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckqcdyt180007k23bhtq7gus1" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
       
       
       
@@ -656,6 +737,14 @@
       <ul>
         
           <li>
+            <a href="/2021/06/25/const%E7%9A%84%E5%8C%BA%E5%88%AB/">const的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">数组去重方法</a>
+          </li>
+        
+          <li>
             <a href="/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/">正则表达式实例</a>
           </li>
         
@@ -665,14 +754,6 @@
         
           <li>
             <a href="/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/">模版字符串</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/">面试总结3（js）</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/">数组字符串部分方法</a>
           </li>
         
       </ul>
