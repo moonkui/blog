@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-06-25T13:44:23.722Z</updated>
+  <updated>2021-06-25T13:49:18.899Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>const的区别</title>
-    <link href="http://example.com/2021/06/25/const%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://example.com/2021/06/25/const%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <title>var let const的区别</title>
+    <link href="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
     <published>2021-06-25T13:44:23.000Z</published>
-    <updated>2021-06-25T13:44:23.722Z</updated>
+    <updated>2021-06-25T13:49:18.899Z</updated>
     
     
     
@@ -34,15 +34,15 @@
     <link href="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/"/>
     <id>http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/</id>
     <published>2021-06-25T08:58:29.000Z</published>
-    <updated>2021-06-25T09:42:28.487Z</updated>
+    <updated>2021-06-25T14:32:34.464Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>利用ES6新特性 Set<br>优点：简单，代码简洁。缺点：兼容性差。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3,2,3,4,3,5,7];</span><br><span class="line"></span><br><span class="line">function unique(arr)&#123;</span><br><span class="line">  return Array.from(new Set(arr));</span><br><span class="line">&#125;</span><br><span class="line">console.log(unique(arr));</span><br></pre></td></tr></table></figure><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>利用数组的indexOf()方法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [2, 8, 5, 0, 5, , ,2, 6, 7, 2];</span><br><span class="line">    var newArr = [];</span><br><span class="line">    for(var i = 0 ;i&lt;arr.length;i++)&#123;</span><br><span class="line">      if(newArr.indexOf(arr[i]) === -1)&#123;</span><br><span class="line">        newArr.push(arr[i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(newArr);</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>利用ES6新特性 Set<br>优点：简单，代码简洁。缺点：有兼容性问题，无法去掉空对象。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,1,&#x27;true&#x27;,&#x27;true&#x27;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#x27;NaN&#x27;, 0, 0, &#x27;a&#x27;, &#x27;a&#x27;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">function unique(arr)&#123;</span><br><span class="line">  return Array.from(new Set(arr));</span><br><span class="line">&#125;</span><br><span class="line">console.log(unique(arr));</span><br></pre></td></tr></table></figure><h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>利用数组的indexOf()方法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [2, 8, 5, 0, 5, , ,2, 6, 7, 2];</span><br><span class="line">    var newArr = [];</span><br><span class="line">    for(var i = 0 ;i&lt;arr.length;i++)&#123;</span><br><span class="line">      if(newArr.indexOf(arr[i]) === -1)&#123;</span><br><span class="line">        newArr.push(arr[i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(newArr);</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;方法一&quot;&gt;&lt;a href=&quot;#方法一&quot; class=&quot;headerlink&quot; title=&quot;方法一&quot;&gt;&lt;/a&gt;方法一&lt;/h2&gt;&lt;p&gt;利用ES6新特性 Set&lt;br&gt;优点：简单，代码简洁。缺点：兼容性差。&lt;/p&gt;
-&lt;figure class=&quot;highlight p</summary>
+    <summary type="html">&lt;h2 id=&quot;方法一&quot;&gt;&lt;a href=&quot;#方法一&quot; class=&quot;headerlink&quot; title=&quot;方法一&quot;&gt;&lt;/a&gt;方法一&lt;/h2&gt;&lt;p&gt;利用ES6新特性 Set&lt;br&gt;优点：简单，代码简洁。缺点：有兼容性问题，无法去掉空对象。&lt;/p&gt;
+&lt;figure class=&quot;h</summary>
       
     
     
