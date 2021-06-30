@@ -71,6 +71,127 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-日期实例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-06-30T14:47:22.000Z" itemprop="datePublished">2021-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/">日期实例</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1-用当前日期和时间创建新的日期对象"><a href="#1-用当前日期和时间创建新的日期对象" class="headerlink" title="1.用当前日期和时间创建新的日期对象"></a>1.用当前日期和时间创建新的日期对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date();</span><br><span class="line">console.log(d);</span><br><span class="line">console.log(d);</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-创建下周今天的日期"><a href="#2-创建下周今天的日期" class="headerlink" title="2.创建下周今天的日期"></a>2.创建下周今天的日期</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date();</span><br><span class="line">d.setDate(d.getDate() + 7);</span><br><span class="line">console.log(d);</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-创建三十天后的日期"><a href="#3-创建三十天后的日期" class="headerlink" title="3.创建三十天后的日期"></a>3.创建三十天后的日期</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date();</span><br><span class="line">d.setDate(d.getDate() + 30);</span><br><span class="line">console.log(d);</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-创建上个月第一天的日期"><a href="#4-创建上个月第一天的日期" class="headerlink" title="4.创建上个月第一天的日期"></a>4.创建上个月第一天的日期</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date();</span><br><span class="line">d.setFullYear(2021,4,1);</span><br><span class="line">console.log(d);</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-new-Date-变成-yyyy-mm-dd格式"><a href="#5-new-Date-变成-yyyy-mm-dd格式" class="headerlink" title="5.new Date() 变成 yyyy-mm-dd格式"></a>5.new Date() 变成 yyyy-mm-dd格式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var date = new Date();</span><br><span class="line">var strDate = date.getFullYear() + &quot;-&quot; + (date.getMonth() + 1) + &quot;-&quot; + date.getDate();</span><br></pre></td></tr></table></figure>
+<h2 id="6-比较日期大小"><a href="#6-比较日期大小" class="headerlink" title="6.比较日期大小"></a>6.比较日期大小</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function dateCompare(startDate, endDate) &#123;</span><br><span class="line">            var Start = new Date(startDate);</span><br><span class="line">            var End = new Date(endDate);</span><br><span class="line">            console.log(Start);</span><br><span class="line">            console.log(End);</span><br><span class="line">            if (Start &lt; End)&#123;</span><br><span class="line">                console.log(&quot;小于&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            else if(Start &gt; End)&#123;</span><br><span class="line">                console.log(&quot;大于&quot;);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">              console.log(&quot;等于&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        var startDate1 = &quot;2021-3-29 00:00:03&quot;;</span><br><span class="line">        var endDate1 = &quot;2021-8-29 00:00:02&quot;;</span><br><span class="line">        dateCompare(startDate1, endDate1);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="ckqjlmmhz0004c23ba1yr1b9b" data-title="日期实例" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-日期" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/30/%E6%97%A5%E6%9C%9F/" class="article-date">
+  <time class="dt-published" datetime="2021-06-30T13:30:30.000Z" itemprop="datePublished">2021-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/30/%E6%97%A5%E6%9C%9F/">日期</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="创建日期对象的四种方法"><a href="#创建日期对象的四种方法" class="headerlink" title="创建日期对象的四种方法"></a>创建日期对象的四种方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//四种方法创建日期对象</span><br><span class="line">   new Date(); //用当前日期和时间创建新的日期对象</span><br><span class="line">   new Date(year,month,day,hours,minutes,seconds,milliseconds); //用指定日期和时间创建新的日期对象</span><br><span class="line">   new Date(milliseconds); //创建一个零时加毫秒的新日期对象</span><br><span class="line">   new Date(date String); //从日期字符串创建一个新的对象</span><br></pre></td></tr></table></figure>
+
+<p>注意：JavaScript 将日期存储为自 1970 年 1 月 1 日 00:00:00 UTC（协调世界时）以来的毫秒数。<br>     零时间是 1970 年 1 月 1 日 00:00:00 UTC。<br>     一天（24 小时）是 86 400 000 毫秒。</p>
+<h2 id="四种Javascript输入日期格式"><a href="#四种Javascript输入日期格式" class="headerlink" title="四种Javascript输入日期格式"></a>四种Javascript输入日期格式</h2><ol>
+<li>ISO日期:”2021-06-30” (国际标准)</li>
+<li>短日期:”06/30/2021”或者”2021/06/30”</li>
+<li>长日期:”Jun 30 2021”或者”30 Jun 2021”</li>
+<li>完整日期:”Wednesday June 30 2021”<br>其中ISO格式遵守JavaScript中的严格标准<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//ISO日期也可以添加时分秒</span><br><span class="line">//（YYYY-MM-DDTHH:MM:SS)</span><br><span class="line">var d = new Date(&quot;2021-06-30T12:00:00&quot;);</span><br><span class="line">//JavaScript 接受“完整 JavaScript 格式”的日期字符串</span><br><span class="line">var date = new Date(&quot;Wednesday June 30 2021 09:00:00 GMT+0800&quot;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="JavaScript日期输出格式"><a href="#JavaScript日期输出格式" class="headerlink" title="JavaScript日期输出格式"></a>JavaScript日期输出格式</h2><p>默认输出全文本字符串格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Wed Jun 30 2021 09:00:00 GMT+0800 (中国标准时间)</span><br></pre></td></tr></table></figure>
+
+<h2 id="日期获取方法"><a href="#日期获取方法" class="headerlink" title="日期获取方法"></a>日期获取方法</h2><ol>
+<li>getDate() 以数值返回天（1-31）</li>
+<li>getDay() 以数值获取周名（0-6）</li>
+<li>getFullYear() 获取四位的年（YYYY）</li>
+<li>getHours() 获取小时（0-23）</li>
+<li>getMilliseconds() 获取毫秒（0-999）</li>
+<li>getMinutes() 获取分钟（0-59）</li>
+<li>getMonth() 获取月（0-11）</li>
+<li>getSeconds() 获取秒（0-59）</li>
+<li>getTime() 获取时间（从1970年1月1日至今）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date();</span><br><span class="line">console.log(d.getDate());//30</span><br><span class="line">console.log(d.getDay());//3</span><br><span class="line">console.log(d.getFullYear());//2021</span><br><span class="line">console.log(d.getMonth());//5</span><br><span class="line">console.log(d.getHours());//22</span><br><span class="line">console.log(d.getMinutes());//30</span><br><span class="line">console.log(d.getSeconds());//24</span><br><span class="line">console.log(d.getMilliseconds());//744</span><br><span class="line">console.log(d.getTime());//1625063424744</span><br></pre></td></tr></table></figure>
+
+<h2 id="日期设置方法"><a href="#日期设置方法" class="headerlink" title="日期设置方法"></a>日期设置方法</h2><ol>
+<li>setDate() 以数值（1-31）设置日</li>
+<li>setFullYears() 设置年</li>
+<li>setMonth() 设置月（0-11）</li>
+<li>setHours() 设置小时（0-23）</li>
+<li>setMinutes() 设置分钟（0-59）</li>
+<li>setSeconds() 设置秒（0-59）</li>
+<li>setMilliseconds() 设置毫秒（0-999）</li>
+<li>setTime() 设置时间（从1970年1月1日至今的毫秒数）</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="ckqjlmmhy0003c23b6wxb4gxc" data-title="日期" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="page-var let const的区别" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
@@ -97,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckqf8gpi000011n3b2ep9aqaq" data-title="var let const的区别" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckqjlmmhx0001c23b3xx79rsn" data-title="var let const的区别" class="article-share-link">分享</a>
       
       
       
@@ -131,16 +252,16 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>利用ES6新特性 Set<br>优点：简单，代码简洁。缺点：有兼容性问题，无法去掉空对象。</p>
+        <h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>利用ES6新特性 Set<br>优点：简单，代码简洁。缺点：有兼容性问题，无法去掉重复的”{}”。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,1,&#x27;true&#x27;,&#x27;true&#x27;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#x27;NaN&#x27;, 0, 0, &#x27;a&#x27;, &#x27;a&#x27;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">function unique(arr)&#123;</span><br><span class="line">  return Array.from(new Set(arr));</span><br><span class="line">&#125;</span><br><span class="line">console.log(unique(arr));</span><br></pre></td></tr></table></figure>
 <h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>利用数组的indexOf()方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [2, 8, 5, 0, 5, , ,2, 6, 7, 2];</span><br><span class="line">    var newArr = [];</span><br><span class="line">    for(var i = 0 ;i&lt;arr.length;i++)&#123;</span><br><span class="line">      if(newArr.indexOf(arr[i]) === -1)&#123;</span><br><span class="line">        newArr.push(arr[i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(newArr);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,1,&#x27;true&#x27;,&#x27;true&#x27;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#x27;NaN&#x27;, 0, 0, &#x27;a&#x27;, &#x27;a&#x27;,&#123;&#125;,&#123;&#125;];</span><br><span class="line">    var newArr = [];</span><br><span class="line">    for(var i = 0 ;i&lt;arr.length;i++)&#123;</span><br><span class="line">      if(newArr.indexOf(arr[i]) === -1)&#123;</span><br><span class="line">        newArr.push(arr[i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(newArr);</span><br></pre></td></tr></table></figure>
 
-
+<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ckqf8gpi100021n3bd4rldlhu" data-title="数组去重方法" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ckqjlmmhy0002c23b14vj8l9z" data-title="数组去重方法" class="article-share-link">分享</a>
       
       
       
@@ -188,7 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckqf8gpi200061n3bc3pphmy3" data-title="正则表达式实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckqjlmmi00008c23b0q6v0lra" data-title="正则表达式实例" class="article-share-link">分享</a>
       
       
       
@@ -200,9 +321,9 @@
 
 
   
-    <article id="post-正则表达式1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-正则表达式基本内容" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1/" class="article-date">
+    <a href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" class="article-date">
   <time class="dt-published" datetime="2021-06-23T15:00:50.000Z" itemprop="datePublished">2021-06-23</time>
 </a>
     
@@ -214,7 +335,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1/">正则表达式1</a>
+      <a class="p-name article-title" href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/">正则表达式基本内容</a>
     </h1>
   
 
@@ -228,7 +349,7 @@
 <li><p>使用正则表达式字面量，其由包含在斜杠之间的模式组成</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var re = /ab+c/;</span><br><span class="line">var reg = /abc/g;</span><br></pre></td></tr></table></figure></li>
 <li><p>RegExp对象的构造函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var re = new RegExp(&quot;a\bb+c);</span><br><span class="line">var reg = newRegExp(&quot;abc&quot;,&quot;g&quot;)</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var re = new RegExp(&quot;a\bb+c);</span><br><span class="line">var reg = newRegExp(&quot;abc&quot;,&quot;g&quot;);</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h2><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ol>
 <li>i 执行对大小写不敏感的匹配</li>
@@ -246,68 +367,16 @@
 <li>[A-z] 查找任何从大写A到小写z的字符</li>
 <li>[adgk] 查找给定集合内的任何字符</li>
 <li>[^adgk] 查找给定集合外的任何字符</li>
-<li>(red|blue|green) 查找任何指定的选项</li>
-</ol>
-<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><ol>
-<li>\w 查找单词字符 \w === [0-9A-z_]</li>
-<li>\W 查找非单词字符 \W === [^\w]</li>
-<li>\d 查找数字 \d === [0-9]</li>
-<li>\D 查找非数字字符 \D === [^\d]</li>
-<li>\s 查找空白字符 空白字符可以是：空格符、制表符、回车符、换行符、垂直换行符、换页符 \s === [\t\n\r\v\f]</li>
-<li>\S 查找非空白字符 \S === [^\s]</li>
-<li>\b 匹配单词边界</li>
-<li>\B 匹配非单词边界</li>
-<li>\xxx    查找以八进制数 xxx 规定的字符。</li>
-<li>\xdd 查找以十六进制数 dd 规定的字符。</li>
-<li>\uxxxx 查找以十六进制数 xxxx 规定的 Unicode 字符 \u0000=\uffff</li>
-<li>\n 查找换行符。</li>
-<li>\f 查找换页符。</li>
-<li>\r 查找回车符。</li>
-<li>\t 查找制表符。</li>
-<li>\v 查找垂直制表符。</li>
-<li>. === [^\r\n]</li>
-</ol>
-<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><ol>
-<li>n+ {1,} 代表n这个变量可以出现1到无数次</li>
-<li>n* {0,}</li>
-<li>n? {0,1}</li>
-<li>n{x} {x}</li>
-<li>n{x,y} {x,y}</li>
-<li>n{x,} {x,}</li>
-<li>n$ 匹配任何结尾为n的字符串</li>
-<li>^n 匹配任何开头为n的字符串</li>
-<li>?=n 匹配任何其后紧接指定字符串n的字符串</li>
-<li>?!n 匹配任何其后没有紧接指定字符串n的字符串</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var re = /\w+/g;</span><br><span class="line">  var string = &quot;aaaaaa&quot;;</span><br><span class="line">  console.log(string.match(re));  // [&quot;aaaaaa&quot;]</span><br><span class="line"></span><br><span class="line">  var reg = /\w*/g;</span><br><span class="line">  var str = &quot;aaaaaa&quot;;</span><br><span class="line">  console.log(str.match(reg));    // [&quot;aaaaaa&quot;, &quot;&quot;]</span><br><span class="line"></span><br><span class="line">  var reg1 = /\w?/g;</span><br><span class="line">  var str1 = &quot;aaaaaa&quot;;</span><br><span class="line">  console.log(str1.match(reg1));    // [&quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;a&quot;, &quot;&quot;]</span><br><span class="line"></span><br><span class="line">  var reg2 = /\w&#123;3&#125;/g;</span><br><span class="line">  var str2 = &quot;aaaaaa&quot;;</span><br><span class="line">  console.log(str1.match(reg2));  // [&quot;aaa&quot;, &quot;aaa&quot;]</span><br></pre></td></tr></table></figure>
-
-<h3 id="RegExp对象属性"><a href="#RegExp对象属性" class="headerlink" title="RegExp对象属性"></a>RegExp对象属性</h3><ol>
-<li>global RegExp 对象是否具有标志 g</li>
-<li>ignoreCase RegExp 对象是否具有标志 i</li>
-<li>source 正则表达式的源文本</li>
-<li>multiline RegExp 对象是否具有标志 m </li>
-<li>lastIndex 一个整数，标示开始下一次匹配的字符位置</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;12ffffdsdlsjflajf3&quot;;</span><br><span class="line">var reg = /^\d[\s\S]+\d$/g;</span><br><span class="line">console.log(reg.global);      //true</span><br><span class="line">console.log(reg.ignoreCase);  //false</span><br><span class="line">console.log(reg.source);      //^\d[\s\S]+\d$  </span><br></pre></td></tr></table></figure>
-
-<h2 id="RegExp-对象方法"><a href="#RegExp-对象方法" class="headerlink" title="RegExp 对象方法"></a>RegExp 对象方法</h2><ol>
-<li>test 检索字符串中指定的值。返回 true 或 false</li>
-<li>exec 检索字符串中指定的值。返回找到的值，并确定其位置</li>
-</ol>
-<h3 id="支持正则表达式的String对象的方法"><a href="#支持正则表达式的String对象的方法" class="headerlink" title="支持正则表达式的String对象的方法"></a>支持正则表达式的String对象的方法</h3><ol>
-<li>search 检索与正则表达式相匹配的值,返回匹配到的位置，匹配不到，返回-1</li>
-<li>match 找到一个或多个正则表达式的匹配</li>
-<li>replace 替换与正则表达式匹配的子串</li>
-<li>split 把字符串分割成字符串数组</li>
-</ol>
-<h2 id="贪婪匹配原则"><a href="#贪婪匹配原则" class="headerlink" title="贪婪匹配原则"></a>贪婪匹配原则</h2><ul>
-<li>能多就不少</li>
-</ul>
-
+<li>(red|blue|green) 查找任何指定的选项
+        
+          <p class="article-more-link">
+            <a href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/#more">阅读更多</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1/" data-id="ckqf8gpi200051n3bbkme8jgn" data-title="正则表达式1" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" data-id="ckqjlmmhz0006c23bfdjh7mq7" data-title="正则表达式基本内容" class="article-share-link">分享</a>
       
       
       
@@ -353,7 +422,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ckqf8gpi200041n3b9ouv34s5" data-title="模版字符串" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ckqjlmmhz0005c23bdilf1kk1" data-title="模版字符串" class="article-share-link">分享</a>
       
       
       
@@ -419,7 +488,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" data-id="ckqf8gpi300091n3bdev8hazk" data-title="面试总结3（js）" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" data-id="ckqjlmmi1000ac23be7icazu5" data-title="面试总结3（js）" class="article-share-link">分享</a>
       
       
       
@@ -480,7 +549,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="ckqf8gpi100031n3bgdwu6uef" data-title="数组字符串部分方法" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="ckqjlmmi1000bc23b5i5lasms" data-title="数组字符串部分方法" class="article-share-link">分享</a>
       
       
       
@@ -560,141 +629,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" data-id="ckqf8gpi300081n3b2rpkgv01" data-title="面试总结2(css+css3)" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-CSS3新特性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" class="article-date">
-  <time class="dt-published" datetime="2021-06-14T04:44:25.000Z" itemprop="datePublished">2021-06-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/">CSS3新特性</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="过渡-transition"><a href="#过渡-transition" class="headerlink" title="过渡(transition)"></a>过渡(transition)</h2><ul>
-<li>是元素从一种样式逐渐改变为另一种效果</li>
-<li>transition上至少写 transition(transition-property,transition-duration)</li>
-<li>transition-property 规定应用过渡的CSS属性名称</li>
-<li>transition-duration定义过渡效果花费的时间，默认为0</li>
-<li>transition-timing-function 规定过渡效果的时间曲线</li>
-<li>transition-delay 规定 过渡效果何时开始 默认为0</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  width:100px;</span><br><span class="line">  height:100px;</span><br><span class="line">  background:#008c8c;</span><br><span class="line">  transition:width 2s,height 2s,linear 2s;</span><br><span class="line">&#125;</span><br><span class="line">div:hover&#123;</span><br><span class="line">  width:300px;</span><br><span class="line">  height:300px;</span><br><span class="line">  transform:rotate(180deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2D转换"><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h2><ul>
-<li>CSS3 转换可以对元素进行移动、缩放、转动、拉长或拉伸</li>
-<li>让某个元素改变大小 形状和位置</li>
-<li>transform</li>
-<li>transform-origin</li>
-<li>translate(x,y)  定义2D转换，沿着X和Y轴移动元素，可分写-&gt;translateX(n)  translateY(n)</li>
-<li>rotate(angle)在参数中规定角度</li>
-<li>scale(x,y)  改变元素的宽度和高度 可分写</li>
-<li>skew(x-angle，y-angle) 倾斜转换 沿着X和Y轴 可分写</li>
-<li>matrix(n,n,n,n,n,n) 转换，使用六个值的矩阵
-        
-          <p class="article-more-link">
-            <a href="/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="ckqf8gphy00001n3b516x5wuz" data-title="CSS3新特性" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-面试总结1(html+html5)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" class="article-date">
-  <time class="dt-published" datetime="2021-06-13T09:18:25.000Z" itemprop="datePublished">2021-06-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/">面试总结1 （html html5)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>五大主流浏览器及其内核</li>
-</ol>
-<ul>
-<li>Chrome -&gt;Webkit/Blink</li>
-<li>Firefox -&gt;Gecko</li>
-<li>IE -&gt;Trident</li>
-<li>Safari -&gt;Webkit</li>
-<li>Opera -&gt;Presto/Blink</li>
-</ul>
-<ol start="2">
-<li>块级元素和行内元素有哪些，空元素</li>
-</ol>
-<ul>
-<li><p>块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增 footer  head nav aside section main article audio video canvas output</p>
-</li>
-<li><p>行内元素 a br  img map button input  i em b code del  select q label sub sup  strong small  texture span mark city abbr</p>
-</li>
-<li><p>空元素：即没有内容的HTML元素，例：br meta hr link input img</p>
-</li>
-</ul>
-<ol start="3">
-<li>html和h5怎么区分</li>
-</ol>
-<ul>
-<li>DOCTYPE声明</li>
-<li>结构语义化区别：html没有结构化语义化的标签，html5有</li>
-<li>绘图区别</li>
-<li>音频和视频的支持，html要用flash播放器支持，不支持audio,video标签，html5支持</li>
-<li>语法处理，html无法对不准确的语法，html5可以
-        
-          <p class="article-more-link">
-            <a href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckqf8gpi300071n3b3izkfw5e" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" data-id="ckqjlmmi00009c23bgulfa2jy" data-title="面试总结2(css+css3)" class="article-share-link">分享</a>
       
       
       
@@ -707,6 +642,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
 
 </section>
         
@@ -737,6 +677,14 @@
       <ul>
         
           <li>
+            <a href="/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/">日期实例</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/30/%E6%97%A5%E6%9C%9F/">日期</a>
+          </li>
+        
+          <li>
             <a href="/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/">var let const的区别</a>
           </li>
         
@@ -746,14 +694,6 @@
         
           <li>
             <a href="/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/">正则表达式实例</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F1/">正则表达式1</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/">模版字符串</a>
           </li>
         
       </ul>
