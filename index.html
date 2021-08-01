@@ -71,6 +71,142 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Vue3基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time class="dt-published" datetime="2021-08-01T15:02:07.000Z" itemprop="datePublished">2021-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/">Vue3基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &#123;&#123;number&#125;&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">   &lt;!-- &#123;&#123;number&#125;&#125; -&gt;文本插值 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const Counter = &#123;</span><br><span class="line">   // data是函数，返回的是一个对象</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          number : 2</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">Vue.createApp(Counter).mount(&quot;#counter&quot;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><p>绑定元素的属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">   &lt;div v-bind:class=&quot;message&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter = &#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          message : &#x27;container&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h2><p>添加事件监听器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;event-handling&quot;&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;onBtnClick&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123;message&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"> &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line">   const eventHandling =&#123;</span><br><span class="line">     data()&#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        message:1</span><br><span class="line">      &#125;</span><br><span class="line">     &#125;,</span><br><span class="line">     methods:&#123;</span><br><span class="line">      // onBtnClick:function()&#123;&#125;</span><br><span class="line">      onBtnClick()&#123;</span><br><span class="line">        this.message++;</span><br><span class="line">      &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   Vue.createApp(eventHandling).mount(&quot;#event-handling&quot;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>双向绑定表单元素（input,textarea,select…）的value值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;two-way-binding&quot;&gt;</span><br><span class="line">    &lt;input v-model=&quot;message&quot; type=&quot;text&quot;&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123;message&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const TwoWay = &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        message:&quot;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Vue.createApp(TwoWay).mount(&#x27;#two-way-binding&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if v-else-if v-else"></a>v-if v-else-if v-else</h2><p>控制绑定元素的有无</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-if=&quot;number == 1&quot;&gt;1&lt;/div&gt;</span><br><span class="line">    &lt;div v-else-if=&quot;number == 2&quot;&gt;2&lt;/div&gt;</span><br><span class="line">    &lt;div v-else&gt;3&lt;/div&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;onBtnClick&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          number:1</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods:&#123;</span><br><span class="line">        onBtnClick()&#123;</span><br><span class="line">          if(this.number == 3)&#123;</span><br><span class="line">            this.number = 1</span><br><span class="line">          &#125;else&#123;</span><br><span class="line">            this.number++;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><p>控制绑定元素的显示隐藏<br>如果元素频繁显示隐藏，就用v-show，v-show相当于在css中添加display:none,v-if则是删除/添加整个dom元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-show=&quot;isShowDiv&quot;&gt;&#123;&#123;number&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;onBtnClick&quot;&gt;切换显示&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          isShowDiv:true,  </span><br><span class="line">          number:&#x27;mo&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods:&#123;</span><br><span class="line">        onBtnClick()&#123;</span><br><span class="line">         this.isShowDiv = !this.isShowDiv;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>渲染出一个列表，可以生成多个绑定的元素<br>key 用于决定列表元素的唯一性，即代表这个元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-for=&quot;(item,index) in list&quot; v-bind:key=&quot;item&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          list:[1,2,3,4,5,6,7,&quot;mo&quot;,9]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-for=&quot;(item,index) in list&quot; v-bind:key=&quot;index&quot; class=&quot;animation-div&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span><br><span class="line">   </span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          list:[1,2,3,4,5,6,7,&quot;mo&quot;,9]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      mounted()&#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">          this.list.splice(2,1,&quot;dd&quot;)</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="ckrtew3v900013a3b6uarck15" data-title="Vue3基础" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-网页练习总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2021-07-14T08:50:54.000Z" itemprop="datePublished">2021-07-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/">网页练习总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="使用ajax请求发送和获取数据"><a href="#使用ajax请求发送和获取数据" class="headerlink" title="使用ajax请求发送和获取数据"></a>使用ajax请求发送和获取数据</h1><h2 id="使用POST请求发送数据"><a href="#使用POST请求发送数据" class="headerlink" title="使用POST请求发送数据"></a>使用POST请求发送数据</h2><h2 id="上传照片"><a href="#上传照片" class="headerlink" title="上传照片"></a>上传照片</h2><p>利用input type=file实现图片上传</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var imgInput = document.getElementId(&quot;img-input&quot;);</span><br><span class="line">var img = document.getElementId(&quot;img&quot;);</span><br><span class="line">var imgInputId = null;</span><br><span class="line">imgInput.onchange = function()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckrtew3vd000a3a3bg8cd6o6e" data-title="网页练习总结" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-闭包" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/07/01/%E9%97%AD%E5%8C%85/" class="article-date">
+  <time class="dt-published" datetime="2021-07-01T10:17:17.000Z" itemprop="datePublished">2021-07-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/07/01/%E9%97%AD%E5%8C%85/">闭包</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="ckrtew3vd000b3a3b5jb7gthp" data-title="闭包" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-日期实例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" class="article-date">
@@ -115,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="ckqkr6sjt0004zn3b4gjp48j6" data-title="日期实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="ckrtew3vb00063a3b6hr97zus" data-title="日期实例" class="article-share-link">分享</a>
       
       
       
@@ -188,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="ckqkr6sjt0003zn3bhtbaeluz" data-title="日期" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="ckrtew3vb00053a3bcrlu3kvt" data-title="日期" class="article-share-link">分享</a>
       
       
       
@@ -226,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckqkr6sjs0001zn3b34oq5sa3" data-title="var let const的区别" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckrtew3va00023a3bde0v2ek4" data-title="var let const的区别" class="article-share-link">分享</a>
       
       
       
@@ -269,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ckqkr6sjt0002zn3b1unybdlb" data-title="数组去重方法" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ckrtew3va00033a3bfmj51qyk" data-title="数组去重方法" class="article-share-link">分享</a>
       
       
       
@@ -317,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckqkr6sju0007zn3b5qyx7pu7" data-title="正则表达式实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckrtew3vc00093a3b0f485fut" data-title="正则表达式实例" class="article-share-link">分享</a>
       
       
       
@@ -384,7 +520,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" data-id="ckqkr6sju0006zn3be1733qkm" data-title="正则表达式基本内容" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" data-id="ckrtew3vc00083a3ba0jm8ptb" data-title="正则表达式基本内容" class="article-share-link">分享</a>
       
       
       
@@ -430,214 +566,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ckqkr6sju0005zn3b2iw01dkj" data-title="模版字符串" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-面试总结3（js）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" class="article-date">
-  <time class="dt-published" datetime="2021-06-22T03:33:49.000Z" itemprop="datePublished">2021-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/">面试总结3（js）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>数据类型有哪些？</li>
-</ol>
-<ul>
-<li>原始值：Number Boolean String undefined null</li>
-<li>引用值：array Object function…date RegExp</li>
-</ul>
-<ol start="2">
-<li>typeOf返回值 </li>
-</ol>
-<ul>
-<li>String Number Boolean Object undefined function</li>
-<li>typeOf(null)返回Object ,typeOf(array)返回Object</li>
-</ul>
-<ol start="3">
-<li>获取DOM节点的几种方式</li>
-</ol>
-<ul>
-<li>通过id document.getElementById()</li>
-<li>通过元素名 document.getElementsByTagName()</li>
-<li>通过class document.getElementsByClassName()</li>
-<li>通过属性名 docuemnt.getElementsByName()</li>
-<li>document.querySelector()</li>
-<li>document.querySelectorAll()
-        
-          <p class="article-more-link">
-            <a href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" data-id="ckqkr6sjv000azn3bgwyahxpg" data-title="面试总结3（js）" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数组字符串部分属性用法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-06-21T02:30:07.000Z" itemprop="datePublished">2021-06-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/">数组字符串部分方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><ol>
-<li>indexOf lastIndexOf</li>
-</ol>
-<ul>
-<li>indexOf</li>
-<li>定义：可返回数组中某个指定元素的位置</li>
-<li>语法：array.indexOf(item,start)</li>
-<li>用法：从头到尾检索数组，看是否含有对应元素，检索的位置是start对应位置或者从头开始（start参数未写时），检索到item则返回它第一次出现的位置，返回值为Number类型，未找到指定元素返回-1</li>
-<li>lastIndexOf</li>
-<li>定义：返回数组中指定元素最后出现的位置，从数组后面向前查找</li>
-<li>语法：array.lastIndexOf(item,start)</li>
-<li>用法：从尾部向前检索数组<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;c&quot;];</span><br><span class="line">  console.log(arr.indexOf(&quot;b&quot;));//返回1</span><br><span class="line">  console.log(arr.indexOf(&quot;c&quot;));//返回2</span><br><span class="line">  console.log(arr.indexOf(&quot;v&quot;));//返回-1</span><br><span class="line">  console.log(arr.lastIndexOf(&quot;c&quot;));//返回4</span><br><span class="line">  console.log(arr.lastIndexOf(&quot;c&quot;, -2));//返回2</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="2">
-<li>includes</li>
-</ol>
-<ul>
-<li>定义和用法：判断数组是否包含一个指定的值，是返回true，否则返回false</li>
-<li>语法：array.includes(searchElement,fromIndex) fromIndex可写可不写，若为负值，则按升序从array.length + fromIndex的索引开始搜索，默认为0。fromIndex大于数组长度，返回false，该数组不会被搜索<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;c&quot;];</span><br><span class="line">  console.log(arr.includes(&quot;a&quot;)); //返回true</span><br><span class="line">  console.log(arr.includes(&quot;b&quot;,2));//返回false</span><br><span class="line">  console.log(arr.includes(&quot;b&quot;,-100));//返回true</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="ckqkr6sjw000bzn3bcnh5h6ye" data-title="数组字符串部分方法" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-面试总结2(css+css3)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" class="article-date">
-  <time class="dt-published" datetime="2021-06-15T09:44:56.000Z" itemprop="datePublished">2021-06-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/">面试总结2(css+css3)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>display的值有哪些</li>
-</ol>
-<ul>
-<li>none inline inline-block block inherit list-item run-in table inline-table table-row table-row-group table-header-group table-footer-group table-column table-column-group table-cell table-caption</li>
-<li>none 此元素不会被显示</li>
-<li>block 块级元素</li>
-<li>inline 行内元素</li>
-<li>inline-block 行内块元素</li>
-<li>flex 弹性容器</li>
-<li>inline-flex</li>
-<li>inherit 从父元素继承display的值</li>
-<li>list-item 此元素会作为列表显示</li>
-<li>run-in 此元素会根据上下文作为块级元素或行内元素显示</li>
-<li>table 此元素会类似块级表格显示类似（table标签)</li>
-<li>inline-table 此元素会类似行内表格显示类似（table标签）</li>
-<li>table-row-group  此元素作为一个或多个行来的分组来显示（类似tbody标签）</li>
-<li>table-header-group 此元素作为一个或多个行来的分组来显示（类似thead标签）</li>
-<li>table-footer-group 此元素作为一个或多个行来的分组来显示（类似tfoot标签）</li>
-<li>table-row 此元素会作为一个表格行来显示（类似tr标签)</li>
-<li>table-column-group 此元素会作为一个或多个列的分组来显示（类似colgroup标签）</li>
-<li>table-column  此元素会作为一个单元格列来显示（col标签）</li>
-<li>table-cell 此元素会作为一个表格单元格显示（类似td th标签）</li>
-<li>table-caption 此元素会作为一个表格标题显示（类似caption标签） </li>
-</ul>
-<ol start="2">
-<li>position的值有哪些</li>
-</ol>
-<ul>
-<li>注意：static relative absolute fixed sticky 为常用取值</li>
-<li>static 默认值 没有定位，出现在正常的流中（忽略top bottom left right z-index)</li>
-<li>relative 相对定位 相对于其正常位置定位</li>
-<li>absolute 绝对定位 相对于static以外的第一个父元素进行定位</li>
-<li>fixed 固定定位 相对于浏览器可视窗口进行定位</li>
-<li>sticky 粘性定位 该定位基于用户滚动的位置</li>
-<li>inherit  规定应该从父元素继承该属性</li>
-<li>initial 设置该属性为默认值</li>
-<li>注意：绝对定位、固定定位一定是块盒，一定不是浮动元素，没有外边距合并
-        
-          <p class="article-more-link">
-            <a href="/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" data-id="ckqkr6sjv0009zn3b56ch5sc1" data-title="面试总结2(css+css3)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ckrtew3vc00073a3bc7vofm61" data-title="模版字符串" class="article-share-link">分享</a>
       
       
       
@@ -672,7 +601,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li></ul>
     </div>
   </div>
 
@@ -685,23 +614,23 @@
       <ul>
         
           <li>
+            <a href="/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/">Vue3基础</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/">网页练习总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/01/%E9%97%AD%E5%8C%85/">闭包</a>
+          </li>
+        
+          <li>
             <a href="/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/">日期实例</a>
           </li>
         
           <li>
             <a href="/2021/06/30/%E6%97%A5%E6%9C%9F/">日期</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/">var let const的区别</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">数组去重方法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/">正则表达式实例</a>
           </li>
         
       </ul>

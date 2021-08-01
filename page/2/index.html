@@ -71,6 +71,213 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-面试总结3（js）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" class="article-date">
+  <time class="dt-published" datetime="2021-06-22T03:33:49.000Z" itemprop="datePublished">2021-06-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/">面试总结3（js）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>数据类型有哪些？</li>
+</ol>
+<ul>
+<li>原始值：Number Boolean String undefined null</li>
+<li>引用值：array Object function…date RegExp</li>
+</ul>
+<ol start="2">
+<li>typeOf返回值 </li>
+</ol>
+<ul>
+<li>String Number Boolean Object undefined function</li>
+<li>typeOf(null)返回Object ,typeOf(array)返回Object</li>
+</ul>
+<ol start="3">
+<li>获取DOM节点的几种方式</li>
+</ol>
+<ul>
+<li>通过id document.getElementById()</li>
+<li>通过元素名 document.getElementsByTagName()</li>
+<li>通过class document.getElementsByClassName()</li>
+<li>通过属性名 docuemnt.getElementsByName()</li>
+<li>document.querySelector()</li>
+<li>document.querySelectorAll()
+        
+          <p class="article-more-link">
+            <a href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" data-id="ckrtew3ve000e3a3b80wogusz" data-title="面试总结3（js）" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-数组字符串部分属性用法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" class="article-date">
+  <time class="dt-published" datetime="2021-06-21T02:30:07.000Z" itemprop="datePublished">2021-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/">数组字符串部分方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><ol>
+<li>indexOf lastIndexOf</li>
+</ol>
+<ul>
+<li>indexOf</li>
+<li>定义：可返回数组中某个指定元素的位置</li>
+<li>语法：array.indexOf(item,start)</li>
+<li>用法：从头到尾检索数组，看是否含有对应元素，检索的位置是start对应位置或者从头开始（start参数未写时），检索到item则返回它第一次出现的位置，返回值为Number类型，未找到指定元素返回-1</li>
+<li>lastIndexOf</li>
+<li>定义：返回数组中指定元素最后出现的位置，从数组后面向前查找</li>
+<li>语法：array.lastIndexOf(item,start)</li>
+<li>用法：从尾部向前检索数组<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;c&quot;];</span><br><span class="line">  console.log(arr.indexOf(&quot;b&quot;));//返回1</span><br><span class="line">  console.log(arr.indexOf(&quot;c&quot;));//返回2</span><br><span class="line">  console.log(arr.indexOf(&quot;v&quot;));//返回-1</span><br><span class="line">  console.log(arr.lastIndexOf(&quot;c&quot;));//返回4</span><br><span class="line">  console.log(arr.lastIndexOf(&quot;c&quot;, -2));//返回2</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li>includes</li>
+</ol>
+<ul>
+<li>定义和用法：判断数组是否包含一个指定的值，是返回true，否则返回false</li>
+<li>语法：array.includes(searchElement,fromIndex) fromIndex可写可不写，若为负值，则按升序从array.length + fromIndex的索引开始搜索，默认为0。fromIndex大于数组长度，返回false，该数组不会被搜索<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;c&quot;];</span><br><span class="line">  console.log(arr.includes(&quot;a&quot;)); //返回true</span><br><span class="line">  console.log(arr.includes(&quot;b&quot;,2));//返回false</span><br><span class="line">  console.log(arr.includes(&quot;b&quot;,-100));//返回true</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="ckrtew3vb00043a3b63ih8rd3" data-title="数组字符串部分方法" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-面试总结2(css+css3)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" class="article-date">
+  <time class="dt-published" datetime="2021-06-15T09:44:56.000Z" itemprop="datePublished">2021-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/">面试总结2(css+css3)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>display的值有哪些</li>
+</ol>
+<ul>
+<li>none inline inline-block block inherit list-item run-in table inline-table table-row table-row-group table-header-group table-footer-group table-column table-column-group table-cell table-caption</li>
+<li>none 此元素不会被显示</li>
+<li>block 块级元素</li>
+<li>inline 行内元素</li>
+<li>inline-block 行内块元素</li>
+<li>flex 弹性容器</li>
+<li>inline-flex</li>
+<li>inherit 从父元素继承display的值</li>
+<li>list-item 此元素会作为列表显示</li>
+<li>run-in 此元素会根据上下文作为块级元素或行内元素显示</li>
+<li>table 此元素会类似块级表格显示类似（table标签)</li>
+<li>inline-table 此元素会类似行内表格显示类似（table标签）</li>
+<li>table-row-group  此元素作为一个或多个行来的分组来显示（类似tbody标签）</li>
+<li>table-header-group 此元素作为一个或多个行来的分组来显示（类似thead标签）</li>
+<li>table-footer-group 此元素作为一个或多个行来的分组来显示（类似tfoot标签）</li>
+<li>table-row 此元素会作为一个表格行来显示（类似tr标签)</li>
+<li>table-column-group 此元素会作为一个或多个列的分组来显示（类似colgroup标签）</li>
+<li>table-column  此元素会作为一个单元格列来显示（col标签）</li>
+<li>table-cell 此元素会作为一个表格单元格显示（类似td th标签）</li>
+<li>table-caption 此元素会作为一个表格标题显示（类似caption标签） </li>
+</ul>
+<ol start="2">
+<li>position的值有哪些</li>
+</ol>
+<ul>
+<li>注意：static relative absolute fixed sticky 为常用取值</li>
+<li>static 默认值 没有定位，出现在正常的流中（忽略top bottom left right z-index)</li>
+<li>relative 相对定位 相对于其正常位置定位</li>
+<li>absolute 绝对定位 相对于static以外的第一个父元素进行定位</li>
+<li>fixed 固定定位 相对于浏览器可视窗口进行定位</li>
+<li>sticky 粘性定位 该定位基于用户滚动的位置</li>
+<li>inherit  规定应该从父元素继承该属性</li>
+<li>initial 设置该属性为默认值</li>
+<li>注意：绝对定位、固定定位一定是块盒，一定不是浮动元素，没有外边距合并
+        
+          <p class="article-more-link">
+            <a href="/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/#more">阅读更多</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" data-id="ckrtew3ve000d3a3b4scn6dcb" data-title="面试总结2(css+css3)" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-CSS3新特性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" class="article-date">
@@ -121,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="ckqkr6sjq0000zn3b5hwjaauq" data-title="CSS3新特性" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="ckrtew3v700003a3b5atbg4lx" data-title="CSS3新特性" class="article-share-link">分享</a>
       
       
       
@@ -193,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckqkr6sjv0008zn3bfeb7bzga" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckrtew3ve000c3a3bfsbhc8hh" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
       
       
       
@@ -228,7 +435,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li></ul>
     </div>
   </div>
 
@@ -241,23 +448,23 @@
       <ul>
         
           <li>
+            <a href="/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/">Vue3基础</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/">网页练习总结</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/01/%E9%97%AD%E5%8C%85/">闭包</a>
+          </li>
+        
+          <li>
             <a href="/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/">日期实例</a>
           </li>
         
           <li>
             <a href="/2021/06/30/%E6%97%A5%E6%9C%9F/">日期</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/">var let const的区别</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">数组去重方法</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/">正则表达式实例</a>
           </li>
         
       </ul>
