@@ -107,16 +107,18 @@
 
 <h2 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if v-else-if v-else"></a>v-if v-else-if v-else</h2><p>控制绑定元素的有无</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-if=&quot;number == 1&quot;&gt;1&lt;/div&gt;</span><br><span class="line">    &lt;div v-else-if=&quot;number == 2&quot;&gt;2&lt;/div&gt;</span><br><span class="line">    &lt;div v-else&gt;3&lt;/div&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;onBtnClick&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          number:1</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods:&#123;</span><br><span class="line">        onBtnClick()&#123;</span><br><span class="line">          if(this.number == 3)&#123;</span><br><span class="line">            this.number = 1</span><br><span class="line">          &#125;else&#123;</span><br><span class="line">            this.number++;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><p>控制绑定元素的显示隐藏<br>如果元素频繁显示隐藏，就用v-show，v-show相当于在css中添加display:none,v-if则是删除/添加整个dom元素</p>
+<h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><p>控制绑定元素的显示隐藏<br>v-show相当于在css中添加display:none,v-if则是删除/添加整个dom元素<br>如果元素频繁显示隐藏，就用v-show，在运行条件很少改变时，则使用v-if比较好</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-show=&quot;isShowDiv&quot;&gt;&#123;&#123;number&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;onBtnClick&quot;&gt;切换显示&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          isShowDiv:true,  </span><br><span class="line">          number:&#x27;mo&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods:&#123;</span><br><span class="line">        onBtnClick()&#123;</span><br><span class="line">         this.isShowDiv = !this.isShowDiv;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>渲染出一个列表，可以生成多个绑定的元素<br>key 用于决定列表元素的唯一性，即代表这个元素</p>
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>渲染出一个列表，可以生成多个绑定的元素<br>key 用于决定列表元素的唯一性，即代表这个元素<br>Vue官方文档表示不推荐同时使用v-if和v-for，当v-if和v-for同时使用时，v-if具有更高的优先级</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-for=&quot;(item,index) in list&quot; v-bind:key=&quot;item&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          list:[1,2,3,4,5,6,7,&quot;mo&quot;,9]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-for=&quot;(item,index) in list&quot; v-bind:key=&quot;index&quot; class=&quot;animation-div&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span><br><span class="line">   </span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          list:[1,2,3,4,5,6,7,&quot;mo&quot;,9]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      mounted()&#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">          this.list.splice(2,1,&quot;dd&quot;)</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//可以用of代替in作分隔符</span><br><span class="line">&lt;div v-for=&quot;item of items&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="ckrtew3v900013a3b6uarck15" data-title="Vue3基础" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="ckrup283500010h3be31b0o7t" data-title="Vue3基础" class="article-share-link">分享</a>
       
       
       
@@ -157,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckrtew3vd000a3a3bg8cd6o6e" data-title="网页练习总结" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckrup2838000a0h3b6nqj1zem" data-title="网页练习总结" class="article-share-link">分享</a>
       
       
       
@@ -195,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="ckrtew3vd000b3a3b5jb7gthp" data-title="闭包" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="ckrup2839000b0h3bhnzz4fsl" data-title="闭包" class="article-share-link">分享</a>
       
       
       
@@ -251,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="ckrtew3vb00063a3b6hr97zus" data-title="日期实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="ckrup283700060h3bdaab0wqv" data-title="日期实例" class="article-share-link">分享</a>
       
       
       
@@ -324,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="ckrtew3vb00053a3bcrlu3kvt" data-title="日期" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="ckrup283700050h3bd79b3frq" data-title="日期" class="article-share-link">分享</a>
       
       
       
@@ -362,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckrtew3va00023a3bde0v2ek4" data-title="var let const的区别" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckrup283500020h3beu9548we" data-title="var let const的区别" class="article-share-link">分享</a>
       
       
       
@@ -405,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ckrtew3va00033a3bfmj51qyk" data-title="数组去重方法" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ckrup283600030h3battb93ns" data-title="数组去重方法" class="article-share-link">分享</a>
       
       
       
@@ -453,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckrtew3vc00093a3b0f485fut" data-title="正则表达式实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckrup283800090h3ba6ys6u49" data-title="正则表达式实例" class="article-share-link">分享</a>
       
       
       
@@ -520,7 +522,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" data-id="ckrtew3vc00083a3ba0jm8ptb" data-title="正则表达式基本内容" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" data-id="ckrup283800080h3b959bdazq" data-title="正则表达式基本内容" class="article-share-link">分享</a>
       
       
       
@@ -566,7 +568,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ckrtew3vc00073a3bc7vofm61" data-title="模版字符串" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ckrup283700070h3b0e3bdmpo" data-title="模版字符串" class="article-share-link">分享</a>
       
       
       
