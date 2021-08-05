@@ -71,6 +71,134 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-组件-Prop" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" class="article-date">
+  <time class="dt-published" datetime="2021-08-05T03:59:15.000Z" itemprop="datePublished">2021-08-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/">组件-Prop</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="ckrye5x6i00088u3baf2hbmnq" data-title="组件-Prop" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-组件-自定义事件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" class="article-date">
+  <time class="dt-published" datetime="2021-08-04T13:30:43.000Z" itemprop="datePublished">2021-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/">组件-自定义事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" data-id="ckrye5x6i000a8u3be2sa2las" data-title="组件-自定义事件" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-组件-注册" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" class="article-date">
+  <time class="dt-published" datetime="2021-08-04T07:47:17.000Z" itemprop="datePublished">2021-08-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><p>组件是带有名称的可复用的实例，所以它们可以与根实例接收相同的选项，例如：data、computed、watch、methods以及生命周期钩子等。<br>在下面这个例子中这个例子是<component-div>,我们可以吧这个组件作为一个根实例中的自定义元素来使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;container&quot;&gt;</span><br><span class="line"> &lt;component-div&gt;&lt;/component-div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">       //创建一个Vue应用</span><br><span class="line">       const componentDiv = Vue.createApp(&#123;&#125;);</span><br><span class="line">       // 定义一个名为 component-div 的新全局组件</span><br><span class="line">       componentDiv.component(&#x27;component-div&#x27;,&#123;</span><br><span class="line">         data()&#123;</span><br><span class="line">           return&#123;</span><br><span class="line">             count:1</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         // 模版</span><br><span class="line">         template:`</span><br><span class="line">         &lt;div&gt;&#123;&#123;count&#125;&#125;&lt;/div&gt;</span><br><span class="line">         `</span><br><span class="line">       &#125;)</span><br><span class="line">       //挂载</span><br><span class="line">       componentDiv.mount(&quot;#container&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h2><p>为了能在模版中使用，这些组件必须先注册以便Vue能识别。<br>注册类型有两种：全局注册和局部注册</p>
+<h3 id="组件名"><a href="#组件名" class="headerlink" title="组件名"></a>组件名</h3><p>推荐遵循W3C规范中的自定义组件名即（字母全小写且必须包含一个连字符）这可以帮助避免和当前以及未来的HTML元素相冲突<br>在字符串模版或单个文件组件中定义组件时，定义组件名的方式有两种<br>1.使用kebab-case 2.使用PascalCase<br>注意：直接在DOM（即非字符串的模版）中使用只有kebab-case是有效的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//使用kebab-case(小写加连字符形式)</span><br><span class="line"> app.component(&#x27;my-component-name&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">//使用PascalCase（大驼峰命名法）</span><br><span class="line">    app.component(&#x27;myComponentName&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><p>全局注册的组件可以在应用中的任何组件的模版中使用，在所有的子组件中也是如此。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;component-a&gt;&lt;/component-a&gt;</span><br><span class="line">    &lt;component-c&gt;&lt;/component-c&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">const app = Vue.createApp(&#123;&#125;)</span><br><span class="line"></span><br><span class="line">   app.component(&#x27;component-a&#x27;,&#123;</span><br><span class="line">    template:`</span><br><span class="line">     &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line">   app.component(&#x27;component-b&#x27;,&#123;</span><br><span class="line">     template:`</span><br><span class="line">     &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line">   //在component-c组件中使用component-b</span><br><span class="line">   app.component(&#x27;component-c&#x27;,&#123;</span><br><span class="line">    template:`</span><br><span class="line">     &lt;div&gt;c&lt;/div&gt;</span><br><span class="line">     &lt;component-b&gt;&lt;/component-b&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   app.mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h3><p>在根组件的components选项中定义使用的组件<br>注意：局部注册的组件在其子组件中不可用<br>若希望ComponentA在ComponentB中可用则把ComponentA定义在ComponentB的components选项中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">const ComponentA=&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentB=&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentC=&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  const app = Vue.createApp(&#123;</span><br><span class="line">    components:&#123;</span><br><span class="line">      &#x27;component-a&#x27;:ComponentA,</span><br><span class="line">      &#x27;component-b&#x27;:ComponentB,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  \\若希望ComponentA在ComponentB中可用则</span><br><span class="line">  const ComponentA=&#123;</span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentB=&#123;</span><br><span class="line">  components:&#123;</span><br><span class="line">    &#x27;component-a&#x27;:ComponentA</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="通过Prop向子组件传递数据"><a href="#通过Prop向子组件传递数据" class="headerlink" title="通过Prop向子组件传递数据"></a>通过Prop向子组件传递数据</h2><p>Prop是可以在组件上注册的一些自定义attribute</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="ckrye5x6i00098u3bdssa9dw8" data-title="组件" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Vue3基础2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" class="article-date">
@@ -107,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="ckrx6m4150004jm3b2t5t9i1r" data-title="Vue3基础2" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="ckrye5x6g00038u3bb545c212" data-title="Vue3基础2" class="article-share-link">分享</a>
       
       
       
@@ -167,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="ckrx6m4130001jm3b4bup56cp" data-title="Vue3基础" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="ckrye5x6f00018u3bgo4t16xx" data-title="Vue3基础" class="article-share-link">分享</a>
       
       
       
@@ -208,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckrx6m4160009jm3b3wb98fuf" data-title="网页练习总结" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckrye5x6l000i8u3bgzlhe0nz" data-title="网页练习总结" class="article-share-link">分享</a>
       
       
       
@@ -246,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="ckrx6m417000bjm3b51d52ds3" data-title="闭包" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="ckrye5x6k000e8u3b7hal3s4e" data-title="闭包" class="article-share-link">分享</a>
       
       
       
@@ -302,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="ckrx6m4160007jm3b0b6det9z" data-title="日期实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="ckrye5x6h00078u3bb6mv96l9" data-title="日期实例" class="article-share-link">分享</a>
       
       
       
@@ -375,7 +503,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="ckrx6m4150005jm3b5zi8cm5z" data-title="日期" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="ckrye5x6h00068u3ba0noa6so" data-title="日期" class="article-share-link">分享</a>
       
       
       
@@ -413,165 +541,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckrx6m4140002jm3b5ds8ao7z" data-title="var let const的区别" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数组去重方法" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" class="article-date">
-  <time class="dt-published" datetime="2021-06-25T08:58:29.000Z" itemprop="datePublished">2021-06-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">数组去重方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><p>利用ES6新特性 Set<br>优点：简单，代码简洁。缺点：有兼容性问题，无法去掉重复的”{}”。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,1,&#x27;true&#x27;,&#x27;true&#x27;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#x27;NaN&#x27;, 0, 0, &#x27;a&#x27;, &#x27;a&#x27;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">function unique(arr)&#123;</span><br><span class="line">  return Array.from(new Set(arr));</span><br><span class="line">&#125;</span><br><span class="line">console.log(unique(arr));</span><br></pre></td></tr></table></figure>
-<h2 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h2><p>利用数组的indexOf()方法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,1,&#x27;true&#x27;,&#x27;true&#x27;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#x27;NaN&#x27;, 0, 0, &#x27;a&#x27;, &#x27;a&#x27;,&#123;&#125;,&#123;&#125;];</span><br><span class="line">    var newArr = [];</span><br><span class="line">    for(var i = 0 ;i&lt;arr.length;i++)&#123;</span><br><span class="line">      if(newArr.indexOf(arr[i]) === -1)&#123;</span><br><span class="line">        newArr.push(arr[i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(newArr);</span><br></pre></td></tr></table></figure>
-
-<h2 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ckrx6m4140003jm3bgxs9ct02" data-title="数组去重方法" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-正则表达式实例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" class="article-date">
-  <time class="dt-published" datetime="2021-06-24T08:04:39.000Z" itemprop="datePublished">2021-06-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/">正则表达式实例</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="匹配一切字符"><a href="#匹配一切字符" class="headerlink" title="匹配一切字符"></a>匹配一切字符</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var reg = /[\d\D]/g;</span><br><span class="line">var reg1 = /[\s\S/g;</span><br><span class="line">var reg2 = /[\w\W/g;</span><br><span class="line">var reg3 = /[\u0000-\uffff/g;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="写一个正则表达式，检验首尾是否含有数字"><a href="#写一个正则表达式，检验首尾是否含有数字" class="headerlink" title="写一个正则表达式，检验首尾是否含有数字"></a>写一个正则表达式，检验首尾是否含有数字</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;12ffffdsdlsjflajf&quot;;</span><br><span class="line">var reg = /^\d|\d$/g;</span><br><span class="line">console.log(str.match(reg)); //[&quot;1&quot;]</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="写一个正则表达式，检验首或尾都含有数字"><a href="#写一个正则表达式，检验首或尾都含有数字" class="headerlink" title="写一个正则表达式，检验首或尾都含有数字"></a>写一个正则表达式，检验首或尾都含有数字</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;12ffffdsdlsjflajf3&quot;;</span><br><span class="line">var reg = /^\d[\s\S]+\d$/g;</span><br><span class="line">console.log(str.match(reg)); //[&quot;12ffffdsdlsjflajf3&quot;]</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckrx6m41b000fjm3b7dmr9rwg" data-title="正则表达式实例" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-正则表达式基本内容" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" class="article-date">
-  <time class="dt-published" datetime="2021-06-23T15:00:50.000Z" itemprop="datePublished">2021-06-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/">正则表达式基本内容</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><p>正则表达式是用于匹配字符串中字符组合的模式，在JavaScript中，正则表达式也是对象。</p>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>匹配特殊字符或有特殊搭配原则的字符的最佳选择</p>
-<h2 id="两种方法构建正则表达式"><a href="#两种方法构建正则表达式" class="headerlink" title="两种方法构建正则表达式"></a>两种方法构建正则表达式</h2><ol>
-<li><p>使用正则表达式字面量，其由包含在斜杠之间的模式组成</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var re = /ab+c/;</span><br><span class="line">var reg = /abc/g;</span><br></pre></td></tr></table></figure></li>
-<li><p>RegExp对象的构造函数</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var re = new RegExp(&quot;a\bb+c);</span><br><span class="line">var reg = newRegExp(&quot;abc&quot;,&quot;g&quot;);</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h2><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ol>
-<li>i 执行对大小写不敏感的匹配</li>
-<li>g 执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）</li>
-<li>m 执行多行匹配</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//全局匹配</span><br><span class="line">   var reg = /^a/g;</span><br><span class="line">   var str = &quot;abc\na&quot;;</span><br><span class="line">   console.log(str.match(reg)); //[&quot;a&quot;]</span><br><span class="line"></span><br><span class="line">   //全局加多行匹配</span><br><span class="line">   var reg = /^a/gm;</span><br><span class="line">   var str = &quot;abc\na&quot;;</span><br><span class="line">   console.log(str.match(reg)); //[&quot;a&quot;,&quot;a&quot;]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><ol>
-<li>[abc] 查找方括号之间的任何字符</li>
-<li>[^abc] 查找任何不在方括号之间的字符</li>
-<li>[0-9] 查找任何从0-9的数字</li>
-<li>[a-z] 查找任何从小写a到小写z的字符</li>
-<li>[A-Z] 查找任何从大写A到大写Z的字符</li>
-<li>[A-z] 查找任何从大写A到小写z的字符</li>
-<li>[adgk] 查找给定集合内的任何字符</li>
-<li>[^adgk] 查找给定集合外的任何字符</li>
-<li>(red|blue|green) 查找任何指定的选项
-        
-          <p class="article-more-link">
-            <a href="/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" data-id="ckrx6m417000ajm3b95k6298l" data-title="正则表达式基本内容" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckrye5x6g00048u3b6p6mho48" data-title="var let const的区别" class="article-share-link">分享</a>
       
       
       
@@ -619,23 +589,23 @@
       <ul>
         
           <li>
+            <a href="/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/">组件-Prop</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/">组件-自定义事件</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/">Vue3基础2</a>
           </li>
         
           <li>
             <a href="/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/">Vue3基础</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/">网页练习总结</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/01/%E9%97%AD%E5%8C%85/">闭包</a>
-          </li>
-        
-          <li>
-            <a href="/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/">日期实例</a>
           </li>
         
       </ul>
