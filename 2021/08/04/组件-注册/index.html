@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>组件 | Moon Kui</title>
+  <title>组件-注册 | Moon Kui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="组件基础组件是带有名称的可复用的实例，所以它们可以与根实例接收相同的选项，例如：data、computed、watch、methods以及生命周期钩子等。在下面这个例子中这个例子是,我们可以吧这个组件作为一个根实例中的自定义元素来使用 1234567891011121314151617181920&lt;div id&#x3D;&quot;container&quot;&gt; &lt;component-">
+  <meta name="description" content="组件基础组件是带有名称的可复用的实例，所以它们可以与根实例接收相同的选项，例如：data、computed、watch、methods以及生命周期钩子等。在下面这个例子中这个例子是,我们可以把这个组件作为一个根实例中的自定义元素来使用 1234567891011121314151617181920&lt;div id&#x3D;&quot;container&quot;&gt; &lt;component-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="组件">
+<meta property="og:title" content="组件-注册">
 <meta property="og:url" content="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/index.html">
 <meta property="og:site_name" content="Moon Kui">
-<meta property="og:description" content="组件基础组件是带有名称的可复用的实例，所以它们可以与根实例接收相同的选项，例如：data、computed、watch、methods以及生命周期钩子等。在下面这个例子中这个例子是,我们可以吧这个组件作为一个根实例中的自定义元素来使用 1234567891011121314151617181920&lt;div id&#x3D;&quot;container&quot;&gt; &lt;component-">
+<meta property="og:description" content="组件基础组件是带有名称的可复用的实例，所以它们可以与根实例接收相同的选项，例如：data、computed、watch、methods以及生命周期钩子等。在下面这个例子中这个例子是,我们可以把这个组件作为一个根实例中的自定义元素来使用 1234567891011121314151617181920&lt;div id&#x3D;&quot;container&quot;&gt; &lt;component-">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-04T07:47:17.000Z">
-<meta property="article:modified_time" content="2021-08-05T04:00:34.785Z">
+<meta property="article:modified_time" content="2021-08-05T04:00:55.273Z">
 <meta property="article:author" content="kui">
 <meta name="twitter:card" content="summary">
   
@@ -87,7 +87,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      组件
+      组件-注册
     </h1>
   
 
@@ -95,12 +95,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><p>组件是带有名称的可复用的实例，所以它们可以与根实例接收相同的选项，例如：data、computed、watch、methods以及生命周期钩子等。<br>在下面这个例子中这个例子是<component-div>,我们可以吧这个组件作为一个根实例中的自定义元素来使用</p>
+        <h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><p>组件是带有名称的可复用的实例，所以它们可以与根实例接收相同的选项，例如：data、computed、watch、methods以及生命周期钩子等。<br>在下面这个例子中这个例子是<component-div>,我们可以把这个组件作为一个根实例中的自定义元素来使用</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;container&quot;&gt;</span><br><span class="line"> &lt;component-div&gt;&lt;/component-div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">       //创建一个Vue应用</span><br><span class="line">       const componentDiv = Vue.createApp(&#123;&#125;);</span><br><span class="line">       // 定义一个名为 component-div 的新全局组件</span><br><span class="line">       componentDiv.component(&#x27;component-div&#x27;,&#123;</span><br><span class="line">         data()&#123;</span><br><span class="line">           return&#123;</span><br><span class="line">             count:1</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         // 模版</span><br><span class="line">         template:`</span><br><span class="line">         &lt;div&gt;&#123;&#123;count&#125;&#125;&lt;/div&gt;</span><br><span class="line">         `</span><br><span class="line">       &#125;)</span><br><span class="line">       //挂载</span><br><span class="line">       componentDiv.mount(&quot;#container&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h2><p>为了能在模版中使用，这些组件必须先注册以便Vue能识别。<br>注册类型有两种：全局注册和局部注册</p>
 <h3 id="组件名"><a href="#组件名" class="headerlink" title="组件名"></a>组件名</h3><p>推荐遵循W3C规范中的自定义组件名即（字母全小写且必须包含一个连字符）这可以帮助避免和当前以及未来的HTML元素相冲突<br>在字符串模版或单个文件组件中定义组件时，定义组件名的方式有两种<br>1.使用kebab-case 2.使用PascalCase<br>注意：直接在DOM（即非字符串的模版）中使用只有kebab-case是有效的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//使用kebab-case(小写加连字符形式)</span><br><span class="line"> app.component(&#x27;my-component-name&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">//使用PascalCase（大驼峰命名法）</span><br><span class="line">    app.component(&#x27;myComponentName&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//使用kebab-case(短横线分隔命名)</span><br><span class="line"> app.component(&#x27;my-component-name&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">//使用PascalCase（大驼峰命名法）</span><br><span class="line">    app.component(&#x27;myComponentName&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><p>全局注册的组件可以在应用中的任何组件的模版中使用，在所有的子组件中也是如此。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;component-a&gt;&lt;/component-a&gt;</span><br><span class="line">    &lt;component-c&gt;&lt;/component-c&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">const app = Vue.createApp(&#123;&#125;)</span><br><span class="line"></span><br><span class="line">   app.component(&#x27;component-a&#x27;,&#123;</span><br><span class="line">    template:`</span><br><span class="line">     &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line">   app.component(&#x27;component-b&#x27;,&#123;</span><br><span class="line">     template:`</span><br><span class="line">     &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line">   //在component-c组件中使用component-b</span><br><span class="line">   app.component(&#x27;component-c&#x27;,&#123;</span><br><span class="line">    template:`</span><br><span class="line">     &lt;div&gt;c&lt;/div&gt;</span><br><span class="line">     &lt;component-b&gt;&lt;/component-b&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   app.mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
@@ -108,12 +108,11 @@
 <h3 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h3><p>在根组件的components选项中定义使用的组件<br>注意：局部注册的组件在其子组件中不可用<br>若希望ComponentA在ComponentB中可用则把ComponentA定义在ComponentB的components选项中</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">const ComponentA=&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentB=&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentC=&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  const app = Vue.createApp(&#123;</span><br><span class="line">    components:&#123;</span><br><span class="line">      &#x27;component-a&#x27;:ComponentA,</span><br><span class="line">      &#x27;component-b&#x27;:ComponentB,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  \\若希望ComponentA在ComponentB中可用则</span><br><span class="line">  const ComponentA=&#123;</span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentB=&#123;</span><br><span class="line">  components:&#123;</span><br><span class="line">    &#x27;component-a&#x27;:ComponentA</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="通过Prop向子组件传递数据"><a href="#通过Prop向子组件传递数据" class="headerlink" title="通过Prop向子组件传递数据"></a>通过Prop向子组件传递数据</h2><p>Prop是可以在组件上注册的一些自定义attribute</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="ckrye5x6i00098u3bdssa9dw8" data-title="组件" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="ckrye6hw3000iag3b5z67gflk" data-title="组件-注册" class="article-share-link">分享</a>
       
       
       
@@ -181,7 +180,7 @@
           </li>
         
           <li>
-            <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件</a>
+            <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件-注册</a>
           </li>
         
           <li>

@@ -93,11 +93,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h1 id="通过Prop向子组件传递数据"><a href="#通过Prop向子组件传递数据" class="headerlink" title="通过Prop向子组件传递数据"></a>通过Prop向子组件传递数据</h1><p>Prop是可以在组件上注册的一些自定义attribute</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="ckrye5x6i00088u3baf2hbmnq" data-title="组件-Prop" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="ckrye6hvz0008ag3bdteba58h" data-title="组件-Prop" class="article-share-link">分享</a>
       
       
       
@@ -135,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" data-id="ckrye5x6i000a8u3be2sa2las" data-title="组件-自定义事件" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" data-id="ckrye6hw1000bag3b9hgy9bro" data-title="组件-自定义事件" class="article-share-link">分享</a>
       
       
       
@@ -161,7 +162,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件</a>
+      <a class="p-name article-title" href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件-注册</a>
     </h1>
   
 
@@ -169,12 +170,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><p>组件是带有名称的可复用的实例，所以它们可以与根实例接收相同的选项，例如：data、computed、watch、methods以及生命周期钩子等。<br>在下面这个例子中这个例子是<component-div>,我们可以吧这个组件作为一个根实例中的自定义元素来使用</p>
+        <h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><p>组件是带有名称的可复用的实例，所以它们可以与根实例接收相同的选项，例如：data、computed、watch、methods以及生命周期钩子等。<br>在下面这个例子中这个例子是<component-div>,我们可以把这个组件作为一个根实例中的自定义元素来使用</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;container&quot;&gt;</span><br><span class="line"> &lt;component-div&gt;&lt;/component-div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">       //创建一个Vue应用</span><br><span class="line">       const componentDiv = Vue.createApp(&#123;&#125;);</span><br><span class="line">       // 定义一个名为 component-div 的新全局组件</span><br><span class="line">       componentDiv.component(&#x27;component-div&#x27;,&#123;</span><br><span class="line">         data()&#123;</span><br><span class="line">           return&#123;</span><br><span class="line">             count:1</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         // 模版</span><br><span class="line">         template:`</span><br><span class="line">         &lt;div&gt;&#123;&#123;count&#125;&#125;&lt;/div&gt;</span><br><span class="line">         `</span><br><span class="line">       &#125;)</span><br><span class="line">       //挂载</span><br><span class="line">       componentDiv.mount(&quot;#container&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h2 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h2><p>为了能在模版中使用，这些组件必须先注册以便Vue能识别。<br>注册类型有两种：全局注册和局部注册</p>
 <h3 id="组件名"><a href="#组件名" class="headerlink" title="组件名"></a>组件名</h3><p>推荐遵循W3C规范中的自定义组件名即（字母全小写且必须包含一个连字符）这可以帮助避免和当前以及未来的HTML元素相冲突<br>在字符串模版或单个文件组件中定义组件时，定义组件名的方式有两种<br>1.使用kebab-case 2.使用PascalCase<br>注意：直接在DOM（即非字符串的模版）中使用只有kebab-case是有效的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//使用kebab-case(小写加连字符形式)</span><br><span class="line"> app.component(&#x27;my-component-name&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">//使用PascalCase（大驼峰命名法）</span><br><span class="line">    app.component(&#x27;myComponentName&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//使用kebab-case(短横线分隔命名)</span><br><span class="line"> app.component(&#x27;my-component-name&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">//使用PascalCase（大驼峰命名法）</span><br><span class="line">    app.component(&#x27;myComponentName&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><p>全局注册的组件可以在应用中的任何组件的模版中使用，在所有的子组件中也是如此。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;component-a&gt;&lt;/component-a&gt;</span><br><span class="line">    &lt;component-c&gt;&lt;/component-c&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">const app = Vue.createApp(&#123;&#125;)</span><br><span class="line"></span><br><span class="line">   app.component(&#x27;component-a&#x27;,&#123;</span><br><span class="line">    template:`</span><br><span class="line">     &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line">   app.component(&#x27;component-b&#x27;,&#123;</span><br><span class="line">     template:`</span><br><span class="line">     &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line">   //在component-c组件中使用component-b</span><br><span class="line">   app.component(&#x27;component-c&#x27;,&#123;</span><br><span class="line">    template:`</span><br><span class="line">     &lt;div&gt;c&lt;/div&gt;</span><br><span class="line">     &lt;component-b&gt;&lt;/component-b&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   app.mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
@@ -182,12 +183,11 @@
 <h3 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h3><p>在根组件的components选项中定义使用的组件<br>注意：局部注册的组件在其子组件中不可用<br>若希望ComponentA在ComponentB中可用则把ComponentA定义在ComponentB的components选项中</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">const ComponentA=&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentB=&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentC=&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  const app = Vue.createApp(&#123;</span><br><span class="line">    components:&#123;</span><br><span class="line">      &#x27;component-a&#x27;:ComponentA,</span><br><span class="line">      &#x27;component-b&#x27;:ComponentB,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  \\若希望ComponentA在ComponentB中可用则</span><br><span class="line">  const ComponentA=&#123;</span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentB=&#123;</span><br><span class="line">  components:&#123;</span><br><span class="line">    &#x27;component-a&#x27;:ComponentA</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h2 id="通过Prop向子组件传递数据"><a href="#通过Prop向子组件传递数据" class="headerlink" title="通过Prop向子组件传递数据"></a>通过Prop向子组件传递数据</h2><p>Prop是可以在组件上注册的一些自定义attribute</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="ckrye5x6i00098u3bdssa9dw8" data-title="组件" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="ckrye6hw3000iag3b5z67gflk" data-title="组件-注册" class="article-share-link">分享</a>
       
       
       
@@ -235,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="ckrye5x6g00038u3bb545c212" data-title="Vue3基础2" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="ckrye6hvy0003ag3b96ea648j" data-title="Vue3基础2" class="article-share-link">分享</a>
       
       
       
@@ -295,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="ckrye5x6f00018u3bgo4t16xx" data-title="Vue3基础" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="ckrye6hvu0000ag3b3uqz998x" data-title="Vue3基础" class="article-share-link">分享</a>
       
       
       
@@ -336,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckrye5x6l000i8u3bgzlhe0nz" data-title="网页练习总结" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckrye6hw1000cag3b5of52xm8" data-title="网页练习总结" class="article-share-link">分享</a>
       
       
       
@@ -374,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="ckrye5x6k000e8u3b7hal3s4e" data-title="闭包" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="ckrye6hw2000eag3b4xn1098t" data-title="闭包" class="article-share-link">分享</a>
       
       
       
@@ -430,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="ckrye5x6h00078u3bb6mv96l9" data-title="日期实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="ckrye6hvz0006ag3b11ri06bl" data-title="日期实例" class="article-share-link">分享</a>
       
       
       
@@ -503,7 +503,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="ckrye5x6h00068u3ba0noa6so" data-title="日期" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="ckrye6hw00009ag3bgg1w9u2p" data-title="日期" class="article-share-link">分享</a>
       
       
       
@@ -541,7 +541,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckrye5x6g00048u3b6p6mho48" data-title="var let const的区别" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckrye6hvx0002ag3ba6e1g35c" data-title="var let const的区别" class="article-share-link">分享</a>
       
       
       
@@ -597,7 +597,7 @@
           </li>
         
           <li>
-            <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件</a>
+            <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件-注册</a>
           </li>
         
           <li>
