@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>组件-插槽 | Moon Kui</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="插槽内容在组件中插槽允许包含字符串、任何模版代码、包括HTML或其他组件 12345678910111213141516171819&lt;div id&#x3D;&quot;app&quot;&gt;   &lt;component-a&gt;aaaa&lt;&#x2F;component-a&gt;&lt;&#x2F;div&gt; const componentA &#x3D; &amp;#123;      template:&#96;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组件-插槽">
+<meta property="og:url" content="http://example.com/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/index.html">
+<meta property="og:site_name" content="Moon Kui">
+<meta property="og:description" content="插槽内容在组件中插槽允许包含字符串、任何模版代码、包括HTML或其他组件 12345678910111213141516171819&lt;div id&#x3D;&quot;app&quot;&gt;   &lt;component-a&gt;aaaa&lt;&#x2F;component-a&gt;&lt;&#x2F;div&gt; const componentA &#x3D; &amp;#123;      template:&#96;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-08T09:39:24.000Z">
+<meta property="article:modified_time" content="2021-08-08T12:54:00.806Z">
+<meta property="article:author" content="kui">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Moon Kui" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Moon Kui</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-组件-插槽" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" class="article-date">
+  <time class="dt-published" datetime="2021-08-08T09:39:24.000Z" itemprop="datePublished">2021-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      组件-插槽
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="插槽内容"><a href="#插槽内容" class="headerlink" title="插槽内容"></a>插槽内容</h2><p>在组件中<br>插槽允许包含字符串、任何模版代码、包括HTML或其他组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">   &lt;component-a&gt;aaaa&lt;/component-a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"> const componentA = &#123;</span><br><span class="line">      template:`</span><br><span class="line">      &lt;div&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/div&gt;</span><br><span class="line">      `</span><br><span class="line">    &#125;</span><br><span class="line">    const app = Vue.createApp(&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      components:&#123;</span><br><span class="line">        componentA</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;).mount(&quot;#app&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>如果componentA中的template中没有包含一个<slot>元素,那在该组件起始标签和结束标签之间的任何内容都会被抛弃</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">&lt;!-- aaaa不会被渲染 --&gt;</span><br><span class="line">   &lt;component-a&gt;aaaa&lt;/component-a&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="渲染作用域"><a href="#渲染作用域" class="headerlink" title="渲染作用域"></a>渲染作用域</h2><p>在一个插槽中使用数据时，该插槽可以访问其余部分相同的实例property（即相同的“作用域”）<br>意思是可以访问父级组件的作用域，不能访问子组件的作用域<br>记住：父级模版里所有内容都是在父级作用域中编译的，子模版里的所有内容都是在子作用域中编译的</p>
+<h2 id="备用内容"><a href="#备用内容" class="headerlink" title="备用内容"></a>备用内容</h2><p>即在子组件的<slot>中写上内容，当在父级组件中使用子组件且不提供内容时会显示默认内容，若提供，默认内容将会被覆盖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button&gt;&lt;slot&gt;Submit&lt;/slot&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h2><p>有时我们需要多个插槽，此时可以在<slot>中加上一个name属性，若不定义name则默认name=””default<br>在向具名插槽提供内容的时候，我们可以在一个<template>元素上使用v-slot指令,并以 v-slot 的参数的形式提供其名称<br>注意：v-solt只能添加在<template>上，只有一种例外情况（即当提供的内容只有默认插槽时，组件的标签才可以被当作插槽的模版来使用。注意：此方法不能和具名插槽混用，这会导致作用域不明确）<br>具名插槽缩写：v-slot:red替换成#red</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">template:`</span><br><span class="line">     &lt;div class=&quot;component-a&quot;&gt;</span><br><span class="line">      &lt;div style=&quot;color:red&quot;&gt;</span><br><span class="line">        &lt;slot name=&quot;red&quot;&gt;&lt;/slot&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div style=&quot;color:#008c8c&quot;&gt;</span><br><span class="line">        &lt;slot name=&quot;green&quot;&gt;&lt;/slot&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">     `</span><br><span class="line"></span><br><span class="line">&lt;div&gt;&lt;template v-slot:red&gt;aaa&lt;/template&gt;&lt;/div&gt;</span><br><span class="line">&lt;div&gt;&lt;template v-slot:green&gt;aaa&lt;/template&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h2><p>让插槽内容能够访问子组件中才有的数据<br>方法：在子组件的data中定义数据，在<slot>上添加动态的attribute,在<template>上的v-slot上赋值，这个值是包含子组件data数据的一个对象名，可随意赋值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;component-a&gt;&lt;template v-slot:red=&quot;slotProps&quot;&gt;&#123;&#123;slotProps.text&#125;&#125;&lt;/template&gt;&lt;/component-a&gt;</span><br><span class="line"></span><br><span class="line">const componentA = &#123;</span><br><span class="line">    template:`</span><br><span class="line">    &lt;div class=&quot;component-a&quot;&gt;</span><br><span class="line">     &lt;div style=&quot;color:red&quot;&gt;</span><br><span class="line">       &lt;slot name=&quot;red&quot; :text=&quot;text&quot;&gt;&lt;/slot&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">    `,</span><br><span class="line">    data()&#123;</span><br><span class="line">      return&#123;</span><br><span class="line">        text:&quot;textssss&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="动态插槽名"><a href="#动态插槽名" class="headerlink" title="动态插槽名"></a>动态插槽名</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;base-layout&gt;</span><br><span class="line">  &lt;template v-slot:[dynamicSlotName]&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;/template&gt;</span><br><span class="line">&lt;/base-layout&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="解构插槽Prop"><a href="#解构插槽Prop" class="headerlink" title="解构插槽Prop"></a>解构插槽Prop</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//&lt;component-a&gt;&lt;template v-slot:red=&quot;&#123;text&#125;&quot;&gt;&#123;&#123;text&#125;&#125;&lt;/template&gt;&lt;/component-a&gt;</span><br><span class="line">//重命名</span><br><span class="line">&lt;component-a&gt;&lt;template v-slot:red=&quot;&#123;text:todo&#125;&quot;&gt;&#123;&#123;todo&#125;&#125;&lt;/template&gt;&lt;/component-a&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> const componentA = &#123;</span><br><span class="line">     template:`</span><br><span class="line">     &lt;div class=&quot;component-a&quot;&gt;</span><br><span class="line">      &lt;div style=&quot;color:red&quot;&gt;</span><br><span class="line">        &lt;slot name=&quot;red&quot; :text=&quot;text&quot;&gt;&lt;/slot&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">     `,</span><br><span class="line">     data()&#123;</span><br><span class="line">       return&#123;</span><br><span class="line">         text:&quot;textssss&quot;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" data-id="cks37r1wf000cku3bci1cdloa" data-title="组件-插槽" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">组件-Prop</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/">组件-插槽</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/">组件-Prop</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/">组件-自定义事件</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件-注册</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/">Vue3基础2</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 kui<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

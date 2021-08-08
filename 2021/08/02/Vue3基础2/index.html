@@ -6,15 +6,15 @@
   
   <title>Vue3基础2 | Moon Kui</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="实例的生命周期最主要的八个生命周期beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeUnMount、unmounted(创建前、创建后、挂载前、挂载后、更新前、更新后、卸载前、卸载后)其中beforeUpdate和updated可能不执行，也可能不只执行一次 1234&lt;div id&#x3D;&quot;app&amp;qu">
+  <meta name="description" content="实例的生命周期最主要的八个生命周期beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeUnMount、unmounted(创建前、创建后、挂载前、挂载后、更新前、更新后、卸载前、卸载后)其中beforeUpdate和updated可能不执行，也可能不只执行一次官方文档提示：不要在选项 property 或回调上使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue3基础2">
 <meta property="og:url" content="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/index.html">
 <meta property="og:site_name" content="Moon Kui">
-<meta property="og:description" content="实例的生命周期最主要的八个生命周期beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeUnMount、unmounted(创建前、创建后、挂载前、挂载后、更新前、更新后、卸载前、卸载后)其中beforeUpdate和updated可能不执行，也可能不只执行一次 1234&lt;div id&#x3D;&quot;app&amp;qu">
+<meta property="og:description" content="实例的生命周期最主要的八个生命周期beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeUnMount、unmounted(创建前、创建后、挂载前、挂载后、更新前、更新后、卸载前、卸载后)其中beforeUpdate和updated可能不执行，也可能不只执行一次官方文档提示：不要在选项 property 或回调上使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-02T13:55:37.000Z">
-<meta property="article:modified_time" content="2021-08-04T07:48:01.131Z">
+<meta property="article:modified_time" content="2021-08-06T08:22:19.080Z">
 <meta property="article:author" content="kui">
 <meta name="twitter:card" content="summary">
   
@@ -95,21 +95,22 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="实例的生命周期"><a href="#实例的生命周期" class="headerlink" title="实例的生命周期"></a>实例的生命周期</h2><p>最主要的八个生命周期<br>beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeUnMount、unmounted(创建前、创建后、挂载前、挂载后、更新前、更新后、卸载前、卸载后)<br>其中beforeUpdate和updated可能不执行，也可能不只执行一次</p>
+        <h2 id="实例的生命周期"><a href="#实例的生命周期" class="headerlink" title="实例的生命周期"></a>实例的生命周期</h2><p>最主要的八个生命周期<br>beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeUnMount、unmounted(创建前、创建后、挂载前、挂载后、更新前、更新后、卸载前、卸载后)<br>其中beforeUpdate和updated可能不执行，也可能不只执行一次<br>官方文档提示：<br>不要在选项 property 或回调上使用箭头函数，比如 created: () =&gt; console.log(this.a) 或 vm.$watch(‘a’, newValue =&gt; this.myMethod())。因为箭头函数并没有 this，this 会作为变量一直向上级词法作用域查找，直至找到为止，经常导致 Uncaught TypeError: Cannot read property of undefined 或 Uncaught TypeError: this.myMethod is not a function 之类的错误。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;counter&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;onBtnClick&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">const app = Vue.createApp(&#123;</span><br><span class="line">     data()&#123;</span><br><span class="line">       return &#123;</span><br><span class="line">         counter:1</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;,</span><br><span class="line">     beforeCreate()&#123;</span><br><span class="line">       console.log(&quot;创造前&quot;);</span><br><span class="line">     &#125;,</span><br><span class="line">     created()&#123;</span><br><span class="line">       console.log(&quot;创造后&quot;);</span><br><span class="line">     &#125;,</span><br><span class="line">     beforeMount()&#123;</span><br><span class="line">       console.log(&quot;挂载前&quot;);</span><br><span class="line">     &#125;,</span><br><span class="line">     mounted()&#123;</span><br><span class="line">       console.log(&quot;挂载后&quot;);</span><br><span class="line">     &#125;,</span><br><span class="line">     beforeUpdate()&#123;</span><br><span class="line">       console.log(&quot;更新前&quot;);</span><br><span class="line">     &#125;,</span><br><span class="line">     updated()&#123;</span><br><span class="line">       console.log(&quot;更新后&quot;);</span><br><span class="line">     &#125;,</span><br><span class="line">     beforeUnMount()&#123;</span><br><span class="line">       console.log(&quot;卸载前&quot;);</span><br><span class="line">     &#125;,</span><br><span class="line">     unMounted()&#123;</span><br><span class="line">       console.log(&quot;卸载后&quot;);</span><br><span class="line">     &#125;,</span><br><span class="line">     methods:&#123;</span><br><span class="line">      onBtnClick()&#123;</span><br><span class="line">        this.counter++</span><br><span class="line">      &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">   app.mount(&quot;#app&quot;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="文本语法"><a href="#文本语法" class="headerlink" title="文本语法"></a>文本语法</h2><h3 id="文本插值"><a href="#文本插值" class="headerlink" title="文本插值"></a>文本插值</h3><p>数据绑定最常见的形式，两个大括号，当同名中的data里的数据发生改变，插值处的内容也会更新<br>相反，使用v-once能执行一次性插值，数据改变时不更新</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;div&gt;&#123;&#123;counter&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;div v-once&gt;&#123;&#123;counter&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;button @click=&quot;onBtnClick&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">   const app = Vue.createApp(&#123;</span><br><span class="line">     data()&#123;</span><br><span class="line">       return &#123;</span><br><span class="line">         counter:1</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;,</span><br><span class="line">     methods:&#123;</span><br><span class="line">      onBtnClick()&#123;</span><br><span class="line">        this.counter++</span><br><span class="line">      &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">   app.mount(&quot;#app&quot;);</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h3><p>,双打括号会将数据输出为普通文本，v-html则是输出真正的HTML</p>
+<h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h3><p>双打括号会将数据输出为普通文本，v-html则是输出真正的HTML<br>官方文档提示：<br>在你的站点上动态渲染任意的 HTML 是非常危险的，因为它很容易导致 XSS 攻击。请只对可信内容使用 HTML 插值，绝不要将用户提供的内容作为插值。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&#123;&#123;counter&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;div v-html=&quot;counter&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  data()&#123;</span><br><span class="line">       return &#123;</span><br><span class="line">         counter : &quot;&lt;div&gt;Dom元素&lt;/div&gt;&quot;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="ckrye6hvy0003ag3b96ea648j" data-title="Vue3基础2" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="cks37r1wb0002ku3bh1ua1h6t" data-title="Vue3基础2" class="article-share-link">分享</a>
       
       
       
@@ -169,6 +170,10 @@
       <ul>
         
           <li>
+            <a href="/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/">组件-插槽</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/">组件-Prop</a>
           </li>
         
@@ -182,10 +187,6 @@
         
           <li>
             <a href="/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/">Vue3基础2</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/">Vue3基础</a>
           </li>
         
       </ul>
