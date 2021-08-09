@@ -71,6 +71,79 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-日期" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/06/30/%E6%97%A5%E6%9C%9F/" class="article-date">
+  <time class="dt-published" datetime="2021-06-30T13:30:30.000Z" itemprop="datePublished">2021-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/06/30/%E6%97%A5%E6%9C%9F/">日期</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="创建日期对象的四种方法"><a href="#创建日期对象的四种方法" class="headerlink" title="创建日期对象的四种方法"></a>创建日期对象的四种方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//四种方法创建日期对象</span><br><span class="line">   new Date(); //用当前日期和时间创建新的日期对象</span><br><span class="line">   new Date(year,month,day,hours,minutes,seconds,milliseconds); //用指定日期和时间创建新的日期对象</span><br><span class="line">   new Date(milliseconds); //创建一个零时加毫秒的新日期对象</span><br><span class="line">   new Date(date String); //从日期字符串创建一个新的对象</span><br></pre></td></tr></table></figure>
+
+<p>注意：JavaScript 将日期存储为自 1970 年 1 月 1 日 00:00:00 UTC（协调世界时）以来的毫秒数。<br>     零时间是 1970 年 1 月 1 日 00:00:00 UTC。<br>     一天（24 小时）是 86 400 000 毫秒。</p>
+<h2 id="四种Javascript输入日期格式"><a href="#四种Javascript输入日期格式" class="headerlink" title="四种Javascript输入日期格式"></a>四种Javascript输入日期格式</h2><ol>
+<li>ISO日期:”2021-06-30” (国际标准)</li>
+<li>短日期:”06/30/2021”或者”2021/06/30”</li>
+<li>长日期:”Jun 30 2021”或者”30 Jun 2021”</li>
+<li>完整日期:”Wednesday June 30 2021”<br>其中ISO格式遵守JavaScript中的严格标准<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//ISO日期也可以添加时分秒</span><br><span class="line">//（YYYY-MM-DDTHH:MM:SS)</span><br><span class="line">var d = new Date(&quot;2021-06-30T12:00:00&quot;);</span><br><span class="line">//JavaScript 接受“完整 JavaScript 格式”的日期字符串</span><br><span class="line">var date = new Date(&quot;Wednesday June 30 2021 09:00:00 GMT+0800&quot;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="JavaScript日期输出格式"><a href="#JavaScript日期输出格式" class="headerlink" title="JavaScript日期输出格式"></a>JavaScript日期输出格式</h2><p>默认输出全文本字符串格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Wed Jun 30 2021 09:00:00 GMT+0800 (中国标准时间)</span><br></pre></td></tr></table></figure>
+
+<h2 id="日期获取方法"><a href="#日期获取方法" class="headerlink" title="日期获取方法"></a>日期获取方法</h2><ol>
+<li>getDate() 以数值返回天（1-31）</li>
+<li>getDay() 以数值获取周名（0-6）</li>
+<li>getFullYear() 获取四位的年（YYYY）</li>
+<li>getHours() 获取小时（0-23）</li>
+<li>getMilliseconds() 获取毫秒（0-999）</li>
+<li>getMinutes() 获取分钟（0-59）</li>
+<li>getMonth() 获取月（0-11）</li>
+<li>getSeconds() 获取秒（0-59）</li>
+<li>getTime() 获取时间（从1970年1月1日至今）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date();</span><br><span class="line">console.log(d.getDate());//30</span><br><span class="line">console.log(d.getDay());//3</span><br><span class="line">console.log(d.getFullYear());//2021</span><br><span class="line">console.log(d.getMonth());//5</span><br><span class="line">console.log(d.getHours());//22</span><br><span class="line">console.log(d.getMinutes());//30</span><br><span class="line">console.log(d.getSeconds());//24</span><br><span class="line">console.log(d.getMilliseconds());//744</span><br><span class="line">console.log(d.getTime());//1625063424744</span><br></pre></td></tr></table></figure>
+
+<h2 id="日期设置方法"><a href="#日期设置方法" class="headerlink" title="日期设置方法"></a>日期设置方法</h2><ol>
+<li>setDate() 以数值（1-31）设置日</li>
+<li>setFullYears() 设置年</li>
+<li>setMonth() 设置月（0-11）</li>
+<li>setHours() 设置小时（0-23）</li>
+<li>setMinutes() 设置分钟（0-59）</li>
+<li>setSeconds() 设置秒（0-59）</li>
+<li>setMilliseconds() 设置毫秒（0-999）</li>
+<li>setTime() 设置时间（从1970年1月1日至今的毫秒数）</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="cks4qgpfy00089f3b5fxr198i" data-title="日期" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="page-var let const的区别" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
@@ -97,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="cks4faqhz0003fd3b49sd3a11" data-title="var let const的区别" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="cks4qgpfv00019f3be2og7iw0" data-title="var let const的区别" class="article-share-link">分享</a>
       
       
       
@@ -140,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="cks4faqhz0004fd3b1zhjb5bn" data-title="数组去重方法" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="cks4qgpfx00049f3b76br7fq8" data-title="数组去重方法" class="article-share-link">分享</a>
       
       
       
@@ -188,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="cks4faqi1000afd3b5b8y9za3" data-title="正则表达式实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="cks4qgpfy00099f3b4qxzfs0s" data-title="正则表达式实例" class="article-share-link">分享</a>
       
       
       
@@ -255,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" data-id="cks4faqi10009fd3b7vsd7imd" data-title="正则表达式基本内容" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" data-id="cks4qgpfy00079f3bhm7wbfrl" data-title="正则表达式基本内容" class="article-share-link">分享</a>
       
       
       
@@ -301,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="cks4faqi10008fd3bcsis7r1n" data-title="模版字符串" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="cks4qgpfx00069f3b2we9czov" data-title="模版字符串" class="article-share-link">分享</a>
       
       
       
@@ -367,7 +440,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" data-id="cks4faqi6000jfd3bhsc9byqd" data-title="面试总结3（js）" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" data-id="cks4qgpg2000k9f3b1vgu75pl" data-title="面试总结3（js）" class="article-share-link">分享</a>
       
       
       
@@ -428,7 +501,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="cks4faqi00005fd3b4rer3yty" data-title="数组字符串部分方法" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="cks4qgpfz000a9f3bcq4o2ovl" data-title="数组字符串部分方法" class="article-share-link">分享</a>
       
       
       
@@ -508,7 +581,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" data-id="cks4faqi5000ifd3b2gwf2z2o" data-title="面试总结2(css+css3)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/15/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%932(css+css3)/" data-id="cks4qgpg1000i9f3b9wd77ymp" data-title="面试总结2(css+css3)" class="article-share-link">分享</a>
       
       
       
@@ -570,79 +643,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="cks4faqht0000fd3baplk2m20" data-title="CSS3新特性" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-面试总结1(html+html5)" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" class="article-date">
-  <time class="dt-published" datetime="2021-06-13T09:18:25.000Z" itemprop="datePublished">2021-06-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/">面试总结1 （html html5)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>五大主流浏览器及其内核</li>
-</ol>
-<ul>
-<li>Chrome -&gt;Webkit/Blink</li>
-<li>Firefox -&gt;Gecko</li>
-<li>IE -&gt;Trident</li>
-<li>Safari -&gt;Webkit</li>
-<li>Opera -&gt;Presto/Blink</li>
-</ul>
-<ol start="2">
-<li>块级元素和行内元素有哪些，空元素</li>
-</ol>
-<ul>
-<li><p>块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增 footer  head nav aside section main article audio video canvas output</p>
-</li>
-<li><p>行内元素 a br  img map button input  i em b code del  select q label sub sup  strong small  texture span mark city abbr</p>
-</li>
-<li><p>空元素：即没有内容的HTML元素，例：br meta hr link input img</p>
-</li>
-</ul>
-<ol start="3">
-<li>html和h5怎么区分</li>
-</ol>
-<ul>
-<li>DOCTYPE声明</li>
-<li>结构语义化区别：html没有结构化语义化的标签，html5有</li>
-<li>绘图区别</li>
-<li>音频和视频的支持，html要用flash播放器支持，不支持audio,video标签，html5支持</li>
-<li>语法处理，html无法对不准确的语法，html5可以
-        
-          <p class="article-more-link">
-            <a href="/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="cks4faqi5000hfd3ba2pze4zd" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/14/CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" data-id="cks4qgpft00009f3bb1c94px9" data-title="CSS3新特性" class="article-share-link">分享</a>
       
       
       
@@ -658,7 +659,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
   </nav>
 
 </section>
@@ -690,6 +691,10 @@
       <ul>
         
           <li>
+            <a href="/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/">组件-自定义事件</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/">组件-插槽</a>
           </li>
         
@@ -703,10 +708,6 @@
         
           <li>
             <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件-注册</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/">Vue3基础2</a>
           </li>
         
       </ul>

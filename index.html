@@ -71,6 +71,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-组件-自定义事件-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/" class="article-date">
+  <time class="dt-published" datetime="2021-08-09T09:19:34.000Z" itemprop="datePublished">2021-08-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/">组件-自定义事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/" data-id="cks4qgpg0000d9f3b47d1aka7" data-title="组件-自定义事件" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-组件-插槽" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" class="article-date">
@@ -118,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" data-id="cks4faqi2000bfd3baakz9ib0" data-title="组件-插槽" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" data-id="cks4qgpfz000b9f3bc29o6n7e" data-title="组件-插槽" class="article-share-link">分享</a>
       
       
       
@@ -182,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="cks4faqi2000cfd3b36pl0ypn" data-title="组件-Prop" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="cks4qgpg2000j9f3b8afmc1l4" data-title="组件-Prop" class="article-share-link">分享</a>
       
       
       
@@ -216,11 +254,25 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="事件名"><a href="#事件名" class="headerlink" title="事件名"></a>事件名</h2><p>与组件和prop一样提供了自动的大小写转换，如果用驼峰命名的子组件中触发一个事件，你将可以在父组件中添加一个 kebab-case (短横线分隔命名) 的监听器。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.$emit(&#x27;myEvent&#x27;)</span><br><span class="line"></span><br><span class="line">&lt;my-component @my-event=&quot;doSomeThing&quot;&gt;&lt;/my-component&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="定义自定义事件"><a href="#定义自定义事件" class="headerlink" title="定义自定义事件"></a>定义自定义事件</h2><p>通过emits选项在组件上定义已发出的事件<br>当在emits选项中定义了原生事件（如click）时，将使用组件中的事件替代原生事件侦听器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.component(&#x27;custom-form&#x27;,&#123;</span><br><span class="line">  emits:[&#x27;inFocus&#x27;,&#x27;submit&#x27;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="验证抛出的事件"><a href="#验证抛出的事件" class="headerlink" title="验证抛出的事件"></a>验证抛出的事件</h2><p>与 prop 类型验证类似，如果使用对象语法而不是数组语法定义发出的事件，则可以验证它。<br>要添加验证，将为事件分配一个函数，该函数接收传递给 $emit 调用的参数，并返回一个布尔值以指示事件是否有效。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">app.component(&#x27;custom-form&#x27;,&#123;</span><br><span class="line">    emits:&#123;</span><br><span class="line">      // 没有验证</span><br><span class="line">      click:null,</span><br><span class="line"></span><br><span class="line">      //验证submit事件</span><br><span class="line">      submit:(&#123;email,password&#125;) =&gt;&#123;</span><br><span class="line">        if(email &amp;&amp; password)&#123;</span><br><span class="line">          return true</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">          console.warn(&#x27;Invalid submit event payload!&#x27;);</span><br><span class="line">          return false</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      methods:&#123;</span><br><span class="line">        submitForm(email,password)&#123;</span><br><span class="line">          this.$emit(&#x27;submit&#x27;,&#123;email,password&#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="v-model参数"><a href="#v-model参数" class="headerlink" title="v-model参数"></a>v-model参数</h2><p>默认情况下，组件上的v-model使用modelValue作为prop和update:modelValue作为事件。可以通过向v-model传递参数来修改这些名称</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-component v-model:title=&quot;bookTitle&gt;&lt;/my-component&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//在此例，子组件将需要一个title prop并发出update:title要同步的事件</span><br><span class="line">app.component(&#x27;my-component&#x27;,&#123;</span><br><span class="line">  props:&#123;</span><br><span class="line">    title:String</span><br><span class="line">  &#125;,</span><br><span class="line">  emits:[&#x27;update:title&#x27;],</span><br><span class="line">  template:`</span><br><span class="line">  &lt;input type=&quot;text&quot; :value=&quot;title&quot; @input=&quot;$emit(&#x27;update:title&#x27;,$event.target.value)&quot; &gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;my-component v-model:title=&quot;bookTitle&quot;&gt;&lt;/my-component&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多个v-model绑定"><a href="#多个v-model绑定" class="headerlink" title="多个v-model绑定"></a>多个v-model绑定</h2><p>在多个组件实例上创建多个v-model绑定</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;user-name</span><br><span class="line">  v-model:first-name=&quot;firstName&quot;</span><br><span class="line">  v-model:last-name=&quot;lastName&quot;</span><br><span class="line">&gt;&lt;/user-name&gt;</span><br><span class="line"></span><br><span class="line">app.component(&#x27;user-name&#x27;, &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    firstName: String,</span><br><span class="line">    lastName: String</span><br><span class="line">  &#125;,</span><br><span class="line">  emits: [&#x27;update:firstName&#x27;, &#x27;update:lastName&#x27;],</span><br><span class="line">  template: `</span><br><span class="line">    &lt;input </span><br><span class="line">      type=&quot;text&quot;</span><br><span class="line">      :value=&quot;firstName&quot;</span><br><span class="line">      @input=&quot;$emit(&#x27;update:firstName&#x27;, $event.target.value)&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input</span><br><span class="line">      type=&quot;text&quot;</span><br><span class="line">      :value=&quot;lastName&quot;</span><br><span class="line">      @input=&quot;$emit(&#x27;update:lastName&#x27;, $event.target.value)&quot;&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" data-id="cks4faqi4000efd3b9cssc64y" data-title="组件-自定义事件" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" data-id="cks4qgpg0000e9f3b8b2ifvua" data-title="组件-自定义事件" class="article-share-link">分享</a>
       
       
       
@@ -303,7 +355,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="cks4faqi3000dfd3b2fbi8udh" data-title="组件-注册" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="cks4qgpg0000c9f3b7b2vhaxd" data-title="组件-注册" class="article-share-link">分享</a>
       
       
       
@@ -352,7 +404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="cks4faqhx0002fd3beich99qz" data-title="Vue3基础2" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="cks4qgpfw00029f3b3g2xeci9" data-title="Vue3基础2" class="article-share-link">分享</a>
       
       
       
@@ -431,7 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="cks4faqhv0001fd3b34qgffjv" data-title="Vue3基础" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="cks4qgpfw00039f3b2hjuapj9" data-title="Vue3基础" class="article-share-link">分享</a>
       
       
       
@@ -472,7 +524,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="cks4faqi4000ffd3b8qgt683i" data-title="网页练习总结" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="cks4qgpg1000f9f3bfj9fb4am" data-title="网页练习总结" class="article-share-link">分享</a>
       
       
       
@@ -510,7 +562,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="cks4faqi4000gfd3b161wgliw" data-title="闭包" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="cks4qgpg1000g9f3b2jrb2jan" data-title="闭包" class="article-share-link">分享</a>
       
       
       
@@ -566,80 +618,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="cks4faqi00007fd3bhvxf1ca5" data-title="日期实例" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-日期" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/30/%E6%97%A5%E6%9C%9F/" class="article-date">
-  <time class="dt-published" datetime="2021-06-30T13:30:30.000Z" itemprop="datePublished">2021-06-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/30/%E6%97%A5%E6%9C%9F/">日期</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="创建日期对象的四种方法"><a href="#创建日期对象的四种方法" class="headerlink" title="创建日期对象的四种方法"></a>创建日期对象的四种方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//四种方法创建日期对象</span><br><span class="line">   new Date(); //用当前日期和时间创建新的日期对象</span><br><span class="line">   new Date(year,month,day,hours,minutes,seconds,milliseconds); //用指定日期和时间创建新的日期对象</span><br><span class="line">   new Date(milliseconds); //创建一个零时加毫秒的新日期对象</span><br><span class="line">   new Date(date String); //从日期字符串创建一个新的对象</span><br></pre></td></tr></table></figure>
-
-<p>注意：JavaScript 将日期存储为自 1970 年 1 月 1 日 00:00:00 UTC（协调世界时）以来的毫秒数。<br>     零时间是 1970 年 1 月 1 日 00:00:00 UTC。<br>     一天（24 小时）是 86 400 000 毫秒。</p>
-<h2 id="四种Javascript输入日期格式"><a href="#四种Javascript输入日期格式" class="headerlink" title="四种Javascript输入日期格式"></a>四种Javascript输入日期格式</h2><ol>
-<li>ISO日期:”2021-06-30” (国际标准)</li>
-<li>短日期:”06/30/2021”或者”2021/06/30”</li>
-<li>长日期:”Jun 30 2021”或者”30 Jun 2021”</li>
-<li>完整日期:”Wednesday June 30 2021”<br>其中ISO格式遵守JavaScript中的严格标准<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//ISO日期也可以添加时分秒</span><br><span class="line">//（YYYY-MM-DDTHH:MM:SS)</span><br><span class="line">var d = new Date(&quot;2021-06-30T12:00:00&quot;);</span><br><span class="line">//JavaScript 接受“完整 JavaScript 格式”的日期字符串</span><br><span class="line">var date = new Date(&quot;Wednesday June 30 2021 09:00:00 GMT+0800&quot;)</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="JavaScript日期输出格式"><a href="#JavaScript日期输出格式" class="headerlink" title="JavaScript日期输出格式"></a>JavaScript日期输出格式</h2><p>默认输出全文本字符串格式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Wed Jun 30 2021 09:00:00 GMT+0800 (中国标准时间)</span><br></pre></td></tr></table></figure>
-
-<h2 id="日期获取方法"><a href="#日期获取方法" class="headerlink" title="日期获取方法"></a>日期获取方法</h2><ol>
-<li>getDate() 以数值返回天（1-31）</li>
-<li>getDay() 以数值获取周名（0-6）</li>
-<li>getFullYear() 获取四位的年（YYYY）</li>
-<li>getHours() 获取小时（0-23）</li>
-<li>getMilliseconds() 获取毫秒（0-999）</li>
-<li>getMinutes() 获取分钟（0-59）</li>
-<li>getMonth() 获取月（0-11）</li>
-<li>getSeconds() 获取秒（0-59）</li>
-<li>getTime() 获取时间（从1970年1月1日至今）</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var d = new Date();</span><br><span class="line">console.log(d.getDate());//30</span><br><span class="line">console.log(d.getDay());//3</span><br><span class="line">console.log(d.getFullYear());//2021</span><br><span class="line">console.log(d.getMonth());//5</span><br><span class="line">console.log(d.getHours());//22</span><br><span class="line">console.log(d.getMinutes());//30</span><br><span class="line">console.log(d.getSeconds());//24</span><br><span class="line">console.log(d.getMilliseconds());//744</span><br><span class="line">console.log(d.getTime());//1625063424744</span><br></pre></td></tr></table></figure>
-
-<h2 id="日期设置方法"><a href="#日期设置方法" class="headerlink" title="日期设置方法"></a>日期设置方法</h2><ol>
-<li>setDate() 以数值（1-31）设置日</li>
-<li>setFullYears() 设置年</li>
-<li>setMonth() 设置月（0-11）</li>
-<li>setHours() 设置小时（0-23）</li>
-<li>setMinutes() 设置分钟（0-59）</li>
-<li>setSeconds() 设置秒（0-59）</li>
-<li>setMilliseconds() 设置毫秒（0-999）</li>
-<li>setTime() 设置时间（从1970年1月1日至今的毫秒数）</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="cks4faqi00006fd3b3hl66dye" data-title="日期" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="cks4qgpfx00059f3bb682b7py" data-title="日期实例" class="article-share-link">分享</a>
       
       
       
@@ -655,7 +634,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
   </nav>
 
 </section>
@@ -687,6 +666,10 @@
       <ul>
         
           <li>
+            <a href="/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/">组件-自定义事件</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/">组件-插槽</a>
           </li>
         
@@ -700,10 +683,6 @@
         
           <li>
             <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件-注册</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/">Vue3基础2</a>
           </li>
         
       </ul>
