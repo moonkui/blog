@@ -93,11 +93,12 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Provide-Inject"><a href="#Provide-Inject" class="headerlink" title="Provide/Inject"></a>Provide/Inject</h2><p>跨级组件传递数据。父组件使用provide选项提供数据，子组件使用inject选项去使用这些数据<br>此方法不会动态的去响应数据，除非通过传递一个 ref property 或 reactive 对象给 provide 来改变这种行为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;todo-list&gt;&lt;/todo-list&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">const app = Vue.createApp(&#123;&#125;)</span><br><span class="line">    app.component(&#x27;todo-list&#x27;,&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">          todos:[&#x27;Feed a cat&#x27;,&#x27;Buy tickets&#x27;]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      //若要访问组件实例property，需要将provide转换为返回对象的函数</span><br><span class="line">      provide:&#123;</span><br><span class="line">        user:&#x27;mo&#x27;</span><br><span class="line">      &#125;,</span><br><span class="line">      //provide()&#123;</span><br><span class="line">      //return&#123;</span><br><span class="line">      //todoLength: this.todos.length</span><br><span class="line">      //&#125;</span><br><span class="line">      //&#125;</span><br><span class="line">      template:`</span><br><span class="line">      &lt;div&gt;&#123;&#123;todos.length&#125;&#125;&lt;/div&gt;</span><br><span class="line">      &lt;todo-list-statistics&gt;&lt;/todo-list-statistics&gt;</span><br><span class="line">      `</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    app.component(&#x27;todo-list-statistics&#x27;,&#123;</span><br><span class="line">      template:`</span><br><span class="line">     </span><br><span class="line">      `,</span><br><span class="line">      inject:[&#x27;user&#x27;],</span><br><span class="line">      created()&#123;</span><br><span class="line">        console.log(`Injected property: $&#123;this.user&#125;`);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    app.mount(&quot;#app&quot;);</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/10/%E7%BB%84%E4%BB%B6-Provide-Inject-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6-%E6%A8%A1%E7%89%88%E5%BA%94%E7%94%A8/" data-id="cks61z73c000cga3b45sd69c6" data-title="组件-Provide/Inject 动态组件 模版应用" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/10/%E7%BB%84%E4%BB%B6-Provide-Inject-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6-%E6%A8%A1%E7%89%88%E5%BA%94%E7%94%A8/" data-id="cks8yg8ih000cwx3b0ot5arl4" data-title="组件-Provide/Inject 动态组件 模版应用" class="article-share-link">分享</a>
       
       
       
@@ -135,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/" data-id="cks61z73d000fga3b02sjb65t" data-title="组件-自定义事件" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/" data-id="cks8yg8ii000fwx3bcsqua3lb" data-title="组件-自定义事件" class="article-share-link">分享</a>
       
       
       
@@ -194,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" data-id="cks61z73c000dga3b4g0d7nzm" data-title="组件-插槽" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" data-id="cks8yg8ih000dwx3bfq0u6ztk" data-title="组件-插槽" class="article-share-link">分享</a>
       
       
       
@@ -258,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="cks61z73b000bga3bcle4e8m0" data-title="组件-Prop" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="cks8yg8ig000bwx3b66d0f7ee" data-title="组件-Prop" class="article-share-link">分享</a>
       
       
       
@@ -310,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" data-id="cks61z73d000gga3baph59zex" data-title="组件-自定义事件" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" data-id="cks8yg8ii000gwx3b3jp64tlq" data-title="组件-自定义事件" class="article-share-link">分享</a>
       
       
       
@@ -393,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="cks61z73c000ega3bfciqajwh" data-title="组件-注册" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="cks8yg8ii000ewx3b3csm52x6" data-title="组件-注册" class="article-share-link">分享</a>
       
       
       
@@ -442,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="cks61z7380002ga3bd4lafe0j" data-title="Vue3基础2" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="cks8yg8ib0002wx3b220i8z1r" data-title="Vue3基础2" class="article-share-link">分享</a>
       
       
       
@@ -521,7 +522,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="cks61z7370001ga3berqrd3gt" data-title="Vue3基础" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="cks8yg8i90001wx3b0rh0cfbq" data-title="Vue3基础" class="article-share-link">分享</a>
       
       
       
@@ -562,7 +563,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="cks61z73d000hga3b7dq57qs0" data-title="网页练习总结" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="cks8yg8ij000hwx3b6at2dd5i" data-title="网页练习总结" class="article-share-link">分享</a>
       
       
       
@@ -600,7 +601,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="cks61z73d000iga3belog537p" data-title="闭包" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="cks8yg8ij000iwx3b4ck1gipz" data-title="闭包" class="article-share-link">分享</a>
       
       
       
