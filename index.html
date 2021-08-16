@@ -71,6 +71,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-路由" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/15/%E8%B7%AF%E7%94%B1/" class="article-date">
+  <time class="dt-published" datetime="2021-08-15T10:06:21.000Z" itemprop="datePublished">2021-08-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/15/%E8%B7%AF%E7%94%B1/">路由</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h3><p>使用router-link会被渲染成a标签，这使得Vue Router可以在不重新加载页面的情况下更改URL，处理URL的生成以及编码</p>
+<h3 id="router-view"><a href="#router-view" class="headerlink" title="router-view"></a>router-view</h3><p>用来显示与url对应的组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;h1&gt;Hello App&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">      &lt;router-link to=&quot;/&quot;&gt;Go to Home&lt;/router-link&gt;</span><br><span class="line">      &lt;router-link to=&quot;/about&quot;&gt;Go to About&lt;/router-link&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">  &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">//1.定义路由组件</span><br><span class="line">    const Home = &#123;template:`&lt;div&gt;Home&lt;/div&gt;`&#125;</span><br><span class="line">    const About = &#123;template:`&lt;div&gt;About&lt;/div&gt;`&#125;</span><br><span class="line"></span><br><span class="line">    //2.定义一些路由，每个路由都要映射到一个组件</span><br><span class="line">    const routes = [</span><br><span class="line">      &#123;path:&#x27;/&#x27;,component:Home&#125;,</span><br><span class="line">      &#123;path:&#x27;/about&#x27;,component:About&#125;</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    //3.创建路由实例并传递`routes`配置</span><br><span class="line">    const router = VueRouter.createRouter(&#123;</span><br><span class="line">      //4.这里使用 hash 模式</span><br><span class="line">      history:VueRouter.createWebHashHistory(),</span><br><span class="line">      routes,</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    //5.创建并挂载根实例</span><br><span class="line">    const app = Vue.createApp(&#123;&#125;)</span><br><span class="line">    app.use(router)</span><br><span class="line">    app.mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="动态路由匹配"><a href="#动态路由匹配" class="headerlink" title="动态路由匹配"></a>动态路由匹配</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h1&gt;Hello App&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">      &lt;router-link to=&quot;/user/5&quot;&gt;Go to Home&lt;/router-link&gt;</span><br><span class="line">      &lt;router-link to=&quot;/about&quot;&gt;Go to About&lt;/router-link&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"> const User = &#123;</span><br><span class="line">     template:`&lt;div&gt;User&#123;&#123;$route.params.id&#125;&#125;&lt;/div&gt;`,</span><br><span class="line">     mounted()&#123;</span><br><span class="line">       console.log(this.$route);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line">    </span><br><span class="line">   const about = &#123;template:`&lt;div&gt;about&lt;/div&gt;`&#125;</span><br><span class="line"></span><br><span class="line">   const routes = [</span><br><span class="line">     //动态段以冒号开始</span><br><span class="line">     &#123;path:&#x27;/user/:id&#x27;,component:User&#125;,</span><br><span class="line">     &#123;path:&#x27;/about&#x27;,component:about&#125;</span><br><span class="line"></span><br><span class="line">   ]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   const router = VueRouter.createRouter(&#123;</span><br><span class="line">     history:VueRouter.createWebHashHistory(),</span><br><span class="line">     routes</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   const app = Vue.createApp(&#123;</span><br><span class="line">     mounted()&#123;</span><br><span class="line">       console.log(this.$router);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">   app.use(router)</span><br><span class="line">   app.mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h2><p>注意：以 / 开头的嵌套路径将被视为根路径。这允许你利用组件嵌套，而不必使用嵌套的 URL。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">      &lt;router-link to=&quot;/user&quot;&gt;User&lt;/router-link&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"> const User = &#123;</span><br><span class="line">     template:`</span><br><span class="line">     &lt;div&gt;User&lt;/div&gt;</span><br><span class="line">     &lt;router-link to=&quot;/user/setting&quot;&gt;setting&lt;/router-link&gt;</span><br><span class="line">     &lt;router-link to=&quot;/user/info&quot;&gt;info&lt;/router-link&gt;</span><br><span class="line">     &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">     `</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">    const UserSetting = &#123;template:`&lt;div&gt;Setting&lt;/div&gt;`&#125;</span><br><span class="line">    const UserInfo = &#123;template:`&lt;div&gt;Info&lt;/div&gt;`&#125;</span><br><span class="line"></span><br><span class="line">   const routes = [</span><br><span class="line">     &#123;</span><br><span class="line">       path:&#x27;/user&#x27;,</span><br><span class="line">       component:User,</span><br><span class="line">       children:[</span><br><span class="line">         &#123;</span><br><span class="line">           path:&#x27;setting&#x27;,</span><br><span class="line">           component:UserSetting</span><br><span class="line">         &#125;,</span><br><span class="line">         &#123;</span><br><span class="line">           path:&quot;info&quot;,</span><br><span class="line">           component:UserInfo</span><br><span class="line"></span><br><span class="line">         &#125;</span><br><span class="line">       ]</span><br><span class="line">    &#125;,</span><br><span class="line">   ]</span><br><span class="line"></span><br><span class="line">   const router = VueRouter.createRouter(&#123;</span><br><span class="line">     history:VueRouter.createWebHashHistory(),</span><br><span class="line">     routes</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   const app = Vue.createApp(&#123;</span><br><span class="line">     mounted()&#123;</span><br><span class="line">       console.log(this.$router);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;)</span><br><span class="line">   app.use(router)</span><br><span class="line">   app.mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/15/%E8%B7%AF%E7%94%B1/" data-id="cksehfnxk000i023bg1af8tph" data-title="路由" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-过渡和动画" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/08/12/%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/" class="article-date">
@@ -117,7 +162,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/" data-id="cksd1ln9q000hmq3b64hphf3u" data-title="过渡和动画" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/12/%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/" data-id="cksehfnxk000j023b0zlf8j4d" data-title="过渡和动画" class="article-share-link">分享</a>
       
       
       
@@ -156,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/10/%E7%BB%84%E4%BB%B6-Provide-Inject-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6-%E6%A8%A1%E7%89%88%E5%BA%94%E7%94%A8/" data-id="cksd1ln9o000cmq3b8acbdt42" data-title="组件-Provide/Inject 动态组件 模版应用" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/10/%E7%BB%84%E4%BB%B6-Provide-Inject-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6-%E6%A8%A1%E7%89%88%E5%BA%94%E7%94%A8/" data-id="cksehfnxi000c023bbvf9chjp" data-title="组件-Provide/Inject 动态组件 模版应用" class="article-share-link">分享</a>
       
       
       
@@ -194,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/" data-id="cksd1ln9p000fmq3ba7fs6hyz" data-title="组件-自定义事件" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/" data-id="cksehfnxj000f023b05wz8lru" data-title="组件-自定义事件" class="article-share-link">分享</a>
       
       
       
@@ -253,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" data-id="cksd1ln9p000dmq3b3zfah9yg" data-title="组件-插槽" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" data-id="cksehfnxi000d023b470u5948" data-title="组件-插槽" class="article-share-link">分享</a>
       
       
       
@@ -287,7 +332,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="通过Prop向子组件传递数据"><a href="#通过Prop向子组件传递数据" class="headerlink" title="通过Prop向子组件传递数据"></a>通过Prop向子组件传递数据</h2><p>Prop是我们可以在组件上注册的一些自定义attribute，一个组件默认可以拥有任意数量的prop，无论任何值都可以传递给prop<br>使用v-bind可以动态传递prop</p>
+        <h2 id="通过Prop向子组件传递数据"><a href="#通过Prop向子组件传递数据" class="headerlink" title="通过Prop向子组件传递数据"></a>通过Prop向子组件传递数据</h2><p>将数据从父组件传入子组件<br>Prop是我们可以在组件上注册的一些自定义attribute，一个组件默认可以拥有任意数量的prop，无论任何值都可以传递给prop<br>使用v-bind可以动态传递prop</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;blog-post-demo&quot;&gt;</span><br><span class="line">   &lt;blog-post title=&quot;My journey with Vue&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line">   &lt;blog-post title=&quot;Blogging with me&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line">   &lt;blog-post title=&quot;Why Vue is so fun&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">  const app = Vue.createApp(&#123;&#125;)</span><br><span class="line">   app.component(&#x27;blog-post&#x27;,&#123;</span><br><span class="line">     props:[&#x27;title&#x27;],</span><br><span class="line">     template:`&lt;h4&gt;&#123;&#123;title&#125;&#125;&lt;/h4&gt;`</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   app.mount(&#x27;#blog-post-demo&#x27;)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//动态传递prop</span><br><span class="line">&lt;div id=&quot;blog-posts-demo&quot;&gt;</span><br><span class="line">    &lt;blog-post v-for=&quot;post in posts&quot; :key=&quot;post.id&quot; :title=&quot;post.title&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">const App =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">          posts:[</span><br><span class="line">            &#123;id:1,title:&#x27;My journey with Vue&#x27;&#125;,</span><br><span class="line">            &#123;id:2,title:&#x27;Blogging with me&#x27;&#125;,</span><br><span class="line">            &#123;id:3,title:&#x27;Why Vue is so fun&#x27;&#125;</span><br><span class="line">          ]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    const app = Vue.createApp(App)</span><br><span class="line">    app.component(&#x27;blog-post&#x27;,&#123;</span><br><span class="line">      props:[&#x27;title&#x27;],</span><br><span class="line">      template:`&lt;h4&gt;&#123;&#123;title&#125;&#125;&lt;/h4&gt;`</span><br><span class="line">    &#125;)</span><br><span class="line">    app.mount(&#x27;#blog-posts-demo&#x27;)</span><br></pre></td></tr></table></figure>
 
@@ -317,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="cksd1ln9o000bmq3be6s7271c" data-title="组件-Prop" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="cksehfnxi000b023b1r4k5z3q" data-title="组件-Prop" class="article-share-link">分享</a>
       
       
       
@@ -369,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" data-id="cksd1ln9q000gmq3b9a9h8dtv" data-title="组件-自定义事件" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" data-id="cksehfnxj000g023b0vl2drgp" data-title="组件-自定义事件" class="article-share-link">分享</a>
       
       
       
@@ -452,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="cksd1ln9p000emq3be62w171j" data-title="组件-注册" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="cksehfnxj000e023bdroxadrs" data-title="组件-注册" class="article-share-link">分享</a>
       
       
       
@@ -501,7 +546,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="cksd1ln9k0002mq3b6tsdb23e" data-title="Vue3基础2" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/02/Vue3%E5%9F%BA%E7%A1%802/" data-id="cksehfnxe0002023b1ojpg2fp" data-title="Vue3基础2" class="article-share-link">分享</a>
       
       
       
@@ -568,60 +613,20 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-if=&quot;number == 1&quot;&gt;1&lt;/div&gt;</span><br><span class="line">    &lt;div v-else-if=&quot;number == 2&quot;&gt;2&lt;/div&gt;</span><br><span class="line">    &lt;div v-else&gt;3&lt;/div&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;onBtnClick&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          number:1</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods:&#123;</span><br><span class="line">        onBtnClick()&#123;</span><br><span class="line">          if(this.number == 3)&#123;</span><br><span class="line">            this.number = 1</span><br><span class="line">          &#125;else&#123;</span><br><span class="line">            this.number++;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><p>控制绑定元素的显示隐藏<br>v-show相当于在css中添加display:none,v-if则是删除/添加整个dom元素<br>如果元素频繁显示隐藏，就用v-show，在运行条件很少改变时，则使用v-if比较好</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-show=&quot;isShowDiv&quot;&gt;&#123;&#123;number&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;onBtnClick&quot;&gt;切换显示&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          isShowDiv:true,  </span><br><span class="line">          number:&#x27;mo&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods:&#123;</span><br><span class="line">        onBtnClick()&#123;</span><br><span class="line">         this.isShowDiv = !this.isShowDiv;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>渲染出一个列表，可以生成多个绑定的元素<br>key 用于决定列表元素的唯一性，即代表这个元素<br>Vue官方文档表示不推荐同时使用v-if和v-for，当v-if和v-for同时使用时，v-if具有更高的优先级</p>
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>渲染出一个列表，可以生成多个绑定的元素<br>可以用v-for指令基于一个数组来渲染一个列表，也可以用v-for 来遍历一个对象的propert<br>Vue官方文档表示不推荐同时使用v-if和v-for，当v-if和v-for同时使用时，v-if具有更高的优先级<br>key 用于决定列表元素的唯一性，即代表这个元素<br>官方文档建议尽可能在使用v-for时提供key attribute</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-for=&quot;(item,index) in list&quot; v-bind:key=&quot;item&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          list:[1,2,3,4,5,6,7,&quot;mo&quot;,9]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-for=&quot;(item,index) in list&quot; v-bind:key=&quot;index&quot; class=&quot;animation-div&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span><br><span class="line">   </span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          list:[1,2,3,4,5,6,7,&quot;mo&quot;,9]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      mounted()&#123;</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">          this.list.splice(2,1,&quot;dd&quot;)</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">  &lt;div v-for=&quot;(item,index) in list&quot; v-bind:key=&quot;index&quot; class=&quot;animation-div&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">  const Counter =&#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        list:[1,2,3,4,5,6,7,&quot;mo&quot;,9]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted()&#123;</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        this.list.splice(2,1,&quot;dd&quot;)</span><br><span class="line">      &#125;, 1000);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//可以用of代替in作分隔符</span><br><span class="line">&lt;div v-for=&quot;item of items&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;app&quot;&gt;</span><br><span class="line">   &lt;li v-for=&quot;value in myObject&quot;&gt;&#123;&#123;value&#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;!-- &lt;li v-for=&quot;(value,name,index) in myObject&quot;&gt;&#123;&#123;index&#125;&#125;.&#123;&#123;name&#125;&#125;：&#123;&#123;value&#125;&#125;&lt;/li&gt; --&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"> const app = Vue.createApp(&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">          myObject:&#123;</span><br><span class="line">            title:&#x27;11&#x27;,</span><br><span class="line">            name:&#x27;mo&#x27;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;).mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
 
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="cksd1ln9k0001mq3bb25m3r6u" data-title="Vue3基础" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-网页练习总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2021-07-14T08:50:54.000Z" itemprop="datePublished">2021-07-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/">网页练习总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="使用ajax请求发送和获取数据"><a href="#使用ajax请求发送和获取数据" class="headerlink" title="使用ajax请求发送和获取数据"></a>使用ajax请求发送和获取数据</h1><h2 id="使用POST请求发送数据"><a href="#使用POST请求发送数据" class="headerlink" title="使用POST请求发送数据"></a>使用POST请求发送数据</h2><h2 id="上传照片"><a href="#上传照片" class="headerlink" title="上传照片"></a>上传照片</h2><p>利用input type=file实现图片上传</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var imgInput = document.getElementId(&quot;img-input&quot;);</span><br><span class="line">var img = document.getElementId(&quot;img&quot;);</span><br><span class="line">var imgInputId = null;</span><br><span class="line">imgInput.onchange = function()&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="cksd1ln9r000mmq3baiqc55pr" data-title="网页练习总结" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="cksehfnxe0001023bdbq1ho2i" data-title="Vue3基础" class="article-share-link">分享</a>
       
       
       
@@ -669,6 +674,10 @@
       <ul>
         
           <li>
+            <a href="/2021/08/15/%E8%B7%AF%E7%94%B1/">路由</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/12/%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/">过渡和动画</a>
           </li>
         
@@ -682,10 +691,6 @@
         
           <li>
             <a href="/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/">组件-插槽</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/">组件-Prop</a>
           </li>
         
       </ul>
