@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-15T13:10:25.819Z</updated>
+  <updated>2021-08-26T09:08:28.762Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue CLI(1)</title>
+    <link href="http://example.com/2021/08/26/Vue-CLI-1/"/>
+    <id>http://example.com/2021/08/26/Vue-CLI-1/</id>
+    <published>2021-08-26T08:59:03.000Z</published>
+    <updated>2021-08-26T09:08:28.762Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Vue-CLI-安装"><a href="#Vue-CLI-安装" class="headerlink" title="Vue CLI 安装"></a>Vue CLI 安装</h2><p>使用命令</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line">#OR</span><br><span class="line">yarn global add @vue/cli</span><br></pre></td></tr></table></figure><p>查看版本</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure><p>如需升级运行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm update -g @vue/cli</span><br><span class="line">#OR</span><br><span class="line">yarn global upgrade --lastest @vue/cli</span><br></pre></td></tr></table></figure><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#创建一个项目</span><br><span class="line">vue create &quot;world&quot;</span><br><span class="line"></span><br><span class="line">#选择版本</span><br><span class="line">Vue CLI v4.5.13</span><br><span class="line">? Please pick a preset: (Use arrow keys)</span><br><span class="line">❯ Default ([Vue 2] babel, eslint) </span><br><span class="line">  Default (Vue 3) ([Vue 3] babel, eslint) </span><br><span class="line">  Manually select features </span><br></pre></td></tr></table></figure><p>运行文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">成功后终端会提示，按步骤操作即可</span><br><span class="line">👉  Get started with the following commands:</span><br><span class="line"></span><br><span class="line"> $ cd world</span><br><span class="line"> $ npm run serve</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Vue-CLI-安装&quot;&gt;&lt;a href=&quot;#Vue-CLI-安装&quot; class=&quot;headerlink&quot; title=&quot;Vue CLI 安装&quot;&gt;&lt;/a&gt;Vue CLI 安装&lt;/h2&gt;&lt;p&gt;使用命令&lt;/p&gt;
+&lt;figure class=&quot;highlight plai</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>路由</title>
@@ -394,46 +415,6 @@
 &lt;h2 id=&quot;基础语法&quot;&gt;&lt;a href=&quot;#基础语法&quot; class=&quot;headerlink&quot; title=&quot;基础语法&quot;&gt;&lt;/a&gt;基础语法&lt;/h2&gt;&lt;ol&gt;
 &lt;li&gt;最简单的用法看起来只是用反撇号（`)替换了单、双引号&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;let message = `hello world`;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(message);          //&amp;quot;hello world&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(typeof(message));  //&amp;quot;string&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(message.length);   //11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
 &lt;li&gt;想在字符串中使用反撇号，那么用反斜杠（\）将它转义即可，而在模版字面量中，不需要转义单、双引号&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;let message = `hello\`world!`;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(message);  //&amp;quot;hello`world!&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>面试总结3（js）</title>
-    <link href="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/"/>
-    <id>http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/</id>
-    <published>2021-06-22T03:33:49.000Z</published>
-    <updated>2021-06-25T08:52:20.097Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>数据类型有哪些？</li></ol><ul><li>原始值：Number Boolean String undefined null</li><li>引用值：array Object function…date RegExp</li></ul><ol start="2"><li>typeOf返回值 </li></ol><ul><li>String Number Boolean Object undefined function</li><li>typeOf(null)返回Object ,typeOf(array)返回Object</li></ul><ol start="3"><li>获取DOM节点的几种方式</li></ol><ul><li>通过id document.getElementById()</li><li>通过元素名 document.getElementsByTagName()</li><li>通过class document.getElementsByClassName()</li><li>通过属性名 docuemnt.getElementsByName()</li><li>document.querySelector()</li><li>document.querySelectorAll()<span id="more"></span></li></ul><ol start="4"><li>HTTP和HTTPS</li></ol><ul><li>HTTP协议通常承载于TCP协议之上，在HTTP和TCP之间添加一个安全协议层（SSL或TSL），这个时候就成了我们常说的HTTPS。默认HTTP的端口号为80，HTTPS的端口号为443</li></ul><ol start="5"><li>减少页面加载时间的方法</li></ol><ul><li>压缩Javascript css代码</li><li>优化图片（使用雪碧图/精灵图）</li><li>图片懒加载</li><li>减少HTTP请求（合并文件，合并图片）</li><li>少使用图片</li></ul><ol start="6"><li>怎么适应尺寸</li></ol><ul><li>使用媒体查询</li><li>使用弹性布局</li></ul><ol start="7"><li>下拉页面，实现快速加载页面</li></ol><ul><li>实现方式：监听滚动事件，使用分页加载，需要接口支持，如一次只加载20条记录，然后通过监听滚动事件，当快滚动到底部的时候加载下一页的数据</li></ul><ol start="8"><li>audio、video支持格式</li></ol><ul><li>video支持格式：Ogg、MPEG4、WEBM</li><li>audio支持格式：wav、mp3、ogg、acc、webm等格式</li></ul><ol start="9"><li>怎么解决跨域问题</li></ol><ul><li>设置代理服务器</li><li>后端设置跨域响应头</li><li>JSONP</li></ul><ol start="10"><li>数组去重方法</li></ol><ul><li></li></ul><ol start="11"><li>一个四则运算的字符串输出结果</li></ol><ol start="12"><li><p>数组不用排序找第二大的数</p></li><li><p>找出字符串中第一个不重复的字符</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//法一：</span><br><span class="line">function test(str)&#123;</span><br><span class="line">            var len = str.length;</span><br><span class="line">              //循环字符串</span><br><span class="line">            for(var i = 0;i&lt;len;i++)&#123;</span><br><span class="line">              //截取i后面的字符串</span><br><span class="line">              var firStr = str.slice(i+1);</span><br><span class="line">              //截取i前面的字符串</span><br><span class="line">              var secStr = str.slice(0,i);</span><br><span class="line">              //判断i值是否存在于后面的字符串或者前面的字符串</span><br><span class="line">              if(firStr.indexOf(str[i]) == -1 &amp;&amp; secStr.indexOf(str[i]) == -1)&#123;</span><br><span class="line">                return str[i];</span><br><span class="line">              &#125;else&#123;</span><br><span class="line">                continue;</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">//法二</span><br><span class="line">for(let x of str) &#123; </span><br><span class="line">   let reg = new RegExp(`$&#123;x&#125;`,&#x27;g&#x27;); //创建正则</span><br><span class="line">  </span><br><span class="line">    if (str.match(reg).length == 1)  &#123; </span><br><span class="line">    console.log(x); //输出第一个不重复的字符</span><br><span class="line">    break; //终止循环</span><br><span class="line">    &#125;s</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure></li></ol><ol start="14"><li>undefined和null的区别</li></ol><ul><li>null表示”没有对象”，即该处不应该有值，undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义</li><li>null转化为数值时为0，undefined，转为数值时是NaN</li><li>undefined == null(true)、 undefined===null(false)</li></ul><ol start="15"><li><p>数据库左链接和右链接的区别</p></li><li><p>vue中data是函数的原因</p></li><li><p>去掉一个字符内所有的空格</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot; 6 4 55 3 &quot;;</span><br><span class="line">var result = str.replace(/\s*/g,&quot;&quot;);</span><br><span class="line">console.log(result);//返回64553</span><br></pre></td></tr></table></figure></li></ol><ul><li>扩展</li><li>去除字符串内两头的空格 str1 = str.replace(/^\s*|\s*$/g,””)</li><li>去除字符串内左侧的空格 str1 = str.replace(/^\s*/,””)</li><li>去除字符串内右侧的空格 str1 = str.replace(/\s*$/g,””)</li></ul><ol start="18"><li><p>GET请求和POST请求的区别</p></li><li><p>js中==和===的区别</p></li></ol><ul><li>在==中， 只比较值。如果两个值类型不同也可能相等，如null == undefined</li><li>在===中，比较类型和值。如果值类型不同，肯定不相等</li></ul><ol start="20"><li><p>Ajax怎么用</p></li><li></li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;数据类型有哪些？&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;原始值：Number Boolean String undefined null&lt;/li&gt;
-&lt;li&gt;引用值：array Object function…date RegExp&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start=&quot;2&quot;&gt;
-&lt;li&gt;typeOf返回值 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;String Number Boolean Object undefined function&lt;/li&gt;
-&lt;li&gt;typeOf(null)返回Object ,typeOf(array)返回Object&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start=&quot;3&quot;&gt;
-&lt;li&gt;获取DOM节点的几种方式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;通过id document.getElementById()&lt;/li&gt;
-&lt;li&gt;通过元素名 document.getElementsByTagName()&lt;/li&gt;
-&lt;li&gt;通过class document.getElementsByClassName()&lt;/li&gt;
-&lt;li&gt;通过属性名 docuemnt.getElementsByName()&lt;/li&gt;
-&lt;li&gt;document.querySelector()&lt;/li&gt;
-&lt;li&gt;document.querySelectorAll()</summary>
     
     
     

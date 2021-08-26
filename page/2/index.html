@@ -71,6 +71,86 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Vue3基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" class="article-date">
+  <time class="dt-published" datetime="2021-08-01T15:02:07.000Z" itemprop="datePublished">2021-08-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/">Vue3基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &#123;&#123;number&#125;&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">   &lt;!-- &#123;&#123;number&#125;&#125; -&gt;文本插值 --&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const Counter = &#123;</span><br><span class="line">   // data是函数，返回的是一个对象</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          number : 2</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">Vue.createApp(Counter).mount(&quot;#counter&quot;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用JavaScript表达式"><a href="#使用JavaScript表达式" class="headerlink" title="使用JavaScript表达式"></a>使用JavaScript表达式</h2><p>对于所有的数据绑定，Vue.js都提供来完全的JavaScript表达式的支持<br>但是有个限制就是每个绑定都只能包含单个表达式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--  这是语句，不是表达式：--&gt;</span><br><span class="line">&#123;&#123; var a = 1 &#125;&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 流控制也不会生效，请使用三元表达式 --&gt;</span><br><span class="line">&#123;&#123; if (ok) &#123; return message &#125; &#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h2><p>绑定元素的属性<br>如果绑定的值是null或undefined，那该attribute将不会被包含在渲染的元素上<br>对于v-bind如果disabled的值是truthy，那么disabled attribute将包含在内，如果该值是一个空字符串，它也会包含在内，与<div disabled="">保持一致.对于其他错误的值，该attribute将被省略</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:disabled=&quot;isDivDisabled&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">   &lt;div v-bind:title=&quot;message&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">    const Counter = &#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          message : &#x27;container&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Truthy-真值"><a href="#Truthy-真值" class="headerlink" title="Truthy(真值)"></a>Truthy(真值)</h3><p>指的是在布尔值上下文中，转换后的值为真的值。所有值都是真值，除非它们被定义为假值（即除false、0、””、null、undefined和NaN以外的皆为真值）</p>
+<h2 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h2><p>添加事件监听器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;event-handling&quot;&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;onBtnClick&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123;message&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"> &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line">   const eventHandling =&#123;</span><br><span class="line">     data()&#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        message:1</span><br><span class="line">      &#125;</span><br><span class="line">     &#125;,</span><br><span class="line">     methods:&#123;</span><br><span class="line">      // onBtnClick:function()&#123;&#125;</span><br><span class="line">      onBtnClick()&#123;</span><br><span class="line">        this.message++;</span><br><span class="line">      &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   Vue.createApp(eventHandling).mount(&quot;#event-handling&quot;)</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>除了直接绑定到一个方法，也可以在内联JavaScript语句中调用方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">&lt;button @click=&quot;say(hi)&quot;&gt;say&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">Vue.creatApp(&#123;</span><br><span class="line">  methods:&#123;</span><br><span class="line">    say(message)&#123;</span><br><span class="line">      alert(message)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).mount(&quot;#app&quot;)</span><br><span class="line"></span><br><span class="line">&lt;!-- 原js中的event即原始的DOM事件，可以用$event传入 --&gt;</span><br><span class="line">&lt;button @click=&quot;say(hi,$event)&quot;&gt;say&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">methods:&#123;</span><br><span class="line">    say(message,event)&#123;</span><br><span class="line">      alert(message)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  &lt;!-- 多事件处理 --&gt;</span><br><span class="line">&lt;button @click=&quot;one($event), two($event)&quot;&gt;</span><br><span class="line">  Submit</span><br><span class="line">&lt;/button&gt; </span><br></pre></td></tr></table></figure>
+
+<h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><p>为了阻止默认事件，修饰符是由点开头的指令后缀来表示的<br>.stop 阻止单击事件继续传播<br>.prevent 提交事件不再重载<br>.capture 添加事件监听器时使用事件捕获事件（即内部元素触发的事件先在此处理，然后才交由内部元素进行处理）<br>.self 只当在event.target是当前元素自身是触发处理函数（即事件不是从内部元素触发的）<br>.once 点击事件只会触发一次<br>.passive<br>提示：修饰符可以串联，但顺序很重要；相应的代码会以同样的顺序产生。因此，用 v-on:click.prevent.self 会阻止所有的点击，而 v-on:click.self.prevent 只会阻止对元素自身的点击。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a @click.stop.prevent=&quot;dothis&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;div @click.capture=&quot;do&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="按键修饰符-按键别名-系统修饰键-鼠标按钮修饰符"><a href="#按键修饰符-按键别名-系统修饰键-鼠标按钮修饰符" class="headerlink" title="按键修饰符 按键别名 系统修饰键 鼠标按钮修饰符"></a>按键修饰符 按键别名 系统修饰键 鼠标按钮修饰符</h3><p>按键别名<br>Vue 为最常用的键提供了别名<br>.enter<br>.tab<br>.delete (捕获“删除”和“退格”键)<br>.esc<br>.space<br>.up<br>.down<br>.left<br>.right</p>
+<p>系统修饰键<br>用如下修饰符来实现仅在按下相应按键时才触发鼠标或键盘事件的监听器。<br>.ctrl<br>.alt<br>.shift<br>.meta</p>
+<p>这些修饰符会限制处理函数仅响应特定的鼠标按钮。<br>.left<br>.right<br>.middle</p>
+<p>.exact 修饰符允许我们控制由精确的系统修饰符组合触发的事件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 只有在`key`是`Enter`式调用submit --&gt;</span><br><span class="line">&lt;input @keyup.enter=&quot;submit&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- Alt + Enter --&gt;</span><br><span class="line">&lt;input @keyup.alt.enter=&quot;clear&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 即使 Alt 或 Shift 被一同按下时也会触发 --&gt;</span><br><span class="line">&lt;button @click.ctrl=&quot;onClick&quot;&gt;A&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 有且只有 Ctrl 被按下的时候才触发 --&gt;</span><br><span class="line">&lt;button @click.ctrl.exact=&quot;onCtrlClick&quot;&gt;A&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 没有任何系统修饰符被按下的时候才触发 --&gt;</span><br><span class="line">&lt;button @click.exact=&quot;onClick&quot;&gt;A&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="动态参数"><a href="#动态参数" class="headerlink" title="动态参数"></a>动态参数</h2><p>也可以在指令参数中使用 JavaScript 表达式，方法是用方括号括起来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- attributeName 会被作为一个 JavaScript 表达式进行动态求值，求得的值将会作为最终的参数来使用。若 组件实例中 data property attributeName，其值为 &quot;href&quot;，那么这个绑定将等价于 v-bind:href --&gt;</span><br><span class="line">&lt;a v-bind:[attributeName]=&quot;url&quot;&gt; ... &lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 当 eventName 的值为 &quot;focus&quot; 时，v-on:[eventName] 将等价于 v-on:focus --&gt;</span><br><span class="line">&lt;a v-on:[eventName]=&quot;doSomething&quot;&gt; ... &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h2><p>双向绑定表单元素（input,textarea,select…）的value值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;two-way-binding&quot;&gt;</span><br><span class="line">    &lt;input v-model=&quot;message&quot; type=&quot;text&quot;&gt;</span><br><span class="line">    &lt;div&gt;&#123;&#123;message&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const TwoWay = &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        message:&quot;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Vue.createApp(TwoWay).mount(&#x27;#two-way-binding&#x27;)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>修饰符 .lazy .number .trim<br>在默认情况下，v-model 在每次 input 事件触发后将输入框的值与数据进行同步 (除了上述输入法组织文字时)。你可以添加 lazy 修饰符，从而转为在 change 事件_之后_进行同步</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在&quot;change&quot;时而非&quot;input&quot;时更新 --&gt;</span><br><span class="line">&lt;input v-model.laze=&quot;msg&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 自动将用户的输入值转为数值类型 --&gt;</span><br><span class="line">&lt;input v-model.number=&quot;age&quot; type=&quot;number&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 自动过滤用户输入的首尾空白字符 --&gt;</span><br><span class="line">&lt;input v-model.trim=&quot;msg&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if v-else-if v-else"></a>v-if v-else-if v-else</h2><p>控制绑定元素的有无</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-if=&quot;number == 1&quot;&gt;1&lt;/div&gt;</span><br><span class="line">    &lt;div v-else-if=&quot;number == 2&quot;&gt;2&lt;/div&gt;</span><br><span class="line">    &lt;div v-else&gt;3&lt;/div&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;onBtnClick&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          number:1</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods:&#123;</span><br><span class="line">        onBtnClick()&#123;</span><br><span class="line">          if(this.number == 3)&#123;</span><br><span class="line">            this.number = 1</span><br><span class="line">          &#125;else&#123;</span><br><span class="line">            this.number++;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h2><p>控制绑定元素的显示隐藏<br>v-show相当于在css中添加display:none,v-if则是删除/添加整个dom元素<br>如果元素频繁显示隐藏，就用v-show，在运行条件很少改变时，则使用v-if比较好</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-show=&quot;isShowDiv&quot;&gt;&#123;&#123;number&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;onBtnClick&quot;&gt;切换显示&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          isShowDiv:true,  </span><br><span class="line">          number:&#x27;mo&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      methods:&#123;</span><br><span class="line">        onBtnClick()&#123;</span><br><span class="line">         this.isShowDiv = !this.isShowDiv;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h2><p>渲染出一个列表，可以生成多个绑定的元素<br>可以用v-for指令基于一个数组来渲染一个列表，也可以用v-for 来遍历一个对象的propert<br>Vue官方文档表示不推荐同时使用v-if和v-for，当v-if和v-for同时使用时，v-if具有更高的优先级<br>key 用于决定列表元素的唯一性，即代表这个元素<br>官方文档建议尽可能在使用v-for时提供key attribute</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">    &lt;div v-for=&quot;(item,index) in list&quot; v-bind:key=&quot;item&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;script src=&quot;./vue.global.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    const Counter =&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          list:[1,2,3,4,5,6,7,&quot;mo&quot;,9]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;counter&quot;&gt;</span><br><span class="line">  &lt;div v-for=&quot;(item,index) in list&quot; v-bind:key=&quot;index&quot; class=&quot;animation-div&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"> </span><br><span class="line">  const Counter =&#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        list:[1,2,3,4,5,6,7,&quot;mo&quot;,9]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted()&#123;</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        this.list.splice(2,1,&quot;dd&quot;)</span><br><span class="line">      &#125;, 1000);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  Vue.createApp(Counter).mount(&#x27;#counter&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//可以用of代替in作分隔符</span><br><span class="line">&lt;div v-for=&quot;item of items&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul id=&quot;app&quot;&gt;</span><br><span class="line">   &lt;li v-for=&quot;value in myObject&quot;&gt;&#123;&#123;value&#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;!-- &lt;li v-for=&quot;(value,name,index) in myObject&quot;&gt;&#123;&#123;index&#125;&#125;.&#123;&#123;name&#125;&#125;：&#123;&#123;value&#125;&#125;&lt;/li&gt; --&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line"> const app = Vue.createApp(&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">          myObject:&#123;</span><br><span class="line">            title:&#x27;11&#x27;,</span><br><span class="line">            name:&#x27;mo&#x27;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;).mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/01/Vue3%E5%9F%BA%E7%A1%80/" data-id="ckssphzaa00019p3b4i2902c9" data-title="Vue3基础" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-网页练习总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" class="article-date">
@@ -100,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="cksehfnxk000h023b7vtyde4k" data-title="网页练习总结" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/14/%E7%BD%91%E9%A1%B5%E7%BB%83%E4%B9%A0%E6%80%BB%E7%BB%93/" data-id="ckssphzah000l9p3b936y8nfo" data-title="网页练习总结" class="article-share-link">分享</a>
       
       
       
@@ -138,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="cksehfnxl000k023bbp3jen5g" data-title="闭包" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/07/01/%E9%97%AD%E5%8C%85/" data-id="ckssphzah000j9p3bhwjmeh0q" data-title="闭包" class="article-share-link">分享</a>
       
       
       
@@ -194,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="cksehfnxg0007023bhyo5gtia" data-title="日期实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F%E5%AE%9E%E4%BE%8B/" data-id="ckssphzae000b9p3b4gh67g98" data-title="日期实例" class="article-share-link">分享</a>
       
       
       
@@ -267,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="cksehfnxg0006023be5hodwb9" data-title="日期" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/30/%E6%97%A5%E6%9C%9F/" data-id="ckssphzae000a9p3bf79l7w2p" data-title="日期" class="article-share-link">分享</a>
       
       
       
@@ -305,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="cksehfnxf0003023ba8b58n9y" data-title="var let const的区别" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/var%20let%20const%E7%9A%84%E5%8C%BA%E5%88%AB/" data-id="ckssphzac00049p3b78r8ev6u" data-title="var let const的区别" class="article-share-link">分享</a>
       
       
       
@@ -348,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="cksehfnxf0004023b0gc8fcev" data-title="数组去重方法" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/25/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ckssphzab00029p3b971rfu3r" data-title="数组去重方法" class="article-share-link">分享</a>
       
       
       
@@ -396,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="cksehfnxh000a023b5j0bhq5u" data-title="正则表达式实例" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/24/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AE%9E%E4%BE%8B/" data-id="ckssphzad00089p3b2vpeg3sg" data-title="正则表达式实例" class="article-share-link">分享</a>
       
       
       
@@ -463,7 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" data-id="cksehfnxh0009023bcsdy7tlh" data-title="正则表达式基本内容" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E6%9C%AC%E5%86%85%E5%AE%B9/" data-id="ckssphzad00079p3bfyfyevcb" data-title="正则表达式基本内容" class="article-share-link">分享</a>
       
       
       
@@ -509,73 +589,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="cksehfnxg0008023b0u6yc6ld" data-title="模版字符串" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-面试总结3（js）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" class="article-date">
-  <time class="dt-published" datetime="2021-06-22T03:33:49.000Z" itemprop="datePublished">2021-06-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/">面试总结3（js）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>数据类型有哪些？</li>
-</ol>
-<ul>
-<li>原始值：Number Boolean String undefined null</li>
-<li>引用值：array Object function…date RegExp</li>
-</ul>
-<ol start="2">
-<li>typeOf返回值 </li>
-</ol>
-<ul>
-<li>String Number Boolean Object undefined function</li>
-<li>typeOf(null)返回Object ,typeOf(array)返回Object</li>
-</ul>
-<ol start="3">
-<li>获取DOM节点的几种方式</li>
-</ol>
-<ul>
-<li>通过id document.getElementById()</li>
-<li>通过元素名 document.getElementsByTagName()</li>
-<li>通过class document.getElementsByClassName()</li>
-<li>通过属性名 docuemnt.getElementsByName()</li>
-<li>document.querySelector()</li>
-<li>document.querySelectorAll()
-        
-          <p class="article-more-link">
-            <a href="/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/#more">阅读更多</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/22/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%933%EF%BC%88js%EF%BC%89/" data-id="cksehfnxm000n023b9tc6hd4q" data-title="面试总结3（js）" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/23/%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2/" data-id="ckssphzad00099p3bd9a8bhsi" data-title="模版字符串" class="article-share-link">分享</a>
       
       
       
@@ -623,6 +637,10 @@
       <ul>
         
           <li>
+            <a href="/2021/08/26/Vue-CLI-1/">Vue CLI(1)</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/15/%E8%B7%AF%E7%94%B1/">路由</a>
           </li>
         
@@ -636,10 +654,6 @@
         
           <li>
             <a href="/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/">组件-自定义事件</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/">组件-插槽</a>
           </li>
         
       </ul>
