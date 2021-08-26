@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Vue CLI(配置参考) | Moon Kui</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="全局CLI配置有些针对 @vue&#x2F;cli 的全局配置，例如你惯用的包管理器和你本地保存的 preset，都保存在 home 目录下一个名叫 .vuerc 的 JSON 文件。 vue.config.js可选的配置文件，若项目的（和package.json同级）根目录中存在这个文件，则会被自动加载。你可以使用package.json中的vue字段，但是要严格按照JSON的格式来写这个文件应导出一个包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue CLI(配置参考)">
+<meta property="og:url" content="http://example.com/2021/08/26/Vue-CLI-%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83/index.html">
+<meta property="og:site_name" content="Moon Kui">
+<meta property="og:description" content="全局CLI配置有些针对 @vue&#x2F;cli 的全局配置，例如你惯用的包管理器和你本地保存的 preset，都保存在 home 目录下一个名叫 .vuerc 的 JSON 文件。 vue.config.js可选的配置文件，若项目的（和package.json同级）根目录中存在这个文件，则会被自动加载。你可以使用package.json中的vue字段，但是要严格按照JSON的格式来写这个文件应导出一个包">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-26T09:14:04.000Z">
+<meta property="article:modified_time" content="2021-08-26T13:17:22.384Z">
+<meta property="article:author" content="kui">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Moon Kui" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Moon Kui</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Vue-CLI-配置参考" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/26/Vue-CLI-%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83/" class="article-date">
+  <time class="dt-published" datetime="2021-08-26T09:14:04.000Z" itemprop="datePublished">2021-08-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Vue CLI(配置参考)
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="全局CLI配置"><a href="#全局CLI配置" class="headerlink" title="全局CLI配置"></a>全局CLI配置</h2><p>有些针对 @vue/cli 的全局配置，例如你惯用的包管理器和你本地保存的 preset，都保存在 home 目录下一个名叫 .vuerc 的 JSON 文件。</p>
+<h2 id="vue-config-js"><a href="#vue-config-js" class="headerlink" title="vue.config.js"></a>vue.config.js</h2><p>可选的配置文件，若项目的（和package.json同级）根目录中存在这个文件，则会被自动加载。<br>你可以使用package.json中的vue字段，但是要严格按照JSON的格式来写<br>这个文件应导出一个包含了选项的对象</p>
+<h3 id="publicPath"><a href="#publicPath" class="headerlink" title="publicPath"></a>publicPath</h3><p>打包bulid完后，都单独生成一个/dist文件夹<br>publicPath设置的是域名根目录到项目根目录间的url，默认’/‘是根目录，部署应用包的基本URL，不是项目打包出来的文件存放的位置</p>
+<h3 id="outputDir"><a href="#outputDir" class="headerlink" title="outputDir"></a>outputDir</h3><p>用来设置项目打包生成的文件的存储目录，可以是静态路径也可以是相对路径，相对路径是相对于文件当前的根路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//vue.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  </span><br><span class="line">  publicPath:&#x27;&#x27;,//基本路径</span><br><span class="line">  outputDir:&#x27;dist&#x27;,//输出目录</span><br><span class="line">  assetsDir:&#123;</span><br><span class="line">    Type:string,</span><br><span class="line">    Default:&#x27;&#x27;,</span><br><span class="line">  &#125;</span><br><span class="line">  indexPath:&#123;</span><br><span class="line">    Type:string,</span><br><span class="line">    Default:&#x27;index.html&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  filenameHashing:&#123;</span><br><span class="line">    Type:boolean,</span><br><span class="line">    Default:true</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代理-devServer"><a href="#代理-devServer" class="headerlink" title="代理 devServer"></a>代理 devServer</h3><p>解决开发环境的跨域问题<br>（跨域就是不同源，即不满足协议、域名、端口都相同的约定）<br>（同源是指：协议、域名、端口都相同）<br>假设要把<a target="_blank" rel="noopener" href="http://localhost:8081/allin/policy/getProductInfo">http://localhost:8081/allin/policy/getProductInfo</a> 中的域名换成 <a target="_blank" rel="noopener" href="http://www.test.com/">www.test.com</a> 相当于把请求换成 <a target="_blank" rel="noopener" href="http://www.test.com/allin/policy/getProductInfo">http://www.test.com/allin/policy/getProductInfo</a><br>代理：在本地会创建一个虚拟服务端，然后发送请求的数据，并同时接收请求的数据，这样客户端端和服务端进行数据的交互就不会有跨域问题<br>把请求的url写成/politics/2021_08_26_604559.shtml</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  devServer:&#123;</span><br><span class="line">    proxy: &#x27;https://www.guancha.cn/&#x27; //要访问的跨域的域名</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">\\App.vue</span><br><span class="line">export default &#123;</span><br><span class="line">created()&#123;</span><br><span class="line">    const xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.open(&quot;get&quot;,&quot;/politics/2021_08_26_604559.shtml&quot;)</span><br><span class="line">    xhr.send()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>请求多个服务器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  devServer:&#123;</span><br><span class="line">    proxy:&#123;</span><br><span class="line">      &#x27;/api1&#x27;:&#123;</span><br><span class="line">        target:&#x27;https://www.guancha.cn&#x27;,</span><br><span class="line">        ws:true,</span><br><span class="line">        changeOrigin:true</span><br><span class="line">      &#125;,</span><br><span class="line">      &#x27;/api2&#x27;:&#123;</span><br><span class="line">        target:&#x27;https://www.ithome.com&#x27;,</span><br><span class="line">        ws:true,</span><br><span class="line">        changeOrigin:true</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">\\App.vue</span><br><span class="line">export default &#123;</span><br><span class="line">created()&#123;</span><br><span class="line">    const xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.open(&quot;get&quot;,&quot;/api1/politics/2021_08_26_604559.shtml&quot;)</span><br><span class="line">    xhr.send();</span><br><span class="line"></span><br><span class="line">    const xhr2 = new XMLHttpRequest();</span><br><span class="line">    xhr2.open(&quot;get&quot;,&quot;/api2/0/571/567.htm&quot;)</span><br><span class="line">    xhr2.send();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/26/Vue-CLI-%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83/" data-id="ckst0ipqp0002qi3bdn131ecc" data-title="Vue CLI(配置参考)" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/08/26/Vue-CLI-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Vue CLI(1)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">八月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">七月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/08/26/Vue-CLI-%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83/">Vue CLI(配置参考)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/26/Vue-CLI-1/">Vue CLI(1)</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/15/%E8%B7%AF%E7%94%B1/">路由</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/12/%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/">过渡和动画</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/10/%E7%BB%84%E4%BB%B6-Provide-Inject-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6-%E6%A8%A1%E7%89%88%E5%BA%94%E7%94%A8/">组件-Provide/Inject 动态组件 模版应用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 kui<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
