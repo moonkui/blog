@@ -14,7 +14,7 @@
 <meta property="og:description" content="数组方法 indexOf lastIndexOf   indexOf 定义：可返回数组中某个指定元素的位置 语法：array.indexOf(item,start) 用法：从头到尾检索数组，看是否含有对应元素，检索的位置是start对应位置或者从头开始（start参数未写时），检索到item则返回它第一次出现的位置，返回值为Number类型，未找到指定元素返回-1 lastIndexOf 定义：返">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-21T02:30:07.000Z">
-<meta property="article:modified_time" content="2021-07-06T06:57:23.305Z">
+<meta property="article:modified_time" content="2021-08-27T13:18:28.726Z">
 <meta property="article:author" content="kui">
 <meta name="twitter:card" content="summary">
   
@@ -138,7 +138,7 @@
 <li>forEach</li>
 </ol>
 <ul>
-<li> 定义及用法：用于调用数组的每个元素，并将元素传递给会调函数</li>
+<li> 定义及用法：用于调用数组的每个元素，并将元素传递给回调函数</li>
 <li>注意：forEach()对于空数组是不会执行回调函数的 </li>
 <li>语法：array.forEach(function(currentValue,index,arr),thisValue)</li>
 <li>currentValue 必填，当前元素</li>
@@ -203,7 +203,20 @@
 <ul>
 <li>对数组的元素进行排序，改变原数组</li>
 <li>array.sort(sortfunction)</li>
+<li>sort里可以放一个函数</li>
+<li>array.sort() –仅是这样写，是按照字符编码的顺序进行排序</li>
+<li>如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：</li>
 </ul>
+<ol>
+<li><p>若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。</p>
+</li>
+<li><p>若 a 等于 b，则返回 0。</p>
+</li>
+<li><p>若 a 大于 b，则返回一个大于 0 的值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> //从小到大排序</span><br><span class="line"> function sortNumber(a,b)&#123;</span><br><span class="line">    return a - b</span><br><span class="line"> &#125;</span><br><span class="line">//从大到小排序</span><br><span class="line"> function sortNumber(a,b)&#123;</span><br><span class="line">    return b - a</span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>toString<br>把数组转换为字符串，并返回结果</p>
+</li>
+</ol>
 <h2 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h2><ol>
 <li>indexOf lastIndexOf</li>
 </ol>
@@ -262,11 +275,25 @@
 <li>定义和用法：返回指定索引位置的字符</li>
 <li>语法：string.charAt(index)<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;hello world i me you&quot;</span><br><span class="line">console.log(str.charAt(0));//返回h</span><br><span class="line">console.log(str.charAt(str.length - 1));//返回u</span><br></pre></td></tr></table></figure></li>
 </ul>
+<ol start="8">
+<li><p>charCodeAt()<br>返回指定位置的字符的Unicode编码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var str=&quot;Hello world!&quot;</span><br><span class="line">console.log(str.charCodeAt(1)) //101</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>match()<br>找到一个或多个正则表达式的匹配<br>区分大小写，返回的是一个数组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;1 and 3 dd 4 d 55&quot;;</span><br><span class="line">console.log(str.match(/\d+/g)) //[&quot;1&quot;, &quot;3&quot;, &quot;4&quot;, &quot;55&quot;]</span><br></pre></td></tr></table></figure></li>
+<li><p>search()<br>检索与正则表达式相匹配的字符串用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。<br>search() 方法不执行全局匹配，它将忽略标志 g。它同时忽略 regexp 的 lastIndex 属性，并且总是从字符串的开始进行检索，这意味着它总是返回 stringObject 的第一个匹配的位置。<br>返回值：stringObject 中第一个与 regexp 相匹配的子串的起始位置。<br>如果没有找到任何匹配的子串，则返回 -1。</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;Hello world!&quot;</span><br><span class="line">console.log(str.search(/world/)); //6</span><br></pre></td></tr></table></figure>
+
+<ol start="11">
+<li>toLowerCase()    把字符串转换为小写。</li>
+<li>toUpperCase()    把字符串转换为大写。</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="ckst0ipqq0006qi3b8qiw2rjd" data-title="数组字符串部分方法" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/21/%E6%95%B0%E7%BB%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%83%A8%E5%88%86%E5%B1%9E%E6%80%A7%E7%94%A8%E6%B3%95/" data-id="ckszwgaqo0006v23b083j7ofp" data-title="数组字符串部分方法" class="article-share-link">分享</a>
       
       
       
@@ -326,6 +353,14 @@
       <ul>
         
           <li>
+            <a href="/2021/08/30/VUe-Router/">VUe Router</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/26/Ajax/">Ajax</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/26/Vue-CLI-%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83/">Vue CLI(配置参考)</a>
           </li>
         
@@ -335,14 +370,6 @@
         
           <li>
             <a href="/2021/08/15/%E8%B7%AF%E7%94%B1/">路由</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/12/%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/">过渡和动画</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/10/%E7%BB%84%E4%BB%B6-Provide-Inject-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6-%E6%A8%A1%E7%89%88%E5%BA%94%E7%94%A8/">组件-Provide/Inject 动态组件 模版应用</a>
           </li>
         
       </ul>

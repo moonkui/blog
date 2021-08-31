@@ -71,6 +71,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-VUe-Router" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/30/VUe-Router/" class="article-date">
+  <time class="dt-published" datetime="2021-08-30T04:40:11.000Z" itemprop="datePublished">2021-08-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/30/VUe-Router/">VUe Router</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/30/VUe-Router/" data-id="ckszwgaqk0000v23b9pox3qsr" data-title="VUe Router" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Ajax" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/08/26/Ajax/" class="article-date">
+  <time class="dt-published" datetime="2021-08-26T14:37:32.000Z" itemprop="datePublished">2021-08-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/08/26/Ajax/">Ajax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Ajax简介"><a href="#Ajax简介" class="headerlink" title="Ajax简介"></a>Ajax简介</h2><p>AJAX是异步JavaScript和XML，简单地说，使用XMLHttpRequest对象与服务器通信。它可以使用JSON、XML、HTML和文本文本等格式发送和接收数据。<br>它可以与服务器通信、交换数据或更新页面，而没有刷新页面<br>主要特性：</p>
+<ol>
+<li>发送请求给服务器，不重新加载页面。</li>
+<li>接受并使用来自服务器的数据。</li>
+</ol>
+<p>arr.indexOf(“b”)<br>arr.lastIndexOf(“b”)<br>arr.includes(“v”,2)<br>arr.includes(“b”,-100)<br>arr.slice(1m3)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/08/26/Ajax/" data-id="ckszwgaqo0004v23b88py2n2v" data-title="Ajax" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Vue-CLI-配置参考" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/08/26/Vue-CLI-%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83/" class="article-date">
@@ -96,8 +178,11 @@
         <h2 id="全局CLI配置"><a href="#全局CLI配置" class="headerlink" title="全局CLI配置"></a>全局CLI配置</h2><p>有些针对 @vue/cli 的全局配置，例如你惯用的包管理器和你本地保存的 preset，都保存在 home 目录下一个名叫 .vuerc 的 JSON 文件。</p>
 <h2 id="vue-config-js"><a href="#vue-config-js" class="headerlink" title="vue.config.js"></a>vue.config.js</h2><p>可选的配置文件，若项目的（和package.json同级）根目录中存在这个文件，则会被自动加载。<br>你可以使用package.json中的vue字段，但是要严格按照JSON的格式来写<br>这个文件应导出一个包含了选项的对象</p>
 <h3 id="publicPath"><a href="#publicPath" class="headerlink" title="publicPath"></a>publicPath</h3><p>打包bulid完后，都单独生成一个/dist文件夹<br>publicPath设置的是域名根目录到项目根目录间的url，默认’/‘是根目录，部署应用包的基本URL，不是项目打包出来的文件存放的位置</p>
-<h3 id="outputDir"><a href="#outputDir" class="headerlink" title="outputDir"></a>outputDir</h3><p>用来设置项目打包生成的文件的存储目录，可以是静态路径也可以是相对路径，相对路径是相对于文件当前的根路径</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//vue.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  </span><br><span class="line">  publicPath:&#x27;&#x27;,//基本路径</span><br><span class="line">  outputDir:&#x27;dist&#x27;,//输出目录</span><br><span class="line">  assetsDir:&#123;</span><br><span class="line">    Type:string,</span><br><span class="line">    Default:&#x27;&#x27;,</span><br><span class="line">  &#125;</span><br><span class="line">  indexPath:&#123;</span><br><span class="line">    Type:string,</span><br><span class="line">    Default:&#x27;index.html&#x27;</span><br><span class="line">  &#125;,</span><br><span class="line">  filenameHashing:&#123;</span><br><span class="line">    Type:boolean,</span><br><span class="line">    Default:true</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="outputDir"><a href="#outputDir" class="headerlink" title="outputDir"></a>outputDir</h3><p>用来设置项目打包生成的文件的存储目录，可以是静态路径也可以是相对路径<br>相对路径是相对于文件当前的根路径</p>
+<h3 id="assetsDir"><a href="#assetsDir" class="headerlink" title="assetsDir"></a>assetsDir</h3><p>用来设置放置打包生成的静态资源（js、css、img、fonts）的目录<br>该目录相对于outputDir</p>
+<h3 id="indexPath"><a href="#indexPath" class="headerlink" title="indexPath"></a>indexPath</h3><p>用于设定打包生成的 index.html 文件的存储位置<br>该路径若是相对路径，则相对于outputDir，也可以是一个绝对路径；<br>路径一定要以文件名+后缀结尾，最好以index,html结尾。</p>
+<h3 id="filenameHashing"><a href="#filenameHashing" class="headerlink" title="filenameHashing"></a>filenameHashing</h3><p>设置打包生成的的静态资源的文件名中是否加入hash以便控制浏览器缓存问题。<br>当只需要保存静态资源时，可以设置filenameHashing为false</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//vue.config.js</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  </span><br><span class="line">  publicPath:&#x27;&#x27;,//基本路径</span><br><span class="line">  outputDir:&#x27;dist&#x27;,//输出目录</span><br><span class="line">  assetsDir:&#x27;&#x27;,</span><br><span class="line">  indexPath:&#x27;index.html&#x27;,</span><br><span class="line">  filenameHashing:true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="代理-devServer"><a href="#代理-devServer" class="headerlink" title="代理 devServer"></a>代理 devServer</h3><p>解决开发环境的跨域问题<br>（跨域就是不同源，即不满足协议、域名、端口都相同的约定）<br>（同源是指：协议、域名、端口都相同）<br>假设要把<a target="_blank" rel="noopener" href="http://localhost:8081/allin/policy/getProductInfo">http://localhost:8081/allin/policy/getProductInfo</a> 中的域名换成 <a target="_blank" rel="noopener" href="http://www.test.com/">www.test.com</a> 相当于把请求换成 <a target="_blank" rel="noopener" href="http://www.test.com/allin/policy/getProductInfo">http://www.test.com/allin/policy/getProductInfo</a><br>代理：在本地会创建一个虚拟服务端，然后发送请求的数据，并同时接收请求的数据，这样客户端端和服务端进行数据的交互就不会有跨域问题<br>把请求的url写成/politics/2021_08_26_604559.shtml</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  devServer:&#123;</span><br><span class="line">    proxy: &#x27;https://www.guancha.cn/&#x27; //要访问的跨域的域名</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -108,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/26/Vue-CLI-%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83/" data-id="ckst0ipqp0002qi3bdn131ecc" data-title="Vue CLI(配置参考)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/26/Vue-CLI-%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83/" data-id="ckszwgaqm0001v23b1ifd9njo" data-title="Vue CLI(配置参考)" class="article-share-link">分享</a>
       
       
       
@@ -157,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/26/Vue-CLI-1/" data-id="ckst0ipqo0001qi3b712v88l5" data-title="Vue CLI(1)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/26/Vue-CLI-1/" data-id="ckszwgaqp0007v23bbj1816s5" data-title="Vue CLI(1)" class="article-share-link">分享</a>
       
       
       
@@ -202,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/15/%E8%B7%AF%E7%94%B1/" data-id="ckst0ipqv000lqi3bdphxay2i" data-title="路由" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/15/%E8%B7%AF%E7%94%B1/" data-id="ckszwgaqt000lv23b1qnx3e6m" data-title="路由" class="article-share-link">分享</a>
       
       
       
@@ -260,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/12/%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/" data-id="ckst0ipqw000mqi3b06v3a5n5" data-title="过渡和动画" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/12/%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/" data-id="ckszwgaqu000ov23be1koccei" data-title="过渡和动画" class="article-share-link">分享</a>
       
       
       
@@ -299,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/10/%E7%BB%84%E4%BB%B6-Provide-Inject-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6-%E6%A8%A1%E7%89%88%E5%BA%94%E7%94%A8/" data-id="ckst0ipqt000dqi3b8yt07a9p" data-title="组件-Provide/Inject 动态组件 模版应用" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/10/%E7%BB%84%E4%BB%B6-Provide-Inject-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6-%E6%A8%A1%E7%89%88%E5%BA%94%E7%94%A8/" data-id="ckszwgaqs000gv23bc7slcw89" data-title="组件-Provide/Inject 动态组件 模版应用" class="article-share-link">分享</a>
       
       
       
@@ -337,7 +422,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/" data-id="ckst0ipqu000hqi3b3cbubr4s" data-title="组件-自定义事件" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/09/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6-1/" data-id="ckszwgaqt000iv23b63o034eu" data-title="组件-自定义事件" class="article-share-link">分享</a>
       
       
       
@@ -396,7 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" data-id="ckst0ipqt000eqi3baqgt897u" data-title="组件-插槽" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/08/%E7%BB%84%E4%BB%B6-%E6%8F%92%E6%A7%BD/" data-id="ckszwgaqs000hv23b8pea0dy3" data-title="组件-插槽" class="article-share-link">分享</a>
       
       
       
@@ -441,10 +526,10 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 动态赋予一个变量的值 --&gt;</span><br><span class="line">    &lt;blog-post :title=&quot;post.title&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line">      &lt;!-- 动态赋予一个复杂表达式的值 --&gt;</span><br><span class="line">    &lt;blog-post :titke=&quot;post.title + &#x27;by&quot; + post.author.name&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 传入数字 即使`88`是静态的，仍然需要`v-bind`来告诉Vue --&gt;</span><br><span class="line">    &lt;!-- 这是一个JavaScript表达式而不是一个字符串 --&gt;</span><br><span class="line">    &lt;blog-post :likes=&quot;88&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line">    &lt;!-- 用一个变量进行动态赋值 --&gt;</span><br><span class="line">    &lt;blog-post :likes=&quot;post.likes&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 传入一个布尔值，包括该prop没有值的情况在内，都意味着 `true` --&gt;</span><br><span class="line">    &lt;blog-post is-published&gt;&lt;/blog-post&gt;</span><br><span class="line">    &lt;blog-post :is-published=&quot;post.isPublished&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--  传入一个数组 --&gt;</span><br><span class="line">    &lt;blog-post :comment-ids=&quot;post.commentIds&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--  传入一个对象 --&gt;</span><br><span class="line">    &lt;blog-post :author=&quot;post.author&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">  </span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 传入一个对象的所有property --&gt;</span><br><span class="line">  &lt;blog-post v-bind=&quot;post&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line">&lt;!-- 等价于 --&gt;</span><br><span class="line"> &lt;blog-post :id=&quot;post.id&quot; :title=&quot;post.title&quot;&gt;&lt;/blog-post&gt;</span><br><span class="line"></span><br><span class="line">post:&#123;</span><br><span class="line">    id:1,</span><br><span class="line">    title:&#x27;My Journey with Vue&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h2><p>所有的prop都使得其父子之间形成了一个单向下行绑定：父级prop的更新<br>会向下流动到子组件中，但是反过来则不行。这样会防止从子组件意外变更父级组件的状态，从而导致应用的数据流难以理解<br>另外，每次父级组件发生变更时，子组件中所有的 prop 都将会刷新为最新的值。这意味着你不应该在一个子组件内部改变 prop。如果这样做了，Vue 会在浏览器的控制台中发出警告。</p>
+<h2 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h2><p>所有的prop都使得其父子之间形成了一个单向下行绑定：父级prop的更新<br>会向下流动到子组件中，但是反过来则不行。这样可以防止从子组件意外变更父级组件的状态，从而导致应用的数据流难以理解<br>另外，每次父级组件发生变更时，子组件中所有的 prop 都将会刷新为最新的值。这意味着你不应该在一个子组件内部改变 prop。如果这样做了，Vue 会在浏览器的控制台中发出警告。</p>
 <p>两种常见的试图变更一个prop的情形</p>
 <ol>
-<li>这个prop用来传递一个初始值；这个子组件接下来希望将其作为一个本地的prop数据来使用。在这种情况下，最好定义一个本地的data property并将这个prop作为其初始值：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:[&#x27;initialCounter&#x27;],</span><br><span class="line">      data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">          conunter:this.initialCounter</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></li>
+<li>这个prop用来传递一个初始值；这个子组件接下来希望将其作为一个本地的prop数据来使用。在这种情况下，最好定义一个本地的data property并将这个prop作为其初始值：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:[&#x27;initialCounter&#x27;],</span><br><span class="line">data()&#123;</span><br><span class="line">  return&#123;</span><br><span class="line">    conunter:this.initialCounter</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>这个prop以一种原始的值传入且需要进行转换。在这种情况下，最好使用这个prop的值来定义一个计算属性<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props:[&#x27;size&#x27;],</span><br><span class="line">      comouted:&#123;</span><br><span class="line">        normalizedSize()&#123;</span><br><span class="line">          return this.size.trim().toLowerCase()</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
 提示：注意在 JavaScript 中对象和数组是通过引用传入的，所以对于一个数组或对象类型的 prop 来说，在子组件中改变变更这个对象或数组本身将会影响到父组件的状态。</li>
 </ol>
@@ -460,142 +545,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="ckst0ipqs000cqi3b3kzlay10" data-title="组件-Prop" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-组件-自定义事件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" class="article-date">
-  <time class="dt-published" datetime="2021-08-04T13:30:43.000Z" itemprop="datePublished">2021-08-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/">组件-自定义事件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="事件名"><a href="#事件名" class="headerlink" title="事件名"></a>事件名</h2><p>与组件和prop一样提供了自动的大小写转换，如果用驼峰命名的子组件中触发一个事件，你将可以在父组件中添加一个 kebab-case (短横线分隔命名) 的监听器。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.$emit(&#x27;myEvent&#x27;)</span><br><span class="line"></span><br><span class="line">&lt;my-component @my-event=&quot;doSomeThing&quot;&gt;&lt;/my-component&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="定义自定义事件"><a href="#定义自定义事件" class="headerlink" title="定义自定义事件"></a>定义自定义事件</h2><p>通过emits选项在组件上定义已发出的事件<br>当在emits选项中定义了原生事件（如click）时，将使用组件中的事件替代原生事件侦听器</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.component(&#x27;custom-form&#x27;,&#123;</span><br><span class="line">  emits:[&#x27;inFocus&#x27;,&#x27;submit&#x27;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="验证抛出的事件"><a href="#验证抛出的事件" class="headerlink" title="验证抛出的事件"></a>验证抛出的事件</h2><p>与 prop 类型验证类似，如果使用对象语法而不是数组语法定义发出的事件，则可以验证它。<br>要添加验证，将为事件分配一个函数，该函数接收传递给 $emit 调用的参数，并返回一个布尔值以指示事件是否有效。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">app.component(&#x27;custom-form&#x27;,&#123;</span><br><span class="line">    emits:&#123;</span><br><span class="line">      // 没有验证</span><br><span class="line">      click:null,</span><br><span class="line"></span><br><span class="line">      //验证submit事件</span><br><span class="line">      submit:(&#123;email,password&#125;) =&gt;&#123;</span><br><span class="line">        if(email &amp;&amp; password)&#123;</span><br><span class="line">          return true</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">          console.warn(&#x27;Invalid submit event payload!&#x27;);</span><br><span class="line">          return false</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      methods:&#123;</span><br><span class="line">        submitForm(email,password)&#123;</span><br><span class="line">          this.$emit(&#x27;submit&#x27;,&#123;email,password&#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="v-model参数"><a href="#v-model参数" class="headerlink" title="v-model参数"></a>v-model参数</h2><p>默认情况下，组件上的v-model使用modelValue作为prop和update:modelValue作为事件。可以通过向v-model传递参数来修改这些名称</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-component v-model:title=&quot;bookTitle&gt;&lt;/my-component&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//在此例，子组件将需要一个title prop并发出update:title要同步的事件</span><br><span class="line">app.component(&#x27;my-component&#x27;,&#123;</span><br><span class="line">  props:&#123;</span><br><span class="line">    title:String</span><br><span class="line">  &#125;,</span><br><span class="line">  emits:[&#x27;update:title&#x27;],</span><br><span class="line">  template:`</span><br><span class="line">  &lt;input type=&quot;text&quot; :value=&quot;title&quot; @input=&quot;$emit(&#x27;update:title&#x27;,$event.target.value)&quot; &gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;my-component v-model:title=&quot;bookTitle&quot;&gt;&lt;/my-component&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="多个v-model绑定"><a href="#多个v-model绑定" class="headerlink" title="多个v-model绑定"></a>多个v-model绑定</h2><p>在多个组件实例上创建多个v-model绑定</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;user-name</span><br><span class="line">  v-model:first-name=&quot;firstName&quot;</span><br><span class="line">  v-model:last-name=&quot;lastName&quot;</span><br><span class="line">&gt;&lt;/user-name&gt;</span><br><span class="line"></span><br><span class="line">app.component(&#x27;user-name&#x27;, &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    firstName: String,</span><br><span class="line">    lastName: String</span><br><span class="line">  &#125;,</span><br><span class="line">  emits: [&#x27;update:firstName&#x27;, &#x27;update:lastName&#x27;],</span><br><span class="line">  template: `</span><br><span class="line">    &lt;input </span><br><span class="line">      type=&quot;text&quot;</span><br><span class="line">      :value=&quot;firstName&quot;</span><br><span class="line">      @input=&quot;$emit(&#x27;update:firstName&#x27;, $event.target.value)&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input</span><br><span class="line">      type=&quot;text&quot;</span><br><span class="line">      :value=&quot;lastName&quot;</span><br><span class="line">      @input=&quot;$emit(&#x27;update:lastName&#x27;, $event.target.value)&quot;&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6/" data-id="ckst0ipqu000iqi3b0h5xgqjt" data-title="组件-自定义事件" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-组件-注册" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" class="article-date">
-  <time class="dt-published" datetime="2021-08-04T07:47:17.000Z" itemprop="datePublished">2021-08-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/">组件-注册</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="组件基础"><a href="#组件基础" class="headerlink" title="组件基础"></a>组件基础</h2><p>组件是带有名称的可复用的实例，所以它们可以与根实例接收相同的选项，例如：data、computed、watch、methods以及生命周期钩子等。<br>在下面这个例子中这个例子是<component-div>,我们可以把这个组件作为一个根实例中的自定义元素来使用</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;container&quot;&gt;</span><br><span class="line"> &lt;component-div&gt;&lt;/component-div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">       //创建一个Vue应用</span><br><span class="line">       const componentDiv = Vue.createApp(&#123;&#125;);</span><br><span class="line">       // 定义一个名为 component-div 的新全局组件</span><br><span class="line">       componentDiv.component(&#x27;component-div&#x27;,&#123;</span><br><span class="line">         data()&#123;</span><br><span class="line">           return&#123;</span><br><span class="line">             count:1</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;,</span><br><span class="line">         // 模版</span><br><span class="line">         template:`</span><br><span class="line">         &lt;div&gt;&#123;&#123;count&#125;&#125;&lt;/div&gt;</span><br><span class="line">         `</span><br><span class="line">       &#125;)</span><br><span class="line">       //挂载</span><br><span class="line">       componentDiv.mount(&quot;#container&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="组件注册"><a href="#组件注册" class="headerlink" title="组件注册"></a>组件注册</h2><p>为了能在模版中使用，这些组件必须先注册以便Vue能识别。<br>注册类型有两种：全局注册和局部注册</p>
-<h3 id="组件名"><a href="#组件名" class="headerlink" title="组件名"></a>组件名</h3><p>推荐遵循W3C规范中的自定义组件名即（字母全小写且必须包含一个连字符）这可以帮助避免和当前以及未来的HTML元素相冲突<br>在字符串模版或单个文件组件中定义组件时，定义组件名的方式有两种<br>1.使用kebab-case 2.使用PascalCase<br>注意：直接在DOM（即非字符串的模版）中使用只有kebab-case是有效的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//使用kebab-case(短横线分隔命名)</span><br><span class="line"> app.component(&#x27;my-component-name&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">//使用PascalCase（大驼峰命名法）</span><br><span class="line">    app.component(&#x27;myComponentName&#x27;, &#123;</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="全局注册"><a href="#全局注册" class="headerlink" title="全局注册"></a>全局注册</h3><p>全局注册的组件可以在应用中的任何组件的模版中使用，在所有的子组件中也是如此。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;component-a&gt;&lt;/component-a&gt;</span><br><span class="line">    &lt;component-c&gt;&lt;/component-c&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">const app = Vue.createApp(&#123;&#125;)</span><br><span class="line"></span><br><span class="line">   app.component(&#x27;component-a&#x27;,&#123;</span><br><span class="line">    template:`</span><br><span class="line">     &lt;div&gt;a&lt;/div&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line">   app.component(&#x27;component-b&#x27;,&#123;</span><br><span class="line">     template:`</span><br><span class="line">     &lt;div&gt;b&lt;/div&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line">   //在component-c组件中使用component-b</span><br><span class="line">   app.component(&#x27;component-c&#x27;,&#123;</span><br><span class="line">    template:`</span><br><span class="line">     &lt;div&gt;c&lt;/div&gt;</span><br><span class="line">     &lt;component-b&gt;&lt;/component-b&gt;</span><br><span class="line">     `</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">   app.mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h3><p>在根组件的components选项中定义使用的组件<br>注意：局部注册的组件在其子组件中不可用<br>若希望ComponentA在ComponentB中可用则把ComponentA定义在ComponentB的components选项中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">const ComponentA=&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentB=&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentC=&#123;</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br><span class="line">  const app = Vue.createApp(&#123;</span><br><span class="line">    components:&#123;</span><br><span class="line">      &#x27;component-a&#x27;:ComponentA,</span><br><span class="line">      &#x27;component-b&#x27;:ComponentB,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  \\若希望ComponentA在ComponentB中可用则</span><br><span class="line">  const ComponentA=&#123;</span><br><span class="line">  &#125;</span><br><span class="line">  const ComponentB=&#123;</span><br><span class="line">  components:&#123;</span><br><span class="line">    &#x27;component-a&#x27;:ComponentA</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="根组件"><a href="#根组件" class="headerlink" title="根组件"></a>根组件</h2><p>传递给createApp的选项用于配置根组件。当我们挂载应用时，该组件被用作渲染的起点。</p>
-<p>一个应用需要被挂载到一个DOM元素中，例如，如果你想把一个 Vue 应用挂载到 <div id="app"></div>，应该传入 #app</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const RootComponent = &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">const app = Vue.createApp(RootComponent)</span><br><span class="line">//mount不返回本身，相反，他返回的是根组件实例</span><br><span class="line">const vm = app.mount(&#x27;#app&#x27;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Data-Property和方法"><a href="#Data-Property和方法" class="headerlink" title="Data Property和方法"></a>Data Property和方法</h2><h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><p>组件的data选项是一个函数。Vue在创建新组件实例的过程中调用此函数。它返回的是一个对象，Vue会通过响应性系统将其包裹，并以$data的形式存储在组件实例中。该对象的任何顶级property也直接通过组件实例暴露出来<br>这些实例property仅在实例首次创建时被添加，所以需确保它们都在data返回的对象中，必要时使用null、undefined占位</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">const app = Vue.createApp(&#123;</span><br><span class="line">  data()&#123;</span><br><span class="line">    return&#123;</span><br><span class="line">      count:4</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const vm = app.mount(&#x27;#app&#x27;)</span><br><span class="line"></span><br><span class="line">console.log(vm.$data.count) // =&gt; 4</span><br><span class="line">console.log(vm.count)       // =&gt; 4</span><br><span class="line"></span><br><span class="line">// 修改 vm.count 的值也会更新 $data.count</span><br><span class="line">vm.count = 7</span><br><span class="line">console.log(vm.$data.count) // =&gt; 7</span><br><span class="line"></span><br><span class="line">// 反之亦然</span><br><span class="line">vm.$data.count = 8</span><br><span class="line">console.log(vm.count) // =&gt; 8</span><br></pre></td></tr></table></figure>
-
-<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>用methods选项向组件实例添加方法，它是一个包含所需方法的对象<br>Vue自动为methods绑定this,以便它始终指向实例，在定义methods时应避免使用箭头函数，因为这会阻止Vue绑定恰当的this指向</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const app = Vue.createApp(&#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123; count: 4 &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    increment() &#123;</span><br><span class="line">      // `this` 指向该组件实例</span><br><span class="line">      this.count++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const vm = app.mount(&#x27;#app&#x27;)</span><br><span class="line"></span><br><span class="line">console.log(vm.count) // =&gt; 4</span><br><span class="line"></span><br><span class="line">vm.increment()</span><br><span class="line"></span><br><span class="line">console.log(vm.count) // =&gt; 5</span><br></pre></td></tr></table></figure>
-
-<h2 id="计算属性和侦听器"><a href="#计算属性和侦听器" class="headerlink" title="计算属性和侦听器"></a>计算属性和侦听器</h2><h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p>对于任何包含响应式数据的复杂逻辑，都应使用计算属性</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;computed-basics&quot;&gt;</span><br><span class="line">    &lt;p&gt;Has published books:&lt;/p&gt;</span><br><span class="line">    &lt;span&gt;&#123;&#123;publishedBooksMessage&#125;&#125;&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">Vue.createApp(&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">          author:&#123;</span><br><span class="line">            name:&#x27;John Doe&#x27;,</span><br><span class="line">            books:[</span><br><span class="line">              &#x27;Vue 2 - Advanced Guide&#x27;,</span><br><span class="line">              &#x27;Vue 3&#x27;,</span><br><span class="line">              &#x27;Vue 4&#x27;</span><br><span class="line">            ]</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      computed:&#123;</span><br><span class="line">        //计算属性的getter</span><br><span class="line">        publishedBooksMessage()&#123;</span><br><span class="line">          //this指向实例</span><br><span class="line">          return this.author.books.length &gt; 0?&#x27;Yes&#x27;:&#x27;No&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;).mount(&#x27;#computed-basics&#x27;)</span><br></pre></td></tr></table></figure>
-<h3 id="计算属性的Setter"><a href="#计算属性的Setter" class="headerlink" title="计算属性的Setter"></a>计算属性的Setter</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">        fullName:&#123;</span><br><span class="line">          //getter</span><br><span class="line">          get()&#123;</span><br><span class="line">            return this.firstName + &#x27;&#x27; + this.lastName</span><br><span class="line">          &#125;,</span><br><span class="line">          //setter</span><br><span class="line">          set(newValue)&#123;</span><br><span class="line">            const names = newValue.split(&#x27;&#x27;)</span><br><span class="line">            this.firstName = names[0]</span><br><span class="line">            this.lastName = names[names.length - 1]</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="计算属性VS方法"><a href="#计算属性VS方法" class="headerlink" title="计算属性VS方法"></a>计算属性VS方法</h3><p>计算属性是基于它们的响应依赖关系缓存的。<br>计算属性只在相关响应式依赖发生改变时它们才会重新求值<br>而每当触发重新渲染时，调用方法将会再次执行函数<br>如果不希望有缓存，就用method来替代</p>
-<h3 id="侦听器"><a href="#侦听器" class="headerlink" title="侦听器"></a>侦听器</h3><p>当数据发生变化时，及时作出响应处理<br>使用watch选项，监听器可以监听数组 / 对象。<br>允许异步操作 (访问一个 API)，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const vm = Vue.createApp(&#123;</span><br><span class="line">      data()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">          firstName: &#x27;Foo&#x27;,</span><br><span class="line">          lastName: &#x27;Bar&#x27;,</span><br><span class="line">          fullName: &#x27;Foo Bar&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      watch:&#123;</span><br><span class="line">        firstName(val)&#123;</span><br><span class="line">          this.fullName = val + &#x27; &#x27;+this.lastName</span><br><span class="line">        &#125;,</span><br><span class="line">        lastName(val)&#123;</span><br><span class="line">          this.fullName = this.firstName + &#x27; &#x27;+val</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;).mount(&#x27;#demo&#x27;)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">      fullName()&#123;</span><br><span class="line">        return this.firstName + &#x27; &#x27; + this.lastName</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Class与Style绑定"><a href="#Class与Style绑定" class="headerlink" title="Class与Style绑定"></a>Class与Style绑定</h2><h3 id="对象语法"><a href="#对象语法" class="headerlink" title="对象语法"></a>对象语法</h3><p>可以传给:class一个对象，以动态的切换class,:class指令可以与普通的class attribute共存</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;static&quot; :class=&quot;&#123;active:isActive,&#x27;text-danger&#x27;=hasError&#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">data()&#123;</span><br><span class="line">  return&#123;</span><br><span class="line">    isActive:true,</span><br><span class="line">    hasError:false</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结果为 --&gt;</span><br><span class="line">&lt;div class=&quot;static active&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="数组语法"><a href="#数组语法" class="headerlink" title="数组语法"></a>数组语法</h3><p>把一个数组传给:class，以应用一个class列表<br>在数组语法中也可以使用对象语法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;static&quot; :class=&quot;[activeClass,errorClass]&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">data()&#123;</span><br><span class="line">  return&#123;</span><br><span class="line">    activeClass:&#x27;active&#x27;,</span><br><span class="line">    errorClass:&#x27;text-danger&#x27;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 结果为 --&gt;</span><br><span class="line">&lt;div class=&quot;active text-danger&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;div :class=&quot;[isActive ? activeClass :&#x27;&#x27;,errorClass]&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div :class=&quot;[&#123;active:isActive&#125;,errorClass]&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="在组件上使用"><a href="#在组件上使用" class="headerlink" title="在组件上使用"></a>在组件上使用</h3><p>在自定义组件上使用class attribute时，这些class将被添加到该元素中。此元素现有的class不会被覆盖</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const app = Vue.createApp(&#123;&#125;)</span><br><span class="line"></span><br><span class="line">app.component(&#x27;my-component&#x27;,&#123;</span><br><span class="line">  template:`&lt;p class=&quot;baz boo&quot;&gt;&lt;/p&gt;`</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;!-- 在使用时添加一些class --&gt;</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">&lt;my-component class=&quot;baz zoo&quot;&gt;&lt;/my-component&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 渲染结果 --&gt;</span><br><span class="line">&lt;p class=&quot;baz boo baz zoo&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
-<p>如果你的组件有多个根元素，你需要定义哪些部分将接收这个类。可以使用 $attrs 组件属性执行此操作</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;my-component class=&quot;baz&quot;&gt;&lt;/my-component&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">const app = Vue.createApp(&#123;&#125;)</span><br><span class="line"></span><br><span class="line">app.component(&#x27;my-component&#x27;, &#123;</span><br><span class="line">  template: `</span><br><span class="line">    &lt;p :class=&quot;$attrs.class&quot;&gt;Hi!&lt;/p&gt;</span><br><span class="line">    &lt;span&gt;This is a child component&lt;/span&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="绑定内联样式"><a href="#绑定内联样式" class="headerlink" title="绑定内联样式"></a>绑定内联样式</h2><p>:style CSS property名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，记得用引号括起来) 来命名<br>同样有对象语法和数组语法</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :style=&quot;&#123; color: activeColor, fontSize: fontSize + &#x27;px&#x27; &#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">data() &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    activeColor: &#x27;red&#x27;,</span><br><span class="line">    fontSize: 30</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 或者 --&gt;</span><br><span class="line">&lt;div :style=&quot;styleObject&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">data() &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    styleObject: &#123;</span><br><span class="line">      color: &#x27;red&#x27;,</span><br><span class="line">      fontSize: &#x27;13px&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 数组语法：将多个样式对象应用到同一个元素上 --&gt;</span><br><span class="line">&lt;div :style=&quot;[baseStyles,overridingStyles&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/08/04/%E7%BB%84%E4%BB%B6-%E6%B3%A8%E5%86%8C/" data-id="ckst0ipqu000gqi3bhe8q14yc" data-title="组件-注册" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/08/05/%E7%BB%84%E4%BB%B6-Prop/" data-id="ckszwgaqr000cv23bc25nbdvv" data-title="组件-Prop" class="article-share-link">分享</a>
       
       
       
@@ -643,6 +593,14 @@
       <ul>
         
           <li>
+            <a href="/2021/08/30/VUe-Router/">VUe Router</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/26/Ajax/">Ajax</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/26/Vue-CLI-%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83/">Vue CLI(配置参考)</a>
           </li>
         
@@ -652,14 +610,6 @@
         
           <li>
             <a href="/2021/08/15/%E8%B7%AF%E7%94%B1/">路由</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/12/%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/">过渡和动画</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/10/%E7%BB%84%E4%BB%B6-Provide-Inject-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6-%E6%A8%A1%E7%89%88%E5%BA%94%E7%94%A8/">组件-Provide/Inject 动态组件 模版应用</a>
           </li>
         
       </ul>

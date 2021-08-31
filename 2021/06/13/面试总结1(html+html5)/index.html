@@ -14,7 +14,7 @@
 <meta property="og:description" content="五大主流浏览器及其内核   Chrome -&gt;Webkit&#x2F;Blink Firefox -&gt;Gecko IE -&gt;Trident Safari -&gt;Webkit Opera -&gt;Presto&#x2F;Blink   块级元素和行内元素有哪些，空元素   块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-13T09:18:25.000Z">
-<meta property="article:modified_time" content="2021-06-21T02:21:58.259Z">
+<meta property="article:modified_time" content="2021-08-31T09:56:26.530Z">
 <meta property="article:author" content="kui">
 <meta name="twitter:card" content="summary">
   
@@ -109,7 +109,7 @@
 <li>块级元素和行内元素有哪些，空元素</li>
 </ol>
 <ul>
-<li><p>块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增 footer  head nav aside section main article audio video canvas output</p>
+<li><p>块级元素：h1-h6 div p ul ol dl dt dd li table hr pre  form  ,h5新增 footer  header nav aside section main article audio video canvas output</p>
 </li>
 <li><p>行内元素 a br  img map button input  i em b code del  select q label sub sup  strong small  texture span mark city abbr</p>
 </li>
@@ -124,7 +124,7 @@
 <li>结构语义化区别：html没有结构化语义化的标签，html5有</li>
 <li>绘图区别</li>
 <li>音频和视频的支持，html要用flash播放器支持，不支持audio,video标签，html5支持</li>
-<li>语法处理，html无法对不准确的语法，html5可以<span id="more"></span></li>
+<li>语法处理，html无法对不准确的语法进行处理，html5可以<span id="more"></span></li>
 </ul>
 <ol start="4">
 <li>html5和html的区别</li>
@@ -144,7 +144,7 @@
 <li>新增画图元素 canvas</li>
 <li>新增多媒体标签 video audio</li>
 <li>新增语义化元素 header footer nav article section aside  figure fig caption bid command dialog rt rp time summary 等</li>
-<li>移除元素 big dir font center frame strike applet basefont</li>
+<li>移除元素 s tt u font basefont  big dir font center frame strike applet basefont</li>
 <li>css新增</li>
 <li>border-color,border-image,border-radius,box-shadow,background-size,background-clip,background-repeat,background-origin,text-shadow, word-wrap,transform,animation, transition</li>
 </ul>
@@ -209,7 +209,7 @@
 <ul>
 <li>为了让搜索引擎优化</li>
 <li>为了让浏览器理解网页</li>
-<li>便于团队开发和维护，语义化更具有可有性</li>
+<li>便于团队开发和维护</li>
 </ul>
 <ol start="13">
 <li>id与class的区别</li>
@@ -220,14 +220,23 @@
 <li>class是可重复的，id是唯一的</li>
 </ul>
 <ol start="14">
-<li><p>如何看待前端模块化</p>
-</li>
-<li><p>如何看待前后端分离</p>
+<li>如何看待前端模块化<br>是一种编程思想。所谓的模块化开发就是封装细节，提供使用接口，彼此之间互不影响，每个模块都是实现某一特定的功能。模块化开发的基础就是函数</li>
+</ol>
+<p>什么是模块？<br>将一个复杂的程序依据一定的规则(规范)封装成几个块(文件), 并进行组合在一起<br>块的内部数据与实现是私有的, 只是向外部暴露一些接口(方法)与外部其它模块通信<br>实现特定功能并且相互独立的一组方法。</p>
+<p>模块化的好处：<br>避免命名冲突(减少命名空间污染)<br>更好的分离, 按需加载<br>更高复用性<br>高可维护性</p>
+<ol start="15">
+<li><p>如何看待前后端分离<br>前后端分离：<br>就是前端和后端分为两个工程，后端就是去实现业务逻辑，提供前端所需要的API接口。而前端就调用后端提供的接口，实现前端页面的交互逻辑，运用nodejs或者ajax进行交互。<br>好处：整个项目的开发权重往前移，实现真正的前后端解藕，动态资源和静态资源分离，提高了性能和扩展性。</p>
 </li>
 <li><p>浏览器兼容性问题</p>
 </li>
-<li><p>对浏览器内核的理解</p>
-</li>
+</ol>
+<ul>
+<li>不同浏览器的标签默认的maigin和padding不同 解决方案：css中 *{margin:0 padding:0}</li>
+<li>IE6双边距问题；在IE6中设置了float，同时又设置margin，就会出现边距问题 解决方案：设置display：inline；</li>
+<li>ul和ol列表缩进问题 消除ul、ol等列表的缩进时，样式应写成：list-style:none;margin:0px;padding:0px;</li>
+</ul>
+<ol start="17">
+<li>对浏览器内核的理解</li>
 </ol>
 <ul>
 <li>主要分成两部分：渲染引擎和js引擎</li>
@@ -268,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckst0ipqw000pqi3bfgej37a9" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/06/13/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%931(html+html5)/" data-id="ckszwgaqu000mv23bhzmph6x6" data-title="面试总结1 （html html5)" class="article-share-link">分享</a>
       
       
       
@@ -323,6 +332,14 @@
       <ul>
         
           <li>
+            <a href="/2021/08/30/VUe-Router/">VUe Router</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/26/Ajax/">Ajax</a>
+          </li>
+        
+          <li>
             <a href="/2021/08/26/Vue-CLI-%E9%85%8D%E7%BD%AE%E5%8F%82%E8%80%83/">Vue CLI(配置参考)</a>
           </li>
         
@@ -332,14 +349,6 @@
         
           <li>
             <a href="/2021/08/15/%E8%B7%AF%E7%94%B1/">路由</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/12/%E8%BF%87%E6%B8%A1%E5%92%8C%E5%8A%A8%E7%94%BB/">过渡和动画</a>
-          </li>
-        
-          <li>
-            <a href="/2021/08/10/%E7%BB%84%E4%BB%B6-Provide-Inject-%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6-%E6%A8%A1%E7%89%88%E5%BA%94%E7%94%A8/">组件-Provide/Inject 动态组件 模版应用</a>
           </li>
         
       </ul>
